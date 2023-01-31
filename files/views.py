@@ -10,3 +10,6 @@ def logIn(request):
 
 def base(request):
     return render(request, "base.html")
+
+def lboard(request):
+    return render(request, "leaderboard.html")
