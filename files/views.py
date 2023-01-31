@@ -13,3 +13,6 @@ def base(request):
 
 def lboard(request):
     return render(request, "leaderboard.html")
+
+def submit(request):
+    return render(request, "submit.html")

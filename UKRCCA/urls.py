@@ -23,5 +23,6 @@ urlpatterns = [
     path('', views.logIn),
     path('base/', views.base),
     path('leaderboard/', views.lboard),
+    path('submit/', views.submit),
 
 ]
