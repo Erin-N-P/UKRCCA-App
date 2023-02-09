@@ -1,3 +1,5 @@
-{% load static %}
+{% extends 'base.html' %}{% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'test.css' %}" />
-<p class="text">HELLOOOO</p>
+{% endblock %} {% block content %}
+<p>not content</p>
+{% endblock %}

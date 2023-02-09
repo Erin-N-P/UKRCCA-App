@@ -7,11 +7,22 @@
   rel="stylesheet"
 />
 
+{% block head %} {% endblock %}
 <div class="headerContainer">
   <img class="back" src="{% static 'back.png' %}" alt="" />
   <h1 class="pageType">PAGE NAME</h1>
 </div>
 
+{% block content %} {% endblock %}
+
 <div class="footerContainer">
-  <p>GUACAMOLE</p>
+  <div class="iconBox">
+    <img src="{% static 'score.png' %}" alt="" />
+  </div>
+  <div class="iconBox">
+    <img src="{% static 'home.png' %}" alt="" />
+  </div>
+  <div class="iconBox">
+    <img src="{% static 'lboard.png' %}" alt="" />
+  </div>
 </div>
