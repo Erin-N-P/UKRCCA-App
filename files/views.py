@@ -11,6 +11,12 @@ def logIn(request):
 def base(request):
     return render(request, "base.html")
 
+def home(request):
+    return render(request, "home.html")
+
+def score(request):
+    return render(request, "score.html")    
+
 def lboard(request):
     return render(request, "leaderboard.html")
 
