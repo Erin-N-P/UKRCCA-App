@@ -55,7 +55,7 @@ ROOT_URLCONF = 'UKRCCA.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR.joinpath('templates')],# in django3
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
