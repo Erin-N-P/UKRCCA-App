@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import UserForm
 
 # Create your views here.
 
@@ -8,7 +9,8 @@ def user_list(request):
 
 # put and post request // insert and update
 def user_form(request):
-    return render(request, "user_register/user_form.html")
+    form = UserForm()
+    return render(request, "user_register/user_form.html", {'form':form})
 
 # delete request
 def user_delete(request):

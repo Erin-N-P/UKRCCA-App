@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    background-color: rgb(159, 189, 253);
+    height: 100vh;
+    margin: 0;
+}
+
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+}
+
+.wrap {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.head {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+}
+
+.properties {
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    line-height: 2rem;
+}
+
+@media screen and (min-width: 650px) {
+    .properties{
+    width: 30%;
+    }
+}    
+.properties input{
+    border-radius: 20px;
+    align-items: center;
+    border: 1px solid rgb(254, 254, 254);
+    height: 35px;
+    width: 320px;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 17px rgba(93, 93, 93, 0.25);
+}
+
+label {
+    font-family: 'Red Hat Display', sans-serif;
+    letter-spacing: 1px;
+}

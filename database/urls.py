@@ -5,6 +5,6 @@ from . import views
 urlpatterns = [
 
     # calling the functions from views
-    path('', views.user_list), # localhost:{portnumber}/user/form
+    path('', views.user_form), # localhost:{portnumber}/user/form
     path('list/', views.user_list) # localhost:{portnumber}/user/list
 ]
