@@ -1,0 +1,9 @@
+{% static %} {% block head %}{% endblock %}
+<link rel="stylesheet" href="{% static 'base.css' %}" />
+
+<div class="headerContainer">
+  <img src="{% static 'back.png' %}" alt="" />
+  {% block pagename %}{% endblock %}
+</div>
+
+{% block content %}{% endblock %}
