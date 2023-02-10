@@ -22,3 +22,6 @@ def score(request):
 
 def submit(request):
     return render(request, 'submit.html')
+
+def base(request):
+    return render(request, 'base.html')

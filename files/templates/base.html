@@ -1,4 +1,12 @@
-{% static %} {% block head %}{% endblock %}
+{% load static %} {% block head %}<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Dosis&family=Jost&family=Outfit&display=swap"
+  rel="stylesheet"
+/>{% endblock %}
 <link rel="stylesheet" href="{% static 'base.css' %}" />
 
 <div class="headerContainer">

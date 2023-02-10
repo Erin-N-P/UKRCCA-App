@@ -1,2 +1,7 @@
-{% load static %} <link rel="stylesheet" href="{% static 'test.css' %}" />
-<p>base will go in here in a minute i guess</p>
+{% extends 'base.html' %}{% load static %} {% block head %}<link
+  rel="stylesheet"
+  href="{% static 'test.css' %}"
+/>
+{% endblock %} {% block pagename %}
+<p>SIGN IN</p>
+{% endblock %}

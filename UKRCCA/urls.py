@@ -25,4 +25,5 @@ urlpatterns = [
     path('leaderboard/', views.lboard),
     path('scorecard/', views.score),
     path('submit/', views.submit),
+    path('base/', views.base),
 ]

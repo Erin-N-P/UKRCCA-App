@@ -1,3 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .headerContainer {
   background-color: #141115;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerContainer img {
+  height: 60px;
+}
+
+.headerContainer p {
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
 }
