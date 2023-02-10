@@ -20,4 +20,9 @@ from files import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', views.test),
+    path('login/', views.login),
+    path('home/', views.home),
+    path('leaderboard/', views.lboard),
+    path('scorecard/', views.score),
+    path('submit/', views.submit),
 ]
