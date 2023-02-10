@@ -11,6 +11,7 @@
         <form class="properties" action="" method="post" autocomplete="off">
             {% csrf_token %} <!-- this helps deal with hackers that will pretend to be insiders -->
             {{ form }}
+            <button type="submit" class="btn"><i class="fa-duotone fa-narwhal"></i> Submit</button>
         </form>
     </div>
 </div>

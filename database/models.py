@@ -70,29 +70,29 @@ class Score(models.Model):
     user = models.ForeignKey(NewUser, on_delete=models.CASCADE)
     score = models.ForeignKey(Competition, on_delete=models.CASCADE)
 
-class Ruleset(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-
-    def __str__(self):
-        return self.name
-
 class Rule(models.Model):
-    ruleset = models.ForeignKey(Ruleset, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     point = models.IntegerField()
 
     def __str__(self):
         return self.name
 
-class Truck(models.Model):
-    name = models.CharField(max_length=50)
+class Ruleset(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    rule = models.ForeignKey(Rule, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
 
 class TruckClass(models.Model):
     type = models.CharField(max_length=20)
-    truck = models.ForeignKey(Truck, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.type
+
+class Truck(models.Model):
+    name = models.CharField(max_length=50)
+    truck_class = models.ForeignKey(TruckClass, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

@@ -56,3 +56,8 @@ label {
     font-family: 'Red Hat Display', sans-serif;
     letter-spacing: 1px;
 }
+
+.properties .btn {
+    height: 30px;
+    width: 50px;
+}
