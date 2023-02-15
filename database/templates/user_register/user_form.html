@@ -1,20 +1,17 @@
 {% extends 'user_register/base.html' %}
 {% load static %} 
 
-{% block head %} <link rel="stylesheet" href="{% static 'form.css' %}"> {% endblock %}
+{% block head %} 
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/8faf1448e3.css" crossorigin="anonymous"> 
+{% endblock %}
 
 
 {% block content %}
-<div class="wrap">
-    <div class="sign-in">
         <h1 class="head">SIGN UP</h1>
         <form class="properties" action="" method="post" autocomplete="off">
             {% csrf_token %} <!-- this helps deal with hackers that will pretend to be insiders -->
             {{ form }}
-            <button type="submit" class="btn"><i class="fa-duotone fa-narwhal"></i> Submit</button>
+            <button type="submit" class="btn"><img src="/static/narwhal.png" alt="" class="narwhal">SIGN UP</button>
         </form>
-    </div>
-</div>
-
-
 {% endblock %}

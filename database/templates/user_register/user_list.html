@@ -1,5 +1,40 @@
 {% extends 'user_register/base.html' %}
+{% load static %}
+
+{% block head %} <link rel="stylesheet" href="{% static 'list.css' %}"> {% endblock %}
 
 {% block content %}
-<p>test to show list of users from the table</p>
+<table id="user">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Start Date</th>
+            <th>Admin</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in user_list %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}} {{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.start_date}}</td>
+            {% if user.is_superuser == True %}
+                <td>YES</td>
+            {% else %}   
+                <td>NO</td>
+            {% endif %}
+            {% if user.is_active == True %}
+                <td>YES</td>
+            {% else %}   
+                <td>NO</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}

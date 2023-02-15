@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#user td, #user th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-family: 'Oswald', sans-serif;
+
+  }
+  
+#user tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#user tr:hover {background-color: #ddd;}
+
+#user th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #6814a8;
+    color: white;
+}
+
