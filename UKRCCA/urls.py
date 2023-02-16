@@ -16,14 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from files import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', views.test),
-    path('login/', views.login),
-    path('home/', views.home),
-    path('leaderboard/', views.lboard),
-    path('scorecard/', views.score),
-    path('submit/', views.submit),
-    path('base/', views.base),
-]
+    path('test/', views.test, name='test'),
+    path('', views.login, name='login'),
+    path('home/', views.home, name='home'),
+    path('leaderboard/', views.lboard, name='lboard'),
+    path('scorecard/', views.score, name='score'),
+    path('submit/', views.submit, name='submit'),
+    path('base/', views.base, name='base'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

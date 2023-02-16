@@ -1,2 +1,7 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'leaderboard.css'}">
+{% extends 'base.html' %}{% load static %}
+
+<link rel="stylesheet" href="{% static 'leaderboard.css'}" />
+
+{% block pagename %}
+<p>LEADERBOARD</p>
+{% endblock %}

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f9fffb;
+}
+
 .headerContainer {
   background-color: #141115;
   height: 150px;

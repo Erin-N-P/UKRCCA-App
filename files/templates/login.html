@@ -1,2 +1,22 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'login.css'}">
+{% extends 'base.html' %}{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'login.css' %}" />
+<script src="{% static 'login.js'}"></script>
+{% endblock %}
+
+<!-- page code -->
+{% block pagename %}
+<p>SIGN IN</p>
+{% endblock %}
+
+{% block content %}
+<div class="contentContainer">
+    <p>Please enter your competition ID:</p>
+    <form class="form" onsubmit="pageSwitch()">
+        <input type="text" id="entry" placeholder="ID ENTRY HERE...">
+        <input type="submit" id="entrySubmit" value="SUBMIT">
+    </form>
+</div>
+
+{% endblock %}
+
