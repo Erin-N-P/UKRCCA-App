@@ -16,12 +16,12 @@
 
 <div class="footerContainer">
   <div class="iconBox">
-    <img class="score" src="{% static 'star.png' %}" alt="" />
+    <a href="{% url 'score' %}"><img class="score" src="{% static 'star.png' %}" alt="" /></a>
   </div>
   <div class="iconBox">
-    <img src="{% static 'home.png' %}" alt="" />
+    <a href="{% url 'home' %}"><img src="{% static 'home.png' %}" alt="" /></a>
   </div>
   <div class="iconBox">
-    <img src="{% static 'lboard.png' %}" alt="" />
+    <a href="{% url 'lboard' %}"><img src="{% static 'lboard.png' %}" alt="" /></a>
   </div>
 </div>
