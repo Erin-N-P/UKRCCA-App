@@ -1,2 +1,33 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'submit.css'}">
+{% extends 'base.html' %}{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'submit.css' %}" />
+{% endblock %}
+
+{% block pagename %} <p>SUBMISSION</p> {% endblock %}
+{% block back %}{% url 'score' %} {% endblock %}
+
+{% block content %}
+<div class="contentContainer">
+    <form class="form">
+        <div>
+            <p>First Name:</p>
+            <input type="text" id="entry" placeholder="Enter here...">
+        </div>
+        <div>
+            <p>Surname:</p>
+            <input type="text" id="entry" placeholder="Enter here...">
+        </div>
+        <div>
+            <p>Team Name:</p>
+            <input type="text" id="entry" placeholder="Enter here...">
+        </div>
+        <div>
+            <p>Confirm Team Name:</p>
+            <input type="text" id="entry" placeholder="Enter here...">
+        </div>
+        <div class="buttonSubmit">
+            <input type="submit" id="entrySubmit" value="SUBMIT">
+        </div>
+    </form>
+</div>
+{% endblock %}
