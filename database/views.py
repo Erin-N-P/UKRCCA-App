@@ -27,5 +27,7 @@ def user_form(request, id=0):
             form.save()
         return redirect('/user/list')
 # delete request
-def user_delete(request):
-    return
+def user_delete(request, id):
+    user = NewUser.objects.get(pk=id)
+    user.delete()
+    return redirect('/user/list/')

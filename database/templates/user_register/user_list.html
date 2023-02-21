@@ -13,7 +13,8 @@
             <th>Start Date</th>
             <th>Admin</th>
             <th>Active</th>
-            <th>Edit</th>
+            <th><a href="{% url 'user_insert' %}" class="add-user">
+                <img src="/static/plus.png" alt="" class="edit" style="height: 20px;">Add New</a></th>
         </tr>
     </thead>
     <tbody>
@@ -37,6 +38,10 @@
                 <a href="{% url 'user_update' user.id %}">
                     <img src="/static/edit.png" alt="" class="edit" style="height: 20px;">
                 </a>
+                <form action="{% url 'user_delete' user.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="del"><img src="/static/delete.png" style="height:20px"></button>
+                </form>
             </td>
         </tr>
         {% endfor %}
