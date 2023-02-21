@@ -13,9 +13,13 @@ def user_list(request):
     return render(request, "user_register/user_list.html", context)
 
 # put and post request // insert and update
-def user_form(request):
+def user_form(request, id=0):
     if request.method == "GET":
-        form = UserForm()
+        if id == 0:
+            form = UserForm()
+        else:
+            user = NewUser.objects.get(pk=id) # i thought pk was just a variable name but no, it has to be pk
+            form = UserForm(instance=user)
         return render(request, "user_register/user_form.html", {'form':form})
     else:
         form = UserForm(request.POST)

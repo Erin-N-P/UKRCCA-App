@@ -13,6 +13,7 @@
             <th>Start Date</th>
             <th>Admin</th>
             <th>Active</th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -32,6 +33,11 @@
             {% else %}   
                 <td>NO</td>
             {% endif %}
+            <td>
+                <a href="{% url 'user_update' user.id %}">
+                    <img src="/static/edit.png" alt="" class="edit" style="height: 20px;">
+                </a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
