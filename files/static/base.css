@@ -30,7 +30,7 @@ body {
 }
 
 .footerContainer {
-  position: absolute;
+  position: sticky;
   bottom: 0;
   left: 0;
   background-color: #141115;

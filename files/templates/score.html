@@ -40,64 +40,64 @@
     <div class="scoreChange">
         <p class="changeName">Progress (-2 points)</p>
         <div class="scoreRight">
-            <button class="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button class="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Reverse (1 points)</p>
         <div class="scoreRight">
-            <button class="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button class="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Gate (10 points)</p>
         <div class="scoreRight">
-            <button class="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button class="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Touch (10 points)</p>
         <div class="scoreRight">
-            <button class="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button class="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Winch (3 points)</p>
         <div class="scoreRight">
-            <button class="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button class="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Boundary (10 points)</p>
         <div class="scoreRight">
-            <button class="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button class="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">DNF (100 points)</p>
         <div class="scoreRight">
-            <button class="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button class="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
         </div>
     </div>
 
     <div class="scoreChange final">
         <p class="changeName">DNS (150 points)</p>
         <div class="scoreRight">
-            <button class="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button class="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
         </div>
     </div>
 </div>
@@ -106,6 +106,8 @@
     let startBtn = document.getElementById('startTimer');
     let stopBtn = document.getElementById('stopTimer');
     let resetBtn = document.getElementById('resetTimer');
+    let addBtn = document.getElementById('add');
+    let minusBtn = document.getElementById('minus');
 
     let hour = 00;
     let minute = 00;
@@ -181,6 +183,8 @@
             setTimeout(stopWatch, 10);
         }
     }
+
+
 
 </script>
 {% endblock %}

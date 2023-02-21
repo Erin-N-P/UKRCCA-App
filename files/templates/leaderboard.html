@@ -1,7 +1,33 @@
 {% extends 'base.html' %}{% load static %}
 
-<link rel="stylesheet" href="{% static 'leaderboard.css'}" />
+{% block head %}
+<link rel="stylesheet" href="{% static 'leaderboard.css' %}" />
+{% endblock %}
 
-{% block pagename %}
-<p>LEADERBOARD</p>
+{% block pagename %} <p>LEADERBOARD</p> {% endblock %}
+{% block back %}{% url 'home' %}{% endblock %}
+
+{% block content %}
+<div class="tableContainer">
+    <table class="table">
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Time</th>
+        </tr>
+        <tr class="top">
+            <td>1</td>
+            <td>Alan Carr</td>
+            <td>80</td>
+            <td>00:12:51:37</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Katalena Dymond</td>
+            <td>150</td>
+            <td>00:99:99:99</td>
+        </tr>
+    </table>
+</div>
 {% endblock %}

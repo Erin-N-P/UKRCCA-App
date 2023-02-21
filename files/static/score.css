@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-.footerContainer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-}
-
 .headerContainer {
     position: sticky;
     top: 0;
@@ -22,6 +16,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 100vh;
 }
 
 .timer {
@@ -89,15 +84,15 @@
     margin-bottom: 3vh;
 }
 
-.add,
-.minus {
+#add,
+#minus {
     background-color: #051905;
     border: none;
     padding-left: 40px;
 }
 
-.add img,
-.minus img {
+#add img,
+#minus img {
     height: 80px;
 }
 
@@ -108,4 +103,8 @@
 
 .buttons {
     display: flex;
+}
+
+.footerContainer .iconbox {
+    background-color: aqua;
 }

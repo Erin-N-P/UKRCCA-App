@@ -1,7 +1,6 @@
 {% extends 'base.html' %}{% load static %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'login.css' %}" />
-<script src="{% static 'login.js'}"></script>
 {% endblock %}
 
 {% block pagename %} <p>SIGN IN</p> {% endblock %}
@@ -15,4 +14,12 @@
     </form>
 </div>
 
+
+<script>
+    function pageSwitch(event) {
+        event.preventDefault();
+        window.location.replace("{% url 'home' %}");
+    }
+
+</script>
 {% endblock %}
