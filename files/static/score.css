@@ -104,3 +104,13 @@
 .buttons {
     display: flex;
 }
+
+body {
+    height: fit-content;
+}
+
+.footerContainer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+}
