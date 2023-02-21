@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100%;
 }
 
 .timer {
@@ -103,8 +103,4 @@
 
 .buttons {
     display: flex;
-}
-
-.footerContainer .iconbox {
-    background-color: aqua;
 }
