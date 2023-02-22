@@ -1,9 +1,4 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="/Files/static/comps.css">
-        <title>Competitions</title>
-    </head>
-    <body>
-
-    </body>
-</html>
+{% extends 'base.html' %}{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'comps.css' %}" />
+{% endblock %}
