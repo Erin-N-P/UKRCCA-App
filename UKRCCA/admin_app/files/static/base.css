@@ -1,4 +1,18 @@
 .e {
-    text-align: left;
-    color: blueviolet;
+    position: absolute;
+    left: 17.95%;
+    right: 17.95%;
+    top: 1.42%;
+    bottom: 91.47%;
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #D5E4D9;
 }
