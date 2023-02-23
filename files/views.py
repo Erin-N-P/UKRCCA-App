@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -25,3 +26,7 @@ def submit(request):
 
 def base(request):
     return render(request, 'base.html')
+
+def redirect_view(request):
+    response = redirect('/home')
+    return response

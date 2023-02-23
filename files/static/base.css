@@ -8,6 +8,8 @@ body {
   background-color: #f9fffb;
 }
 
+/* Header styling */
+
 .headerContainer {
   background-color: #141115;
   height: 150px;
@@ -29,8 +31,10 @@ body {
   line-height: 50px;
 }
 
+/*  Footer styling */
+
 .footerContainer {
-  position: sticky;
+  position: absolute;
   bottom: 0;
   left: 0;
   background-color: #141115;
@@ -41,6 +45,8 @@ body {
   justify-content: space-evenly;
   border-radius: 25px 25px 0 0;
 }
+
+/* Footer icon styling */
 
 .iconBox img {
   height: 80px;

@@ -4,22 +4,21 @@
 {% endblock %}
 
 {% block pagename %} <p>SIGN IN</p> {% endblock %}
-{% block back %} javascript:window.close(); {% endblock %}
+{% block back %}"javascript:close_window();"{% endblock %}
 {% block content %}
 <div class="contentContainer">
     <p>Please enter your competition ID:</p>
-    <form class="form" onsubmit="pageSwitch()">
+    <form class="form" action="{% url 'home' %}">
         <input type="text" id="entry" placeholder="ID ENTRY HERE...">
-        <input type="submit" id="entrySubmit" value="SUBMIT">
+        <button type="submit" id="entrySubmit" value="SUBMIT">SUBMIT</button>
     </form>
 </div>
 
-
 <script>
-    function pageSwitch(event) {
-        event.preventDefault();
-        window.location.replace("{% url 'home' %}");
+    function close_window() {
+        if (confirm("Close Window?")) {
+            close();
+        }
     }
-
 </script>
 {% endblock %}
