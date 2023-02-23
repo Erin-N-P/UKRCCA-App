@@ -1,20 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.contentContainer{
+.contentContainer {
     height: calc(100vh - 150px);
     display: flex;
     flex-direction: column;
@@ -24,24 +8,27 @@
     padding: 20px;
 }
 
-.contentContainer p{
+.contentContainer p {
     font-family: 'Jost', sans-serif;
     font-size: 2.5rem;
     padding-bottom: 20px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: left;
 }
 
-.form div {
+.box {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-#entry{
+#entry1,
+#entry2,
+#entry3,
+#entry4 {
     height: 130px;
     width: 80vw;
     border: none;
@@ -50,10 +37,9 @@ form{
     font-family: 'Outfit', sans-serif;
     background: #FFFFFF;
     padding: 20px;
-  
 }
 
-#entrySubmit{
+#entrySubmit {
     background: #1B4557;
     border-radius: 10px;
     color: #EBEBEB;
@@ -61,11 +47,13 @@ form{
     height: 80px;
     font-size: 2.8rem;
     font-family: 'Jost', sans-serif;
-    padding: 5px;  
+    padding: 5px;
     margin: 20px;
 }
 
 .buttonSubmit {
     display: flex;
-    justify-content: right;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

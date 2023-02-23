@@ -7,11 +7,17 @@
 }
 
 body {
-    height: fit-content;
+    height: 100%;
+    min-height: 100%;
 }
 
 .headerContainer {
     top: 0;
+    left: 0;
+}
+
+.footerContainer {
+    bottom: 0;
     left: 0;
 }
 
@@ -86,6 +92,7 @@ body {
     padding: 30px;
     width: fit-content;
     margin-top: -2.5vh;
+    /* display: none; */
 }
 
 .rulesLight h1 {
@@ -182,4 +189,12 @@ li::before {
     line-height: 40px;
     font-style: normal;
     color: #049372;
+}
+
+.rulesHeavy {
+    font-size: 3rem;
+    font-family: 'Outfit', sans-serif;
+    padding: 50px;
+    padding-bottom: 30vh;
+    display: none;
 }

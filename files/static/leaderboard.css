@@ -1,3 +1,5 @@
+/* Table styling */
+
 .tableContainer {
     width: 100%;
     display: flex;
@@ -31,4 +33,22 @@ td {
 
 .top {
     border-bottom: none;
+}
+
+/* Miscellaneous Styling */
+
+body {
+    min-height: 100%;
+}
+
+.footerContainer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+}
+
+.headerContainer {
+    position: sticky;
+    top: 0;
+    left: 0;
 }
