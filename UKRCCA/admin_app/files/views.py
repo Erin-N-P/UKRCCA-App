@@ -1,24 +1,16 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.views.generic import TemplateView
 
-def files(request):
-    return render(request, 'base.html')
+class CompCrePageView(TemplateView):
+    template_name = 'compcre.html'
 
-def files(request):
-    return render(request, 'compcre.html')
+class CompsPageView(TemplateView):
+    template_name = 'comps.html'
 
-def files(request):
-    return render(request, 'comps.html')
+class HomePageView(TemplateView):
+    template_name = 'home.html'
 
-def files(request):
-    return render(request, 'home.html')
+class LeadBPageView (TemplateView):
+    template_name = 'leadb.html'
 
-def files(request):
-    return render(request, 'leadb.html')
-
-def files(request):
-    return render(request, 'login.html')
-
-def redirect_view(request):
-    response = redirect('/home')
-    return response
+class LoginPageView (TemplateView):
+    template_name = 'login.html'

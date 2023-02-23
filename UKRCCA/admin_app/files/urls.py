@@ -1,17 +1,10 @@
-from django.contrib import admin
 from django.urls import path
-from files import views
-from django.conf import settings
-from django.conf.urls.static import static
-from .views import redirect_view
+from .views import HomePageView, CompCrePageView, CompsPageView, LeadBPageView, LoginPageView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.login, name='login'),
-    path('home/', views.home, name='home'),
-    path('competitions/', views.comps, name='comps'),
-    path('leaderboard/', views.leadb, name='leadb'),
-    path('create competition/', views.compcre, name='compcre'),
-    path('base/', views.base, name='base'),
-    path('/home', redirect_view)
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('', LoginPageView.as_view(), name='login'),
+    path('home/', HomePageView.as_view(), name='home'),
+    path('comps/', CompsPageView.as_view(), name='comps'),
+    path('compcre/', CompCrePageView.as_view(), name='compcre'),
+    path('leadb/', LeadBPageView.as_view(), name='leadb')
+]
