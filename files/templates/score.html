@@ -10,7 +10,8 @@
 <div class="pageContainer">
     <div class="timer">
         <div class="leftTimer">
-            <p class="points">150 POINTS</p>
+            <p id="points">0</p>
+            <p> POINTS</p>
         </div>
         <div class="rightTimer">
             <div id="time">
@@ -40,8 +41,8 @@
     <div class="scoreChange">
         <p class="changeName">Progress (-2 points)</p>
         <div class="scoreRight">
-            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event)"></button>
         </div>
     </div>
 
@@ -99,6 +100,9 @@
             <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
             <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
         </div>
+    </div>
+    <div class="buttonSubmit">
+        <input type="submit" id="entrySubmit" value="SUBMIT">
     </div>
 </div>
 
@@ -184,7 +188,13 @@
         }
     }
 
+increasePoint = function(eve){
+    document.getElementById('points').innerHTML = 'hello'
+}
 
+decreasePoint = function(eve){
+    document.getElementById('points').innerHTML = 'byee'
+}
 
 </script>
 {% endblock %}
