@@ -3,12 +3,15 @@
     left: 0;
     top: 0;
     flex-direction: column;
+    margin-block-start: 0%;
+    margin-top: 30px;
+    margin-block-end: auto;
 
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
     font-size: 4vh;
-    line-height: 33px;
+    line-height: 100px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -18,9 +21,20 @@
 
 .foot{
     position: sticky;
-    left: 0;
-    bottom: 0;
+    left: 0%;
+    bottom: 0%;
     background-color: #D5E4D9;
     width: 100vw;
-    height: 13vh;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img{
+    position: relative;
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 120px;
+    height: 120px;
 }
