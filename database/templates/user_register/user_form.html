@@ -12,7 +12,7 @@
 {% block content %}
         <h1 class="head">SIGN UP</h1>
         <form class="properties" action="" method="post" autocomplete="off">
-            {% csrf_token %} <!-- this helps deal with hackers that will pretend to be insiders -->
+            {% csrf_token %}
             {{ form }}
             <button type="submit" class="btn"><img src="/static/narwhal.png" alt="" class="narwhal">SIGN UP</button>
         </form>

@@ -22,7 +22,8 @@ def user_form(request, id=0):
             form = UserForm(instance=user)
         return render(request, "user_register/user_form.html", {'form':form})
     else:
-        form = UserForm(request.POST)
+        user = NewUser.objects.get(pk=id)
+        form = UserForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
         return redirect('/user/list')
