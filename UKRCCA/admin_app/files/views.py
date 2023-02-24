@@ -1,7 +1,16 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
+from django.views.generic import TemplateView
 
-def files(request):
-    template = loader.get_template('comps.html')
-    return HttpResponse(template.render())
+class CompCrePageView(TemplateView):
+    template_name = 'compcre.html'
+
+class CompsPageView(TemplateView):
+    template_name = 'comps.html'
+
+class HomePageView(TemplateView):
+    template_name = 'home.html'
+
+class LeadBPageView (TemplateView):
+    template_name = 'leadb.html'
+
+class LoginPageView (TemplateView):
+    template_name = 'login.html'

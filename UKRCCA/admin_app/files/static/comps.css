@@ -1,3 +1,28 @@
+html{
+    background-color: #215A71;
+}
+
+.buttonlist{
+    position: relative;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 .complist{
-    color: #203D50;
+    width: 850px;
+    height: 15vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+
+    background: #203D50;
+    border-radius: 1vh;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5vh;
+    line-height: 33px;
+    
+    color: #D5E4D9;
 }

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load static %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'comps.css' %}">
 {% endblock %}
@@ -8,6 +8,12 @@ Competitions
 
 
 {% block content %}
-<button class="complist">Competition 1</button>
+<div class="buttonlist">
+    <button class="complist">Competition 1</button>
+    <button class="complist">Competition 2</button>
+    <button class="complist">Competition 3</button>
+    <button class="complist">Competition 4</button>
+    <button class="complist">Competition 5</button>
+</div>
 {% endblock %}
 

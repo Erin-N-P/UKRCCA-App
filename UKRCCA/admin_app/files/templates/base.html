@@ -7,16 +7,24 @@
         <link href="https://fonts.googleapis.com/css2?family=Carme&family=Nunito:wght@600&family=Rubik:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'base.css' %}">
         {% block head %}
-        {% end block %}
+        {% endblock %}
         <title>{% block title %}{% endblock %}</title>
     </head>
 <body>
 
 {% block header %}
-<p class="e">UKRCCA</p>
+<p class="head">UKRCCA</p>
 {% endblock  %}
 
 {% block content %}
+{% endblock %}
+
+{% block footer %}
+<div class="foot">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+</div>
 {% endblock %}
 
 </body>
