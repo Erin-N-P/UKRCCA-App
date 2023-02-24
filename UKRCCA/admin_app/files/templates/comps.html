@@ -8,13 +8,13 @@ Competitions
 
 
 {% block content %}
-<img src="{% static 'back_icon.png' %}" alt="backicon">
+<a href="{% url 'home' %}"><img src="{% static 'back_icon.png' %}" alt="backicon"></a>
 <div class="buttonlist">
-    <button class="complist">Competition 1</button>
-    <button class="complist">Competition 2</button>
-    <button class="complist">Competition 3</button>
-    <button class="complist">Competition 4</button>
-    <button class="complist">Competition 5</button>
+    <a href="{% url 'leadb' %}"><button class="complist">Competition 1</button></a>
+    <a href="{% url 'leadb' %}"><button class="complist">Competition 2</button></a>
+    <a href="{% url 'leadb' %}"><button class="complist">Competition 3</button></a>
+    <a href="{% url 'leadb' %}"><button class="complist">Competition 4</button></a>
+    <a href="{% url 'leadb' %}"><button class="complist">Competition 5</button></a>
 </div>
 {% endblock %}
 

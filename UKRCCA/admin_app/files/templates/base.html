@@ -21,9 +21,9 @@
 
 {% block footer %}
 <div class="foot">
-    <img class="img" src="{% static 'createcomp_icon.png' %}" alt="createcomp_icon">
-    <img class="img" src="{% static 'home_icon.png' %}" alt="home_icon">
-    <img class="img" src="{% static 'comps_icon.png' %}" alt="comps_icon">
+    <a href="{% url 'compcre' %}"><img class="img" src="{% static 'createcomp_icon.png' %}" alt="createcomp_icon"></a>
+    <a href="{% url 'home' %}"><img class="img" src="{% static 'home_icon.png' %}" alt="home_icon"></a>
+    <a href="{% url 'comps' %}"><img class="img" src="{% static 'comps_icon.png' %}" alt="comps_icon"></a>
 </div>
 {% endblock %}
 
