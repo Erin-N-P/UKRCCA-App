@@ -41,72 +41,74 @@
     <div class="scoreChange">
         <p class="changeName">Progress (-2 points)</p>
         <div class="scoreRight">
-            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event)"></button>
-            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event)"></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, -2)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event, -2)"></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Reverse (1 points)</p>
         <div class="scoreRight">
-            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, 1)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event, 1)"></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Gate (10 points)</p>
         <div class="scoreRight">
-            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, 10)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event, 10)"></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Touch (10 points)</p>
         <div class="scoreRight">
-            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, 10)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event, 10)"></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Winch (3 points)</p>
         <div class="scoreRight">
-            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, 3)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event, 3)"></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">Boundary (10 points)</p>
         <div class="scoreRight">
-            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, 10)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event, 10)"></button>
         </div>
     </div>
 
     <div class="scoreChange">
         <p class="changeName">DNF (100 points)</p>
         <div class="scoreRight">
-            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, 100)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event, 100)"></button>
         </div>
     </div>
 
     <div class="scoreChange final">
         <p class="changeName">DNS (150 points)</p>
         <div class="scoreRight">
-            <button id="add"><img src="{% static 'add.png' %}" alt=""></button>
-            <button id="minus"><img src="{% static 'minus.png' %}" alt=""></button>
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, 150)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event, 150)"></button>
         </div>
     </div>
-    <div class="buttonSubmit">
-        <input type="submit" id="entrySubmit" value="SUBMIT">
-    </div>
+    <form class="buttonSubmit" id="form" action="{% url 'submit' %}">
+        <input type="submit" id="entrySubmit" value="SUBMIT" onclick="returnPoints()">
+    </form>
 </div>
 
 <script>
+
+    document.getElementById('points').innerHTML = "0";
     let startBtn = document.getElementById('startTimer');
     let stopBtn = document.getElementById('stopTimer');
     let resetBtn = document.getElementById('resetTimer');
@@ -188,13 +190,26 @@
         }
     }
 
-increasePoint = function(eve){
-    document.getElementById('points').innerHTML = 'hello'
-}
+    increasePoint = function (eve, change) {
+        var point = document.getElementById('points').innerHTML;
+        pointNew = Number(point);
+        changeNew = Number(change);
+        var total = pointNew + change;
+        document.getElementById('points').innerHTML = total;
+    }
 
-decreasePoint = function(eve){
-    document.getElementById('points').innerHTML = 'byee'
-}
+    decreasePoint = function (eve, change) {
+        var point = document.getElementById('points').innerHTML;
+        pointNew = Number(point);
+        changeNew = Number(change);
+        var total = pointNew - change;
+        document.getElementById('points').innerHTML = total;
+    }
+
+    returnPoints = function () {
+        var finalTotal = document.getElementById('points').innerHTML;
+        return finalTotal;
+    }
 
 </script>
 {% endblock %}

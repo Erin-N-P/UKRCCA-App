@@ -8,28 +8,14 @@
 
 {% block content %}
 <div class="contentContainer">
-    <form class="form" id="form">
-        <div class="box">
-            <p>First Name:</p>
-            <input type="text" id="entry1" placeholder="Enter here...">
-        </div>
-        <div class="box">
-            <p>Surname:</p>
-            <input type="text" id="entry2" placeholder="Enter here...">
-        </div>
-        <div class="box">
-            <p>Team Name:</p>
-            <input type="text" id="entry3" placeholder="Enter here...">
-        </div>
-        <div class="box">
-            <p>Confirm Team Name:</p>
-            <input type="text" id="entry4" placeholder="Enter here...">
-        </div>
-
+    <form class="form" action="{% url 'home' %}" id="form" method="POST">
+        {% csrf_token %}
+        {{ form }}
         <div class="buttonSubmit" onclick="check()">
             <input type="submit" id="entrySubmit" value="SUBMIT">
             <p id="p1"></p>
         </div>
+
     </form>
 </div>
 
@@ -43,30 +29,25 @@
         var fName = document.getElementById('entry1').value;
         var sName = document.getElementById('entry2').value;
         var tName = document.getElementById('entry3').value;
-        var ctName = document.getElementById('entry4').value;
         try {
-            if (tName !== ctName) throw "Team names do not match";
+
             if (fName.trim() == "") throw "Please fill in your first name.";
             if (sName.trim() == "") throw "Please fill in your second name.";
             if (tName.trim() == "") throw "Please fill in your team name.";
-            if (ctName.trim() == "") throw "Please confirm your team name.";
         }
         catch (err) {
-            document.getElementById('p1').innerHTML = err;
+            form.addEventListener('submit', submitForm);
+            window.alert(err);
+
 
         }
         finally {
+            location.reload();
             return fName;
             return sName;
             return tName;
-            removeEventListener('submit', submitForm);
-            return redirect('/home')
+
         }
     }
-
-
-
-
-
 </script>
 {% endblock %}
