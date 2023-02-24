@@ -1,7 +1,7 @@
 {% extends 'user_register/base.html' %}
 {% load static %}
 
-{% block head %} <link rel="stylesheet" href="{% static 'list.css' %}"> {% endblock %}
+{% block head %} <link rel="stylesheet" href="{% static 'list.css' %}">  {% endblock %}
 
 {% block content %}
 <table id="user">
@@ -45,7 +45,18 @@
             </td>
         </tr>
         {% endfor %}
+
+        <div id="popup">
+            <h2>Deleted!</h2>
+            <p>This User has successfully been deleted.</p>
+            <button id="button">OK</button>
+        </div>
+
     </tbody>
 </table>
 
+
+
 {% endblock %}
+
+
