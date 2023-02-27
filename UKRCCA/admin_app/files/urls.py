@@ -6,5 +6,8 @@ urlpatterns = [
     path('home/', HomePageView.as_view(), name='home'),
     path('comps/', CompsPageView.as_view(), name='comps'),
     path('compcre/', CompCrePageView.as_view(), name='compcre'),
-    path('leadb/', LeadBPageView.as_view(), name='leadb')
+    path('leadb/', LeadBPageView.as_view(), name='leadb'),
+        path('rules/', RulesPageView.as_view(), name='rules'),
+    path('lightrules/', LightRulesPageView.as_view(), name='lightrules'),
+    path('heavyrules/', HeavyRulesPageView.as_view, name='heavyrules')
 ]

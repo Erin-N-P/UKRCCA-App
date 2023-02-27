@@ -7,10 +7,17 @@ html{
     align-items: center;
     grid-template-rows: 30vh 70vh;
 }
+.backicon{
+    position: relative;
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: 4vh;
+    width: 4vh;
+}
 .title{
     position: relative;
     
-
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
