@@ -1,1 +1,14 @@
 {% extends 'base.html' %}{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'leadb.css' %}">
+{% endblock %}
+{% block title %}
+Leaderboard
+{% endblock %}
+
+{% block content %}
+<div class="heading">
+    <a href="{% url 'comps' %}"><img src="{% static 'back_icon.png' %}" alt="backicon"></a>
+    <p class="title">Competition</p>
+</div>
+{% endblock %}
