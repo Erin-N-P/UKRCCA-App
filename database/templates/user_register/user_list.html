@@ -44,17 +44,17 @@
                 </a>
                 <form action="{% url 'user_delete' user.id %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="del"><img src="/static/delete.png" style="height:20px"></button>
+                    <button type="submit" class="del" onclick="return confirm('Do you really want to delete user {{user.first_name}} {{user.last_name}}?')"><img src="/static/delete.png" style="height:20px"></button>
                 </form>
             </td>
         </tr>
         {% endfor %}
 
-        <div class="popup">
+        <!-- <div class="popup">
             <h2>Deleted!</h2>
             <p>This User has successfully been deleted.</p>
             <button class="button">OK</button>
-        </div>
+        </div> -->
 
     </tbody>
 </table>

@@ -61,3 +61,8 @@ def comp_form(request, id=0):
             return redirect('/user/comp/list/')
         else:
             return render(request, "competition_register/comp_form.html", {'form':form})
+
+def comp_delete(id):
+    comp = Competition.objects.all(pk=id)
+    comp.delete()
+    return redirect('/user/comp/list/')
