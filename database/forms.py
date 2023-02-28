@@ -1,5 +1,5 @@
 from django import forms
-from .models import NewUser
+from .models import *
 
 class UserForm(forms.ModelForm):
 
@@ -31,9 +31,19 @@ class UserForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)
-        instance = getattr(self, 'instance', None)
-        if instance and instance.pk:
-            self.fields['email'].disabled = True
+        # instance = getattr(self, 'instance', None)
+        # if instance and instance.pk:
+        #     self.fields['email'].disabled = True
+        self.fields['email'].required = True
         self.fields['user_name'].required = True
         self.fields['first_name'].required = True 
         self.fields['last_name'].required = True 
+
+class CompetitionForm(forms.ModelForm):
+    class Meta:
+        model = Competition
+        fields = ('name', 'location', 'no_of_rounds', 'gates_per_round')
+
+    def __init__(self, *args, **kwargs):
+        super(CompetitionForm, self).__init__(*args, **kwargs)
+        instance = getattr(self, 'instance', None)
