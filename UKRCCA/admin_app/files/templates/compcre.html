@@ -11,4 +11,53 @@ Competition Creation
     <a class="backicon" href="{% url 'home' %}"><img class="img1" src="{% static 'back_icon.png' %}" alt="backicon"></a>
     <p class="title">Create Competition</p>
 </div>
+<div class="entry">
+    <p class="Text">Name</p>
+    <input type="text" class="box">
+    <p class="Text">Location</p>
+    <input type="text" class="box">
+    <p class="Text">Gates</p>
+    <select name="Gates" class="Gates">
+        <option value="N/A"></option>
+        <option value="1">1</option>
+        <option value="1">2</option>
+        <option value="1">3</option>
+        <option value="1">4</option>
+        <option value="1">5</option>
+        <option value="1">6</option>
+        <option value="1">7</option>
+        <option value="1">8</option>
+        <option value="1">9</option>
+        <option value="1">10</option>
+        <option value="1">11</option>
+        <option value="1">12</option>
+    </select>
+    <p class="Text">Rounds</p>
+    <select name="Rounds" class="Rounds">
+        <option value="N/A"></option>
+        <option value="1">1</option>
+        <option value="1">2</option>
+        <option value="1">3</option>
+        <option value="1">4</option>
+        <option value="1">5</option>
+        <option value="1">6</option>
+        <option value="1">7</option>
+        <option value="1">8</option>
+        <option value="1">9</option>
+        <option value="1">10</option>
+        <option value="1">11</option>
+        <option value="1">12</option>
+    </select>
+    <p class="Text">Rule Set</p>
+    <label class="container">Light
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+      
+    <label class="container">Full
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+</div>
+<input type="button" class="create"></input>
 {% endblock %}

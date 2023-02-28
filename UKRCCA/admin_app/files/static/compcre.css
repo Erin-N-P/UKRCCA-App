@@ -5,7 +5,7 @@ html{
     position: sticky;
     display: grid;
     align-items: center;
-    grid-template-columns: 11vh;
+    grid-template-columns: 5vh;
     height: 7.5vh;
 }
 .backicon{
@@ -32,4 +32,57 @@ html{
     grid-column-end: 3;
 
     color: #E1E1E1;
+}
+.entry{
+    margin-bottom: 3vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+.Text{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 33px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+    color: #D5E4D9;
+}
+.box{
+    background-color: #E1E1E1;
+    width: 85vw;
+    height: 5vh;
+    border-radius: 3vw;
+    margin-bottom: 3vh;
+}
+.Gates{
+    background-color: #E1E1E1;
+    width: 85vw;
+    height: 5vh;
+    border-radius: 3vw;
+    margin-bottom: 3vh;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 33px;
+}
+.Rounds{
+    background-color: #E1E1E1;
+    width: 85vw;
+    height: 5vh;
+    border-radius: 3vw;
+    margin-bottom: 3vh;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 33px;
 }
