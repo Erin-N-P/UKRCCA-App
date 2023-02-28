@@ -1,3 +1,35 @@
 html{
     background-color: #586994;
 }
+.heading{
+    position: sticky;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 11vh;
+    height: 7.5vh;
+}
+.backicon{
+    position: relative;
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.img1{
+    height: 4vh;
+    width: 4vh;
+}
+.title{
+    position: relative;
+    
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 38px;
+
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    color: #E1E1E1;
+}

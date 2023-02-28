@@ -1,1 +1,14 @@
 {% extends 'base.html' %}{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'compcre.css' %}">
+{% endblock %}
+{% block title %}
+Competition Creation
+{% endblock %}
+
+{% block content%}
+<div class="heading">
+    <a class="backicon" href="{% url 'home' %}"><img class="img1" src="{% static 'back_icon.png' %}" alt="backicon"></a>
+    <p class="title">Create Competition</p>
+</div>
+{% endblock %}
