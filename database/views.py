@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserForm
-from .models import *
+from .models import NewUser
 
 # Create your views here.
 
@@ -22,13 +22,11 @@ def user_form(request, id=0):
             form = UserForm(instance=user)
         return render(request, "user_register/user_form.html", {'form':form})
     else:
-        # user = NewUser.objects.get(pk=id)
-        # form = UserForm(request.POST, instance=user)
         if id == 0:
             form = UserForm(request.POST)
         else:
             user = NewUser.objects.get(pk=id)
-            form = UserForm(request.POST,instance=user)
+            form = UserForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
         return redirect('/user/list')
@@ -37,10 +35,3 @@ def user_delete(request, id):
     user = NewUser.objects.get(pk=id)
     user.delete()
     return redirect('/user/list/')
-
-def comp_list(request):
-    context = {
-        'comp_list': Competition.objects.all()
-    }
-
-    return render
