@@ -30,8 +30,11 @@ def user_form(request, id=0):
         if form.is_valid():
             form.save()
             return redirect('/user/list')
+        else:
+            return render(request, "user_register/user_form.html", {'form':form})
+        
 # delete request
-def user_delete(request, id):
+def user_delete(id):
     user = NewUser.objects.get(pk=id)
     user.delete()
     return redirect('/user/list/')
