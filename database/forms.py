@@ -41,8 +41,30 @@ class UserForm(forms.ModelForm):
 class CompetitionForm(forms.ModelForm):
     class Meta:
         model = Competition
-        fields = ('name', 'location', 'no_of_rounds', 'gates_per_round')
+        fields = '__all__'
+        widgets = {
+            'name': forms.TextInput(attrs={
+            'placeholder': 'Name',
+            'class': 'form-control',
+            'style': 'padding-left: 10px; width: 310px'
+            }),
+            'location': forms.TextInput(attrs={
+            'placeholder': 'Location',
+            'class': 'form-control',
+            'style': 'padding-left: 10px; width: 310px'
+            }),
+            'no_of_rounds': forms.NumberInput(attrs={
+            'placeholder': 'No of Rounds',
+            'class': 'form-control',
+            'style': 'padding-left: 10px; width: 310px'
+            }),
+            'gates_per_round': forms.NumberInput(attrs={
+            'placeholder': 'Gates per round',
+            'class': 'form-control',
+            'style': 'padding-left: 10px; width: 310px'
+            }),
+        }
 
     def __init__(self, *args, **kwargs):
         super(CompetitionForm, self).__init__(*args, **kwargs)
-        instance = getattr(self, 'instance', None)
+        self.fields['name'].required = True

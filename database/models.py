@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class CustomAccountManager(BaseUserManager):
@@ -36,8 +37,8 @@ class CustomAccountManager(BaseUserManager):
 
 class NewUser(AbstractBaseUser, PermissionsMixin):
 
-    email = models.EmailField(_('email address'), unique=True)
-    user_name = models.CharField(max_length=150, unique=True)
+    email = models.EmailField(_('email address'), unique=True, error_messages={'unique':'The email you entered already exists.'})
+    user_name = models.CharField(max_length=150, unique=True, error_messages={'unique':'The username you entered already exists.'})
     first_name = models.CharField(max_length=150, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
     start_date = models.DateTimeField(default=timezone.now)
@@ -57,8 +58,8 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
 class Competition(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=50)
-    no_of_rounds = models.IntegerField()
-    gates_per_round = models.IntegerField()
+    no_of_rounds = models.IntegerField(validators= [MinValueValidator (1, message='Please enter a number greater than or equal to 1'), MaxValueValidator (30, message='Please enter a number less than or equal to 30')])
+    gates_per_round = models.IntegerField(validators= [MinValueValidator (1), MaxValueValidator (30)])
 
     def __str__(self):
         return self.name

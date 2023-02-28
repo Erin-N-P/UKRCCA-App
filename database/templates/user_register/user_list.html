@@ -1,4 +1,4 @@
-{% extends 'user_register/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block head %} <link rel="stylesheet" href="{% static 'list.css' %}">  {% endblock %}
@@ -8,13 +8,16 @@
     <thead>
         <tr>
             <th>Id</th>
+            <th>User Name</th>
             <th>Name</th>
             <th>Email Address</th>
             <th>Start Date</th>
             <th>Admin</th>
             <th>Active</th>
-            <th><a href="{% url 'user_insert' %}" class="add-user">
-                <img src="/static/plus.png" alt="" class="edit" style="height: 20px;">Add New</a></th>
+            <th>
+                <a href="{% url 'user_insert' %}" class="add-user">
+                <img src="/static/plus.png" alt="" class="edit" style="height: 20px;"> Add New</a>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -35,7 +38,7 @@
             {% else %}   
                 <td>NO</td>
             {% endif %}
-            <td>
+            <td class="add-new">
                 <a href="{% url 'user_update' user.id %}">
                     <img src="/static/edit.png" alt="" class="edit" style="height: 20px;">
                 </a>

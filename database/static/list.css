@@ -56,3 +56,29 @@
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+a.add-user {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: white !important;
+    text-decoration: none;
+}
+
+a.add-user:hover {
+    color: rgb(31, 134, 224)!important;
+    transition: 0.19s;
+}
+
+td.add-new {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+button.del {
+    display: flex;
+    width: 20px;
+}

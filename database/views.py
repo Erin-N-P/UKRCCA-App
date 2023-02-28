@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import UserForm
-from .models import NewUser
+from .forms import *
+from .models import *
 
 # Create your views here.
 
@@ -29,9 +29,35 @@ def user_form(request, id=0):
             form = UserForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
-        return redirect('/user/list')
+            return redirect('/user/list')
 # delete request
 def user_delete(request, id):
     user = NewUser.objects.get(pk=id)
     user.delete()
     return redirect('/user/list/')
+
+def comp_list(request):
+    context = {
+        'comp_list': Competition.objects.all()
+    }
+    return render(request, "competition_register/comp_list.html", context)
+
+def comp_form(request, id=0):
+    if request.method == "GET":
+        if id == 0:
+            form = CompetitionForm()
+        else:
+            comp = Competition.objects.get(pk=id)
+            form = CompetitionForm(instance=comp)
+        return render(request, "competition_register/comp_form.html", {'form':form})
+    else:
+        if id == 0:
+            form = CompetitionForm(request.POST)
+        else:
+            comp = Competition.objects.get(pk=id)
+            form = CompetitionForm(request.POST, instance=comp)
+        if form.is_valid():
+            form.save()
+            return redirect('/user/comp/list/')
+        else:
+            return render(request, "competition_register/comp_form.html", {'form':form})
