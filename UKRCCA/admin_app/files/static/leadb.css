@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+=======
+html{
+    background-color: #215A71;
+}
+.heading{
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-rows: 30vh 70vh;
+}
+.backicon{
+    position: relative;
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: 4vh;
+    width: 4vh;
+}
+.title{
+    position: relative;
+    
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 38px;
+
+    display: grid;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-items: center;
+    text-align: center;
+
+    color: #E1E1E1;
+}
+>>>>>>> 3994a5382f69e704cfe240e04e6132a0b3446235
