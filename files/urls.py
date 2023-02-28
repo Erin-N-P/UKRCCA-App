@@ -31,5 +31,4 @@ urlpatterns = [
     path('submit/', views.submit, name='submit'),
     path('base/', views.base, name='base'),
     path('/home', redirect_view),
-    url(r'form', views.my_form, name='form')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
