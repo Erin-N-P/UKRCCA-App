@@ -198,3 +198,7 @@ li::before {
     padding-bottom: 30vh;
     display: none;
 }
+
+.rulesLight li {
+    font-size: 3rem;
+}

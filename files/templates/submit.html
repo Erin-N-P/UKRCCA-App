@@ -36,13 +36,12 @@
 
 </div> -->
 
-<div class="contentContainer">
-    <form method="post" action="{% url 'home' %}">
-        {% csrf_token %}
-        {{form}}
-        <input type="submit" id="entrySubmit" value="SUBMIT">
-    </form>
-</div>
+<form class="properties" method="post" action="{% url 'home' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" id="entrySubmit">SUBMIT</button>
+</form>
+
 
 <!-- <script>
     const fs = require('fs');
