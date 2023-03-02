@@ -7,8 +7,8 @@
 {% block back %}{% url 'score' %} {% endblock %}
 
 {% block content %}
-
-<div class="contentContainer">
+<script src="{% static 'submit.js' %}"></script>
+<!-- <div class="contentContainer">
     <form class="form" id="form" action="{% url 'home' %}">
         <div class="box">
             <p>First Name:</p>
@@ -33,13 +33,19 @@
         </div>
     </form>
 
-    <div class="buttonSubmit" onclick="jsonTime()">
+
+</div> -->
+
+<div class="contentContainer">
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        {{form}}
         <input type="submit" id="entrySubmit" value="SUBMIT">
-        <p id="p1"></p>
-    </div>
+    </form>
 </div>
 
-<script>
+<!-- <script>
+    const fs = require('fs');
 
     function submitForm(event) {
         event.preventDefault();
@@ -69,19 +75,24 @@
         }
     }
 
+    function writeSuccess(err) {
+        // check if there is error
+        if (err) console.error(err);
+        else console.log('write success');
+    }
+
     function jsonTime(first_name, second_name, third_name) {
-        const fs = require('fs')
+
         const racer = {
             first_name: first_name,
             second_name: second_name,
             team_name: third_name
         };
         const jsonString = JSON.stringify(racer)
-        fs.writeFileSync("{% static 'userInfo.json %'}", jsonString)
-        console.log(jsonString);
-
-
+        console.log(jsonString)
+        fs.writeFileSync("{% static 'userList.json' %}", jsonString, writeSuccess)
 
     }
-</script>
+
+</script> -->
 {% endblock %}

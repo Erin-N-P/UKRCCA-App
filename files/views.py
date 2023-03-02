@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
+from .forms import createUser
 
 
 # Create your views here.
@@ -31,7 +32,8 @@ def score(request):
 
 
 def submit(request):
-    return render(request, 'submit.html')
+    form = createUser()
+    return render(request, 'submit.html', {"form": form})
 
 
 def base(request):
