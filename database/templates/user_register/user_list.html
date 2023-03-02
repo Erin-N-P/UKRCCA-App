@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %} <link rel="stylesheet" href="{% static 'list.css' %}">  {% endblock %}
+
+{% block content %}
+<table id="user">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>User Name</th>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Start Date</th>
+            <th>Admin</th>
+            <th>Active</th>
+            <th>
+                <a href="{% url 'user_insert' %}" class="add-user">
+                <img src="/static/plus.png" alt="" class="edit" style="height: 20px;"> Add New</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in user_list %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.user_name}}</td>
+            <td>{{user.first_name}} {{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.start_date}}</td>
+            {% if user.is_superuser == True %}
+                <td>YES</td>
+            {% else %}   
+                <td>NO</td>
+            {% endif %}
+            {% if user.is_active == True %}
+                <td>YES</td>
+            {% else %}   
+                <td>NO</td>
+            {% endif %}
+            <td class="add-new">
+                <a href="{% url 'user_update' user.id %}">
+                    <img src="/static/edit.png" alt="" class="edit" style="height: 20px;">
+                </a>
+                <form action="{% url 'user_delete' user.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="del" onclick="return confirm('Do you really want to delete user {{user.first_name}} {{user.last_name}}?')"><img src="/static/delete.png" style="height:20px"></button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+
+        <!-- <div class="popup">
+            <h2>Deleted!</h2>
+            <p>This User has successfully been deleted.</p>
+            <button class="button">OK</button>
+        </div> -->
+
+    </tbody>
+</table>
+
+
+
+{% endblock %}
+
+

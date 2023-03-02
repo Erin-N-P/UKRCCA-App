@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block head %} 
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,300&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+        <h1 class="head">Create a Competition</h1>
+        <form class="properties" action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn"><img src="/static/narwhal.png" alt="" class="narwhal">SUBMIT</button>
+        </form>
+{% endblock %}

@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#user td, #user th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-family: 'Oswald', sans-serif;
+
+  }
+  
+#user tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#user tr:hover {background-color: #ddd;}
+
+#user th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #6814a8;
+    color: white;
+}
+
+.popup {
+    width: 400px;
+    background: white;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+}
+
+.popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: white;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+a.add-user {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: white !important;
+    text-decoration: none;
+}
+
+a.add-user:hover {
+    color: rgb(31, 134, 224)!important;
+    transition: 0.19s;
+}
+
+td.add-new {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+button.del {
+    display: flex;
+    width: 20px;
+}
