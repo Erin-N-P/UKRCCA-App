@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from database import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('database.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
+    path('admin/', admin.site.urls),
+    path('test/', views.test, name='test'),
+    path('', views.login, name='login'),
+    path('home/', views.home, name='home'),
+    path('leaderboard/', views.lboard, name='lboard'),
+    path('scorecard/', views.score, name='score'),
+    path('submit/', views.submit, name='submit'),
+    path('base/', views.base, name='base'),
 ]

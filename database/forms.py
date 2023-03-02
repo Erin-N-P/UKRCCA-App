@@ -1,31 +1,32 @@
 from django import forms
 from .models import *
 
+
 class UserForm(forms.ModelForm):
 
     class Meta:
         model = NewUser
-        fields = ('user_name','first_name', 'last_name', 'email')
+        fields = ('user_name', 'first_name', 'last_name', 'email')
         widgets = {
             'user_name': forms.TextInput(attrs={
-            'placeholder':'User Name',
-            'class':'form-control',
-            'style':'padding-left: 10px; width: 310px'
+                'placeholder': 'User Name',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
             }),
             'first_name': forms.TextInput(attrs={
-            'placeholder':'First Name',
-            'class':'form-control',
-            'style':'padding-left: 10px; width: 310px'
+                'placeholder': 'First Name',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
             }),
             'last_name': forms.TextInput(attrs={
-            'placeholder':'Last Name',
-            'class':'form-control',
-            'style':'padding-left: 10px; width: 310px'
+                'placeholder': 'Last Name',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
             }),
             'email': forms.EmailInput(attrs={
-            'placeholder':'Email',
-            'class':'form-control',
-            'style':'padding-left: 10px; width: 310px'
+                'placeholder': 'Email',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
             })
         }
 
@@ -35,8 +36,9 @@ class UserForm(forms.ModelForm):
         if instance and instance.pk:
             self.fields['email'].disabled = True
         self.fields['user_name'].required = True
-        self.fields['first_name'].required = True 
-        self.fields['last_name'].required = True 
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+
 
 class CompetitionForm(forms.ModelForm):
     class Meta:
@@ -44,27 +46,36 @@ class CompetitionForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': forms.TextInput(attrs={
-            'placeholder': 'Name',
-            'class': 'form-control',
-            'style': 'padding-left: 10px; width: 310px'
+                'placeholder': 'Name',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
             }),
             'location': forms.TextInput(attrs={
-            'placeholder': 'Location',
-            'class': 'form-control',
-            'style': 'padding-left: 10px; width: 310px'
+                'placeholder': 'Location',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
             }),
             'no_of_rounds': forms.NumberInput(attrs={
-            'placeholder': 'No of Rounds',
-            'class': 'form-control',
-            'style': 'padding-left: 10px; width: 310px'
+                'placeholder': 'No of Rounds',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
             }),
             'gates_per_round': forms.NumberInput(attrs={
-            'placeholder': 'Gates per round',
-            'class': 'form-control',
-            'style': 'padding-left: 10px; width: 310px'
+                'placeholder': 'Gates per round',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
             }),
         }
 
     def __init__(self, *args, **kwargs):
         super(CompetitionForm, self).__init__(*args, **kwargs)
         self.fields['name'].required = True
+
+
+class createUser(forms.Form):
+    firstName = forms.CharField(max_length=30, label="", widget=forms.TextInput(
+        attrs={'placeholder': 'First Name...'}))
+    secondName = forms.CharField(max_length=30, label="", widget=forms.TextInput(
+        attrs={'placeholder': 'Second Name..'}))
+    teamName = forms.CharField(max_length=30, label="", widget=forms.TextInput(
+        attrs={'placeholder': 'Team Name...'}))
