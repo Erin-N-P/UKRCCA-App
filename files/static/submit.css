@@ -1,0 +1,49 @@
+.contentContainer {
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+.contentContainer,
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+
+.contentContainer,
+.properties {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Jost', sans-serif;
+    font-size: 2.5rem;
+    padding-bottom: 20px;
+}
+
+#entrySubmit {
+    background: #1B4557;
+    border-radius: 10px;
+    color: #EBEBEB;
+    width: 25vw;
+    height: 80px;
+    font-size: 2.8rem;
+    font-family: 'Jost', sans-serif;
+    padding: 5px;
+    margin: 20px;
+}
+
+.buttonSubmit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

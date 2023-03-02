@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full page styling */
+.contentContainer {
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+}
+
+/* Text styling */
+
+.contentContainer p {
+    font-family: 'Jost', sans-serif;
+    font-size: 2.5rem;
+    padding-bottom: 20px;
+}
+
+/* Entry box styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#entry {
+    height: 130px;
+    width: 80vw;
+    border: none;
+    font-size: 3rem;
+    font-family: 'Outfit', sans-serif;
+    background: #EBEBEB;
+    box-shadow: inset -4px 4px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+/* Submit button styling */
+
+#entrySubmit {
+    background: #1B4557;
+    border-radius: 10px;
+    color: #EBEBEB;
+    width: 25vw;
+    height: 80px;
+    font-size: 2.8rem;
+    font-family: 'Jost', sans-serif;
+    padding: 5px;
+    margin: 20px;
+}
+
+
+.footerContainer {
+    display: none;
+}
