@@ -20,11 +20,11 @@
 }
 
 .foot{
-    position: sticky;
+    position: fixed;
     left: 0;
     bottom: 0;
+    width: 100%;
     background-color: #D5E4D9;
-    width: 100vw;
     height: 7vh;
     display: flex;
     justify-content: space-between;

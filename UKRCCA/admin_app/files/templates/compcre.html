@@ -49,15 +49,18 @@ Competition Creation
         <option value="1">12</option>
     </select>
     <p class="Text">Rule Set</p>
-    <label class="container">Light
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-    </label>
-      
-    <label class="container">Full
-        <input type="checkbox">
-        <span class="checkmark"></span>
-    </label>
+    <div class="radio">
+        <div class="but">
+            <input type="radio" class="dot" name="fav_language" value="Light">
+            <label class="overlay" for="Light">Light</label><br>
+        </div>
+        <div class="but">
+            <input type="radio" class="dot" name="fav_language" value="Full">
+            <label  class="overlay" for="Full">Full</label><br>
+        </div>
+    </div>
 </div>
-<input type="button" class="create"></input>
+<div class="button">
+    <input type="button" class="create" value="Create"></input>
+</div>
 {% endblock %}
