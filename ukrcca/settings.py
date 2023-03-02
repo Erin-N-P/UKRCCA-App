@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_browser_reload',
 
-    #local
+    # local
     'database.apps.DatabaseConfig',
 ]
 
@@ -129,3 +129,9 @@ AUTH_USER_MODEL = 'database.NewUser'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_URL = '/database/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, '/database/static/'),
+]
