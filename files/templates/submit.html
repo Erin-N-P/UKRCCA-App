@@ -1,0 +1,97 @@
+{% extends 'base.html' %}{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'submit.css' %}" />
+{% endblock %}
+
+{% block pagename %} <p>SUBMISSION</p> {% endblock %}
+{% block back %}{% url 'score' %} {% endblock %}
+
+{% block content %}
+<script src="{% static 'submit.js' %}"></script>
+<!-- <div class="contentContainer">
+    <form class="form" id="form" action="{% url 'home' %}">
+        <div class="box">
+            <p>First Name:</p>
+            <input type="text" id="entry1" placeholder="Enter here...">
+        </div>
+        <div class="box">
+            <p>Surname:</p>
+            <input type="text" id="entry2" placeholder="Enter here...">
+        </div>
+        <div class="box">
+            <p>Team Name:</p>
+            <input type="text" id="entry3" placeholder="Enter here...">
+        </div>
+        <div class="box">
+            <p>Confirm Team Name:</p>
+            <input type="text" id="entry4" placeholder="Enter here...">
+        </div>
+
+        <div class="buttonSubmit" onclick="check()">
+            <input type="submit" id="entrySubmit" value="SUBMIT">
+            <p id="p1"></p>
+        </div>
+    </form>
+
+
+</div> -->
+
+<form class="properties" method="post" action="{% url 'home' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" id="entrySubmit">SUBMIT</button>
+</form>
+
+
+<!-- <script>
+    const fs = require('fs');
+
+    function submitForm(event) {
+        event.preventDefault();
+    }
+
+    function check() {
+        var fName = document.getElementById('entry1').value;
+        var sName = document.getElementById('entry2').value;
+        var tName = document.getElementById('entry3').value;
+        var ctName = document.getElementById('entry4').value;
+        try {
+            if (tName !== ctName) throw "Team names do not match";
+            if (fName.trim() == "") throw "Please fill in your first name.";
+            if (sName.trim() == "") throw "Please fill in your second name.";
+            if (tName.trim() == "") throw "Please fill in your team name.";
+            if (ctName.trim() == "") throw "Please confirm your team name.";
+        }
+        catch (err) {
+            form.addEventListener('submit', submitForm);
+            window.alert(err);
+        }
+
+        finally {
+            removeEventListener('submit', submitForm);
+            location.reload();
+            jsonTime(fName, sName, tName);
+        }
+    }
+
+    function writeSuccess(err) {
+        // check if there is error
+        if (err) console.error(err);
+        else console.log('write success');
+    }
+
+    function jsonTime(first_name, second_name, third_name) {
+
+        const racer = {
+            first_name: first_name,
+            second_name: second_name,
+            team_name: third_name
+        };
+        const jsonString = JSON.stringify(racer)
+        console.log(jsonString)
+        fs.writeFileSync("{% static 'userList.json' %}", jsonString, writeSuccess)
+
+    }
+
+</script> -->
+{% endblock %}
