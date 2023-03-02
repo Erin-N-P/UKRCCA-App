@@ -113,13 +113,13 @@ html{
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin-bottom: 5vh;
+    border-radius: 30px;
 }
 .create{
     width: 35vw;
     height: 6vh;
     background: #505757;
-    border-radius: 10px;
+    border-radius: 30px;
 
     font-family: 'Rubik';
     font-style: normal;
