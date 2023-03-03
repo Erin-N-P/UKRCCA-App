@@ -107,5 +107,5 @@ def submit(request):
     return render(request, 'submit.html', {"form": form})
 
 
-def base(request):
-    return render(request, 'base.html')
+def base1(request):
+    return render(request, 'base1.html')
