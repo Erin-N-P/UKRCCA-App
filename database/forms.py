@@ -71,6 +71,18 @@ class CompetitionForm(forms.ModelForm):
         super(CompetitionForm, self).__init__(*args, **kwargs)
         self.fields['name'].required = True
 
+class ScoreForm(forms.ModelForm):
+    class Meta:
+        model = Score
+        fields = '__all__'
+        widgets = {
+
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(ScoreForm, self).__init__(*args, **kwargs)
+        self.fields['comp'].required = True
+
 
 class createUser(forms.Form):
     firstName = forms.CharField(max_length=30, label="", widget=forms.TextInput(

@@ -6,6 +6,7 @@ urlpatterns = [
     # calling the functions from views
     # get and post req. for insert operations
     path('', views.user_form, name='user_insert'),
+    path('score/', views.score_form, name='score_insert'),
     # get and post req. for update operations
     path('<int:id>/', views.user_form, name='user_update'),
     path('list/', views.user_list),  # get and retrieve req. to display data

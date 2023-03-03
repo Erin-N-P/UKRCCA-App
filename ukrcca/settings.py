@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     # local
     'database.apps.DatabaseConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
