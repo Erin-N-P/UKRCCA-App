@@ -104,112 +104,114 @@
     <form class="buttonSubmit" id="form" action="{% url 'submit' %}">
         <input type="submit" id="entrySubmit" value="SUBMIT" onclick="returnPoints()">
     </form>
-</div>
+    </form>
 
-<script>
+    <script>
 
-    document.getElementById('points').innerHTML = "0";
-    let startBtn = document.getElementById('startTimer');
-    let stopBtn = document.getElementById('stopTimer');
-    let resetBtn = document.getElementById('resetTimer');
-    let addBtn = document.getElementById('add');
-    let minusBtn = document.getElementById('minus');
+        document.getElementById('points').innerHTML = "0";
+        let startBtn = document.getElementById('startTimer');
+        let stopBtn = document.getElementById('stopTimer');
+        let resetBtn = document.getElementById('resetTimer');
+        let addBtn = document.getElementById('add');
+        let minusBtn = document.getElementById('minus');
 
-    let hour = 00;
-    let minute = 00;
-    let second = 00;
-    let count = 00;
+        let hour = 00;
+        let minute = 00;
+        let second = 00;
+        let count = 00;
 
-    startBtn.addEventListener('click', function () {
-        timer = true;
-        stopWatch();
-    });
+        startBtn.addEventListener('click', function () {
+            timer = true;
+            stopWatch();
+        });
 
-    stopBtn.addEventListener('click', function () {
-        timer = false;
-    });
+        stopBtn.addEventListener('click', function () {
+            timer = false;
+        });
 
-    resetBtn.addEventListener('click', function () {
-        timer = false;
-        hour = 0;
-        minute = 0;
-        second = 0;
-        count = 0;
-        document.getElementById('hr').innerHTML = "00";
-        document.getElementById('min').innerHTML = "00";
-        document.getElementById('sec').innerHTML = "00";
-        document.getElementById('count').innerHTML = "00";
-    });
+        resetBtn.addEventListener('click', function () {
+            timer = false;
+            hour = 0;
+            minute = 0;
+            second = 0;
+            count = 0;
+            document.getElementById('hr').innerHTML = "00";
+            document.getElementById('min').innerHTML = "00";
+            document.getElementById('sec').innerHTML = "00";
+            document.getElementById('count').innerHTML = "00";
+        });
 
-    function stopWatch() {
-        if (timer) {
-            count++;
+        function stopWatch() {
+            if (timer) {
+                count++;
 
-            if (count == 100) {
-                second++;
-                count = 0;
+                if (count == 100) {
+                    second++;
+                    count = 0;
+                }
+
+                if (second == 60) {
+                    minute++;
+                    second = 0;
+                }
+
+                if (minute == 60) {
+                    hour++;
+                    minute = 0;
+                    second = 0;
+                }
+
+                let hrString = hour;
+                let minString = minute;
+                let secString = second;
+                let countString = count;
+
+                if (hour < 10) {
+                    hrString = "0" + hrString;
+                }
+
+                if (minute < 10) {
+                    minString = "0" + minString;
+                }
+
+                if (second < 10) {
+                    secString = "0" + secString;
+                }
+
+                if (count < 10) {
+                    countString = "0" + countString;
+                }
+
+                document.getElementById('hr').innerHTML = hrString;
+                document.getElementById('min').innerHTML = minString;
+                document.getElementById('sec').innerHTML = secString;
+                document.getElementById('count').innerHTML = countString;
+                setTimeout(stopWatch, 10);
             }
-
-            if (second == 60) {
-                minute++;
-                second = 0;
-            }
-
-            if (minute == 60) {
-                hour++;
-                minute = 0;
-                second = 0;
-            }
-
-            let hrString = hour;
-            let minString = minute;
-            let secString = second;
-            let countString = count;
-
-            if (hour < 10) {
-                hrString = "0" + hrString;
-            }
-
-            if (minute < 10) {
-                minString = "0" + minString;
-            }
-
-            if (second < 10) {
-                secString = "0" + secString;
-            }
-
-            if (count < 10) {
-                countString = "0" + countString;
-            }
-
-            document.getElementById('hr').innerHTML = hrString;
-            document.getElementById('min').innerHTML = minString;
-            document.getElementById('sec').innerHTML = secString;
-            document.getElementById('count').innerHTML = countString;
-            setTimeout(stopWatch, 10);
         }
-    }
 
-    increasePoint = function (eve, change) {
-        var point = document.getElementById('points').innerHTML;
-        pointNew = Number(point);
-        changeNew = Number(change);
-        var total = pointNew + change;
-        document.getElementById('points').innerHTML = total;
-    }
+        increasePoint = function (eve, change) {
+            var point = document.getElementById('points').innerHTML;
+            pointNew = Number(point);
+            changeNew = Number(change);
+            var total = pointNew + change;
+            document.getElementById('points').innerHTML = total;
+        }
 
-    decreasePoint = function (eve, change) {
-        var point = document.getElementById('points').innerHTML;
-        pointNew = Number(point);
-        changeNew = Number(change);
-        var total = pointNew - change;
-        document.getElementById('points').innerHTML = total;
-    }
+        decreasePoint = function (eve, change) {
+            var point = document.getElementById('points').innerHTML;
+            pointNew = Number(point);
+            changeNew = Number(change);
+            var total = pointNew - change;
+            document.getElementById('points').innerHTML = total;
+        }
 
-    returnPoints = function () {
-        var finalTotal = document.getElementById('points').innerHTML;
-        return finalTotal;
-    }
+        returnPoints = function () {
+            var finalTotal = document.getElementById('points').innerHTML;
+            console.log(finalTotal);
+            return finalTotal;
 
-</script>
-{% endblock %}
+        }
+
+    </script>
+    {% endblock %}
