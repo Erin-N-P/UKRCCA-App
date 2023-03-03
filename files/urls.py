@@ -24,11 +24,12 @@ from .views import redirect_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', views.test, name='test'),
-    path('', views.login, name='login'),
+    path('login/', views.login, name='login'),
     path('home/', views.home, name='home'),
     path('leaderboard/', views.lboard, name='lboard'),
     path('scorecard/', views.score, name='score'),
     path('submit/', views.submit, name='submit'),
     path('base/', views.base, name='base'),
     path('/home', redirect_view),
+    path('', views.user_form, name='user_insert'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

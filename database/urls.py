@@ -13,7 +13,7 @@ urlpatterns = [
     path('comp/', views.comp_form, name='comp_insert'),
     path('comp/list/', views.comp_list),
     path('test/', views.test, name='test'),
-    path('', views.login, name='login'),
+    path('login/', views.login, name='login'),
     path('home/', views.home, name='home'),
     path('leaderboard/', views.lboard, name='lboard'),
     path('scorecard/', views.score, name='score'),
