@@ -35,13 +35,13 @@
 
 
 </div> -->
-
-<form class="properties" method="post" action="{% url 'home' %}">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" id="entrySubmit">SUBMIT</button>
-</form>
-
+<div class="wrapper">
+    <form class="properties" method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" id="entrySubmit">SUBMIT</button>
+    </form>
+</div>
 
 <!-- <script>
     const fs = require('fs');

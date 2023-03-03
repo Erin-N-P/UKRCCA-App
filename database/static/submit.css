@@ -7,9 +7,11 @@
     font-size: 2rem;
     padding: 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100vw;
+    background-color: black;
+
 }
 
 .contentContainer,
@@ -19,14 +21,32 @@ form {
     align-items: left;
 }
 
+.wrapper {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .contentContainer,
 .properties {
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-family: 'Jost', sans-serif;
     font-size: 2.5rem;
     padding-bottom: 20px;
+    margin: auto;
+}
+
+.contentContainer,
+.properties input {
+    width: 80vw;
+    border: none;
+    border-bottom: 2px solid;
+    height: 100px;
+    margin-bottom: 50px;
 }
 
 #entrySubmit {
