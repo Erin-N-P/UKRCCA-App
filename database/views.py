@@ -25,18 +25,21 @@ def getRoutes(request):
 
 @api_view(['POST'])
 def add_items(request):
-    user = UserSerializer(data=request.data)
+    score = ScoreSerializer(data=request.data)
  
     # validating for already existing data
-    if NewUser.objects.filter(**request.data).exists():
+    if Score.objects.filter(**request.data).exists():
         raise serializers.ValidationError('This data already exists')
  
-    if user.is_valid():
-        user.save()
-        return Response(user.data)
+    if score.is_valid():
+        score.save()
+        return Response(score.data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
+@api_view(['PUT'])
+def insert_items(request):
+    pass
 
 # Create your views here.
 

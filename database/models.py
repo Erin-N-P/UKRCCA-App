@@ -65,7 +65,7 @@ class Competition(models.Model):
         return self.name
 
 class Score(models.Model):
-    round = models.IntegerField()
+    round = models.IntegerField(validators= [MinValueValidator (1, message='Please enter a number greater than or equal to 1'), MaxValueValidator (30, message='Please enter a number less than or equal to 30')])
     total_score = models.IntegerField()
     time_taken = models.IntegerField()
     user = models.ForeignKey(NewUser, on_delete=models.CASCADE)

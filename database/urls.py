@@ -13,6 +13,7 @@ urlpatterns = [
     path('delete/<int:id>/', views.user_delete, name='user_delete'),
     path('comp/', views.comp_form, name='comp_insert'),
     path('comp/list/', views.comp_list),
-    path('api-auth/', include('rest_framework.urls'))
+    path('api-auth/', include('rest_framework.urls')),
+
 ]
 

@@ -24,9 +24,8 @@ router.register(r'api', ScoreViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
     path('user/', include('database.urls')),
-    path('api/', views.getRoutes, name='routes'),
+    path('', include(router.urls)),
     path("__reload__/", include("django_browser_reload.urls")),
     path('test/', views.test, name='test'),
     path('home/', views.home, name='home'),
