@@ -16,18 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from database import views
+from database.views import ScoreViewSet
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'api', ScoreViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include(router.urls)),
     path('user/', include('database.urls')),
     path('api/', views.getRoutes, name='routes'),
     path("__reload__/", include("django_browser_reload.urls")),
     path('test/', views.test, name='test'),
-    path('login/', views.login, name='login'),
     path('home/', views.home, name='home'),
     path('leaderboard/', views.lboard, name='lboard'),
     path('scorecard/', views.score, name='score'),
     path('submit/', views.submit, name='submit'),
     path('base/', views.base, name='base'),
-    path('', views.user_form, name='user_insert'),
+    path('', views.login, name='login'),
 ]

@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
 from django.shortcuts import render
-from .serializers import UserSerializer
+from .serializers import ScoreSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import serializers, status, viewsets
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = NewUser.objects.all()
-    serializer_class = UserSerializer
+class ScoreViewSet(viewsets.ModelViewSet):
+    queryset = Score.objects.all()
+    serializer_class = ScoreSerializer
 
 @api_view(['GET'])
 def getRoutes(request):
