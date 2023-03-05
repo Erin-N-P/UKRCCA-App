@@ -69,7 +69,7 @@ class Score(models.Model):
     total_score = models.IntegerField()
     time_taken = models.IntegerField()
     user = models.ForeignKey(NewUser, on_delete=models.CASCADE)
-    score = models.ForeignKey(Competition, on_delete=models.CASCADE)
+    comp = models.ForeignKey(Competition, on_delete=models.CASCADE)
 
 class Rule(models.Model):
     name = models.CharField(max_length=100)

@@ -1,6 +1,21 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
+from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
+@api_view(['GET'])
+def getRoutes(request):
+    routes = [
+        {
+        'Endpoint': '/score-post/',
+        'method': 'PUT',
+        'total_score': {'points': ""},
+        'time_taken': {'time': ""},
+        },
+    ]
+    return Response(routes)
 
 # Create your views here.
 
@@ -35,6 +50,8 @@ def user_form(request, id=0):
         if form.is_valid():
             form.save()
             return redirect('/user/list')
+        else:
+            return render(request, "user_register/user_form.html", {'form':form})
 # delete request
 
 
@@ -70,6 +87,26 @@ def comp_form(request, id=0):
             return redirect('/user/comp/list/')
         else:
             return render(request, "competition_register/comp_form.html", {'form': form})
+        
+def score_form(request, id=0):
+    if request.method == "GET":
+        if id == 0:
+            form = ScoreForm()
+        else:
+            score = Score.objects.get(pk=id)
+            form = ScoreForm(instance=score)
+        return render(request, "score_register/score_form.html", {'form': form})
+    else:
+        if id == 0:
+            form = ScoreForm(request.POST)
+        else:
+            score = Score.objects.get(pk=id)
+            form = ScoreForm(request.POST, instance=score)
+        if form.is_valid():
+            form.save()
+            return redirect('/user/score/')
+        else:
+            return render(request, "score_register/score_form.html", {'form': form})
 
 
 def comp_delete(id):
