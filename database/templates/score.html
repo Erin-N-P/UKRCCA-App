@@ -102,7 +102,7 @@
         </div>
     </div>
     <form class="buttonSubmit" id="form" action="{% url 'submit' %}">
-        <input type="submit" id="entrySubmit" value="SUBMIT" onclick="returnPoints()">
+        <input type="submit" id="entrySubmit" value="SUBMIT">
     </form>
     </form>
 
@@ -114,6 +114,7 @@
         let resetBtn = document.getElementById('resetTimer');
         let addBtn = document.getElementById('add');
         let minusBtn = document.getElementById('minus');
+        var nextBtn = document.getElementById('entrySubmit');
 
         let hour = 00;
         let minute = 00;
@@ -125,8 +126,10 @@
             stopWatch();
         });
 
-        stopBtn.addEventListener('click', function () {
+        stopBtn.addEventListener('click', function stop() {
             timer = false;
+            let stopPressed = true;
+            return stopPressed;
         });
 
         resetBtn.addEventListener('click', function () {
@@ -212,6 +215,43 @@
             return finalTotal;
 
         }
+
+        returnTime = function time() {
+            var hour = document.getElementById('hr').innerHTML.toString();
+            var min = document.getElementById('min').innerHTML.toString();
+            var sec = document.getElementById('sec').innerHTML.toString();
+            var count = document.getElementById('count').innerHTML.toString();
+            var finalTime = hour + ' : ' + min + ' : ' + sec + ' : ' + count;
+            console.log(finalTime);
+            returnPoints();
+            return finalTime;
+        }
+
+        <!-- This bit controls the JSON -->
+
+        sendJSON = function () {
+            time();
+            const racerData = {
+                time: finalTimes,
+                points: finalTotal
+            };
+
+            const request = new Request("ENTER ENDPOINT HERE", {
+                method: "POST",
+                body: JSON.stringify(racerData)
+            })
+
+            request.json().then((data) => {
+
+            })
+
+        }
+
+        nextBtn.onclick = function () {
+            stop();
+            sendJSON();
+        }
+
 
     </script>
     {% endblock %}
