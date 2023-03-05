@@ -2,8 +2,14 @@ from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
 from django.shortcuts import render
+from .serializers import UserSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework import serializers, status, viewsets
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = NewUser.objects.all()
+    serializer_class = UserSerializer
 
 @api_view(['GET'])
 def getRoutes(request):
@@ -16,6 +22,21 @@ def getRoutes(request):
         },
     ]
     return Response(routes)
+
+@api_view(['POST'])
+def add_items(request):
+    user = UserSerializer(data=request.data)
+ 
+    # validating for already existing data
+    if NewUser.objects.filter(**request.data).exists():
+        raise serializers.ValidationError('This data already exists')
+ 
+    if user.is_valid():
+        user.save()
+        return Response(user.data)
+    else:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
 
 # Create your views here.
 

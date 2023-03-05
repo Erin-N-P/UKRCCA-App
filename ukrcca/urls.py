@@ -20,6 +20,7 @@ from database import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('database.urls')),
+    path('api/', views.getRoutes, name='routes'),
     path("__reload__/", include("django_browser_reload.urls")),
     path('test/', views.test, name='test'),
     path('', views.login, name='login'),

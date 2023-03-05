@@ -1,5 +1,10 @@
 from django.urls import path, include
 from . import views
+from .views import UserViewSet
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'api', UserViewSet)
 
 # two routes for the user_form and user_list
 urlpatterns = [
@@ -13,11 +18,7 @@ urlpatterns = [
     path('delete/<int:id>/', views.user_delete, name='user_delete'),
     path('comp/', views.comp_form, name='comp_insert'),
     path('comp/list/', views.comp_list),
-    path('test/', views.test, name='test'),
-    path('', views.login, name='login'),
-    path('home/', views.home, name='home'),
-    path('leaderboard/', views.lboard, name='lboard'),
-    path('scorecard/', views.score, name='score'),
-    path('submit/', views.submit, name='submit'),
-    path('base/', views.base, name='base'),
+    path('api/', views.getRoutes, name='routes'),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls'))
 ]
