@@ -17,4 +17,3 @@ urlpatterns = [
     path(r'api/input/<int:id>/', views.edit_items, name='api')
 
 ]
-
