@@ -209,38 +209,31 @@
             document.getElementById('points').innerHTML = total;
         }
 
-        returnPoints = function () {
-            var finalTotal = document.getElementById('points').innerHTML;
-            console.log(finalTotal);
-            return finalTotal;
 
-        }
+        <!-- This bit controls the JSON -->
 
-        returnTime = function time() {
+        sendJSON = function () {
             var hour = document.getElementById('hr').innerHTML.toString();
             var min = document.getElementById('min').innerHTML.toString();
             var sec = document.getElementById('sec').innerHTML.toString();
             var count = document.getElementById('count').innerHTML.toString();
             var finalTime = hour + ' : ' + min + ' : ' + sec + ' : ' + count;
             console.log(finalTime);
-            returnPoints();
-            return finalTime;
-        }
-
-        <!-- This bit controls the JSON -->
-
-        sendJSON = function () {
-            time();
+            var finalTotal = document.getElementById('points').innerHTML;
+            console.log(finalTotal);
             const racerData = {
-                time: finalTimes,
+                time: finalTime,
                 points: finalTotal
             };
 
-            const request = new Request("{% url 'api' %}", {
+            const request = new Request("api/", {
                 method: "POST",
                 body: JSON.stringify(racerData)
             })
 
+            request.json().then((data) => {
+
+            })
         }
 
         nextBtn.onclick = function () {
