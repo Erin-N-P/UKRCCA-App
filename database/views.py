@@ -37,9 +37,24 @@ def add_items(request):
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-@api_view(['PUT'])
-def insert_items(request):
-    pass
+@api_view(['GET','PUT','DELETE'])
+def edit_items(request, id):
+    try:
+        score = Score.objects.get(pk=id)
+    except Score.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    
+    if request.method == 'GET':
+        serializer = ScoreSerializer(score)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = ScoreSerializer(score, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return serializer.data
+    elif request.method == 'DELETE':
+        score.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 # Create your views here.
 
