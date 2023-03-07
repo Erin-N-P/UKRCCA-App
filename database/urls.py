@@ -14,6 +14,5 @@ urlpatterns = [
     path('comp/', views.comp_form, name='comp_insert'),
     path('comp/list/', views.comp_list),
     path('api-auth/', include('rest_framework.urls')),
-
+    path('<int:id>/', views.edit_items, name='api')
 ]
-
