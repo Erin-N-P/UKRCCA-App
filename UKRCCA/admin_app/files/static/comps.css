@@ -1,13 +1,44 @@
 html{
     background-color: #215A71;
 }
-
+.back{
+    width: 4vh;
+    height: 4vh;
+}
+div.scrollmenu {
+    margin-left: 2vh;
+    margin-right: 2vh;
+    overflow: auto;
+    white-space: nowrap;
+}
+div.scrollmenu p {
+    display: inline-block;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5vh;
+    line-height: 33px;
+    padding-right: 30px;
+    border-left: #203D50;
+    border-right: #203D50;
+    border-width: 30px;
+    
+    color: #D5E4D9;
+}
+hr {
+    position: sticky;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    width: 85vw;
+    border-width: 3px;
+}
 .buttonlist{
     position: relative;
     overflow: scroll;
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 75vh;
 }
 .complist{
     width: 875px;

@@ -1,3 +1,135 @@
 html{
     background-color: #586994;
 }
+.heading{
+    position: sticky;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 5vh;
+    height: 7.5vh;
+}
+.backicon{
+    position: relative;
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.img1{
+    height: 4vh;
+    width: 4vh;
+}
+.title{
+    position: relative;
+    
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 38px;
+
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    color: #E1E1E1;
+}
+.entry{
+    margin: 3vh;
+}
+.Text{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 33px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+    color: #D5E4D9;
+}
+.box{
+    background-color: #E1E1E1;
+    width: 85vw;
+    height: 6vh;
+    border-radius: 3vw;
+    margin-bottom: 4vh;
+}
+.Gates{
+    background-color: #E1E1E1;
+    width: 85vw;
+    height: 6vh;
+    border-radius: 3vw;
+    margin-bottom: 4vh;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 33px;
+}
+.Rounds{
+    background-color: #E1E1E1;
+    width: 85vw;
+    height: 6vh;
+    border-radius: 3vw;
+    margin-bottom: 4vh;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 33px;
+}
+.radio{
+    width: 85vw;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.but{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.dot{
+    height: 6vh;
+    width: 10vw;
+}
+.overlay{
+    font-family: 'Nunito';
+    font-style: normal;
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 55px;
+}
+.button{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+.create{
+    width: 35vw;
+    height: 6vh;
+    background: #505757;
+    border-radius: 30px;
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+}

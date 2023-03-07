@@ -1,117 +1,99 @@
 html {
-    background-color: #202030;
+    background: #183034;
 }
 
-.loginbackground {
+h1 {
     position: relative;
-    width: 390px;
-    height: 844px;
-
-    background: #202030;
-}
-
-.passwordusernamebox {
-    position: absolute;
-    left: 8.97%;
-    right: 8.97%;
-    top: 31.04%;
-    bottom: 31.04%;
-
-    background: rgba(84, 134, 135, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 10px;
-}
-
-.usernametxt {
-    position: absolute;
-    left: 11.54%;
-    right: 45.9%;
-    top: 33.41%;
-    bottom: 60.66%;
-
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
-    line-height: 36px;
-    display: flex;
+    font-size: 150px;
+    line-height: 83px;
+    display: block;
     align-items: center;
     text-align: center;
+    justify-items: center;
+    margin-bottom: 10vh;
 
     color: #D5E4D9;
-
 }
 
-.passwordtxt {
-    position: absolute;
-    left: 12.05%;
-    right: 49.49%;
-    top: 50%;
-    bottom: 44.08%;
+.yes {
+    margin-top: 422px;
+    margin-bottom: 422px;
+}
 
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 36px;
+.block {
+    position: relative;
     display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #D5E4D9;
-
-}
-
-.usernamebox {
-    position: absolute;
-    left: 11.54%;
-    right: 11.54%;
-    top: 40.88%;
-    bottom: 53.2%;
-
-    background: #E1E1E1;
-    border-radius: 10px;
-}
-
-.passwordbox {
-    position: absolute;
-    left: 11.54%;
-    right: 11.54%;
-    top: 57.7%;
-    bottom: 36.37%;
-
-    background: #E1E1E1;
-    border-radius: 10px;
-}
-
-.logintxt {
-    position: absolute;
-    left: 52.56%;
-    right: 8.97%;
-    top: 73.1%;
-    bottom: 20.97%;
-
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 27px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #E1E1E1;
-
-}
-
-.submit {
-    position: absolute;
-    left: 52.56%;
-    right: 8.97%;
-    top: 72.16%;
-    bottom: 20.14%;
+    margin: auto;
+    width: 85vw;
+    height: 30vh;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 3vh;
 
     background: rgba(84, 134, 135, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 10px;
+    border-radius: 30px;
 }
+
+Text {
+    font-family: 'Nunito';
+    font-style: 'bold';
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 33px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 2vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+    color: #D5E4D9;
+}
+
+.box {
+    background-color: #E1E1E1;
+    width: 75vw;
+    height: 6vh;
+    border-radius: 3vw;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    margin-bottom: 2vh;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: right;
+    border-radius: 30px;
+    margin-right: 3vh;
+}
+
+.create {
+    width: 35vw;
+    height: 6vh;
+    background: rgba(84, 134, 135, 0.5);
+    border-radius: 30px;
+
+    .create {
+        width: 35vw;
+        height: 6vh;
+        background: rgba(84, 134, 135, 0.5);
+        border-radius: 30px;
+
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 55px;
+        line-height: 32px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        color: #FFFFFF;
+    }

@@ -1,23 +1,28 @@
-<input type="password">
-<input type="username">
-<input type="submit">
+{% load static %}
+<!DOCTYPE html>
+<html>
 
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carme&family=Nunito:wght@600&family=Rubik:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+  <title>Login</title>
+</head>
 
-<h1>UKRCCA</h1>
+<body>
+  <div class="yes">
+    <h1>UKRCCA</h1>
+    <div class="block">
+      <p class="Text">Username</p>
+      <input type="text" class="box">
+      <p class="Text">Password</p>
+      <input type="text" class="box">
+    </div>
 
-<div class="usernamebox">
-  <label for="fullname">Username</label><br />
-  <input type="text" id="username" name="username"><br />
-
-</div>
-
-<div class="passwordbox">
-  <label for="password">Password</label><br />
-  <input type="password" id="password" name="password"><br />
-
-</div>
-
-<div class="submit">
-  <input type="submit" value="Login">
-  <input type="submit" id="login" name="login"><br />
-</div>
+    <div class="button">
+      <input type="button" class="create" value="Login"></input>
+    </div>
+  </div>
+</body>
