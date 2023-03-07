@@ -1,3 +1,7 @@
+html {
+    background-color: #202030;
+}
+
 .loginbackground {
     position: relative;
     width: 390px;
@@ -6,7 +10,7 @@
     background: #202030;
 }
 
-.loginuserpassword {
+.passwordusernamebox {
     position: absolute;
     left: 8.97%;
     right: 8.97%;
@@ -16,6 +20,46 @@
     background: rgba(84, 134, 135, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 10px;
+}
+
+.usernametxt {
+    position: absolute;
+    left: 11.54%;
+    right: 45.9%;
+    top: 33.41%;
+    bottom: 60.66%;
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #D5E4D9;
+
+}
+
+.passwordtxt {
+    position: absolute;
+    left: 12.05%;
+    right: 49.49%;
+    top: 50%;
+    bottom: 44.08%;
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #D5E4D9;
+
 }
 
 .usernamebox {
@@ -40,7 +84,27 @@
     border-radius: 10px;
 }
 
-.loginbutton {
+.logintxt {
+    position: absolute;
+    left: 52.56%;
+    right: 8.97%;
+    top: 73.1%;
+    bottom: 20.97%;
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #E1E1E1;
+
+}
+
+.submit {
     position: absolute;
     left: 52.56%;
     right: 8.97%;
