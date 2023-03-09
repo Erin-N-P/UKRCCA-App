@@ -1,7 +1,8 @@
 html {
     background: #183034;
 }
-h1{
+
+h1 {
     position: relative;
     font-family: 'Rubik';
     font-style: normal;
@@ -16,11 +17,13 @@ h1{
 
     color: #D5E4D9;
 }
-.yes{
-    margin-top:422px;
+
+.yes {
+    margin-top: 422px;
     margin-bottom: 422px;
 }
-.block{
+
+.block {
     position: relative;
     display: flex;
     margin: auto;
@@ -33,7 +36,8 @@ h1{
     background: rgba(84, 134, 135, 0.5);
     border-radius: 30px;
 }
-.Text{
+
+.Text {
     font-family: 'Nunito';
     font-style: 'bold';
     font-weight: 700;
@@ -49,7 +53,9 @@ h1{
 
     color: #D5E4D9;
 }
-.box{
+
+.box {
+    font-size: 55px;
     background-color: #E1E1E1;
     width: 75vw;
     height: 6vh;
@@ -58,18 +64,20 @@ h1{
     margin-right: 2vh;
     margin-bottom: 2vh;
 }
-.button{
+
+.button {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: right;
     border-radius: 30px;
-    margin-right:3vh;
+    margin-right: 3vh;
 }
-.create{
+
+.create {
     width: 35vw;
     height: 6vh;
-    background:  rgba(84, 134, 135, 0.5);
+    background: rgba(84, 134, 135, 0.5);
     border-radius: 30px;
 
     font-family: 'Rubik';
