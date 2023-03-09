@@ -11,27 +11,6 @@ box-shadow: 0px 5px 5px rgba(225, 225, 225, 0.25);
 border-radius: 5px;
 }
 
-/* Create Competition text */
-
-
-.cctxt{position: absolute;
-width: 160px;
-height: 84.93px;
-left: 211px;
-top: 664px;
-
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 33px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #FFFFFF;
-}
-
 
 /* Title */
 
@@ -72,24 +51,6 @@ border-radius: 5px;
 /* Leaderboard text */
 
 
-.lbtxt{position: absolute;
-width: 249px;
-height: 44px;
-left: 70px;
-top: 447px;
-
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 700;
-font-size: 36px;
-line-height: 49px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #FFFFFF;
-}
-
 
 /* Main image */
 
@@ -117,28 +78,6 @@ top: 553px;
 background: #202030;
 box-shadow: 0px 5px 5px rgba(225, 225, 225, 0.25);
 border-radius: 5px;
-}
-
-
-/* Rules and Regulations text */
-
-
-.rrtxt{position: absolute;
-width: 160px;
-height: 84.93px;
-left: 18px;
-top: 656px;
-
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 33px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #FFFFFF;
 }
 
 
