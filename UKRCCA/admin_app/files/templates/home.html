@@ -4,11 +4,69 @@
 {%endblock%}
 
 {%block content%}
+<div class="container">
+    <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img class="img3" src="{% static 'car1.jpg' %}">
+    </div>
+  
+    <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img class="img3" src="{% static 'car2.jpg' %}">
+    </div>
+  
+    <div class="mySlides">
+        <div class="numbertext">3 / 3</div>
+        <img class="img3" src="{% static 'car3.jpg' %}">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
+    // Next/previous controls
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("demo");
+    let captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+</script>
 <div class="lbmain">
-    <div class="Competitions">
-    <a class="Competitions" href="{% url 'leadb' %}"><img class="..." src="comps_icon.png" alt="Competitions"></a>
+    <a class="Competitions" href="{% url 'leadb' %}"><img class="img1" src="{% static 'white_interlining.png' %}" alt="Competitions"></a>
     <p class="Competition button">Leaderboard</p>
+</div>
+<div class="buttons">
+    <div class="rules">
+        <a class="Competitions" href="{% url 'lightrules' %}"><img class="img2" src="{% static 'white_document.png' %}" alt="Competitions"></a>
+        <p class="Competition button">Rules and Regulations</p>
+    </div>
+    
+    <div class="create">
+        <a class="Competitions" href="{% url 'compcre' %}"><img class="img2" src="{% static 'white_create.png' %}" alt="Competitions"></a>
+        <p class="Competition button">Create Competition</p>
     </div>
 </div>
 

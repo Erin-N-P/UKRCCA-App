@@ -1,100 +1,95 @@
-.container{
-display: flex;
-
+html{
+    background-color: #548687;
 }
-
-/* Competition Creation Main */
-
-.ccmain{position: absolute;
-width: 160px;
-height: 196px;
-left: 211px;
-top: 553px;
-
-background: #202030;
-box-shadow: 0px 5px 5px rgba(225, 225, 225, 0.25);
-border-radius: 5px;
+p{
+    font-family: 'Nunito';
+    font-style: normal;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5vh;
+    margin: 0;
+    padding-top: 1vh;
+    color: #ffffff;
 }
-
-
-
-/* Leaderboard main */
-
-
+.container {
+    position: relative;
+}
+.mySlides{
+    display: none;
+}
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    margin-top: -50px;
+    font-weight: bold;
+    font-size: 0vh;
+    border-radius: 0 3px 3px 0;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.column {
+    float: left;
+    width: 16.66%;
+}
+.img3{
+    margin: 1vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    width: 43vh;
+    height: 25vh;
+    border-radius: 30px;
+}
 .lbmain{
-width: 50%;
-height: 33%;
-border:left 25%;
-top: 20%;
-
-background: #505757;
-box-shadow: 0px 5px 5px rgba(225, 225, 225, 0.25);
-border-radius: 5px;
+    display: flex;
+    margin: 1vh;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+    width: 43vh;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #505757;
+    border-radius: 20px;
 }
-
-
-
-/* Main image */
-
-
-.mainimg{position: absolute;
-width: 353px;
-height: 188px;
-left: 18px;
-top: 109px;
-
-background: url(image.png);
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-border-radius: 15px;
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh;
 }
-
-/* Rules and regs main */
-
-
-.rrmain{position: absolute;
-width: 160px;
-height: 196px;
-left: 18px;
-top: 553px;
-
-background: #202030;
-box-shadow: 0px 5px 5px rgba(225, 225, 225, 0.25);
-border-radius: 5px;
+.rules{
+    display: flex;
+    margin-right: 1vh;
+    width: 20vh;
+    height: 23vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #202030;
 }
-
-
-/* R&R button*/
-
-
-.rr{position: absolute;
-width: 64px;
-height: 71.76px;
-left: 65px;
-top: 577px;
-
-background: url(document.png);
+.create{
+    display: flex;
+    margin-left: 2vh;
+    width: 20vh;
+    height: 23vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #202030;
 }
-
-
-/* edit button */
-
-
-.edbut{position: absolute;
-width: 64px;
-height: 64px;
-left: 259px;
-top: 581px;
-
-background: url(edit.png);
+.img1{
+    width: 10vh;
+    height: 10vh;
 }
-
-/* image  */
-
-
-.lbut{position: absolute;
-width: 90px;
-height: 90px;
-left: 149px;
-top: 357px;
-
-background: url(interlining.png);}
+.img2{
+    width: 8vh;
+    height: 8vh;
+}
