@@ -231,9 +231,12 @@
                 comp: 1
             };
 
-            const request = new Request("/api/input/", {
+            const request = new Request("http://127.0.0.1:8000/api/input/", {
                 method: "POST",
-                body: JSON.stringify(racerData)
+                body: JSON.stringify(racerData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
 
             request.json().then((data) => {
