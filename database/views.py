@@ -187,6 +187,9 @@ def base1(request):
     return render(request, 'base1.html')
 
 def ruleset_form(request, id=0):
+    # context = {
+    #     'name': 'Ruleset',
+    # }
     if request.method == 'GET':
         if id==0:
             form = RulesetForm()

@@ -1,5 +1,7 @@
 body {
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -9,8 +11,7 @@ body {
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 1rem;
 }
 
 .g-wrapper {
@@ -22,13 +23,15 @@ body {
 
 .wrapper-create-wrap {
     display: grid;
-    grid-template-columns: 15% auto;
+    grid-template-columns: 10% auto;
     grid-template-rows: 100%;
     height: 21px;
+    margin-left: 0.5rem;
 }
 
 p {
     margin: 0;
+    margin-left: 0.5rem;
 }
 
 .sign-in {
@@ -39,7 +42,7 @@ p {
     height: 500px;
     width: auto;
     background-color: rgb(255, 255, 255);
-    padding: 3rem;
+    margin-bottom: 2rem;
 }
 
 .wrap {
