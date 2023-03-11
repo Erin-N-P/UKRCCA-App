@@ -179,9 +179,32 @@ def score(request):
 
 
 def submit(request):
-    form = createUser()
+    form = UserScore()
     return render(request, 'submit.html', {"form": form})
 
 
 def base1(request):
     return render(request, 'base1.html')
+
+def ruleset_form(request, id=0):
+    if request.method == 'GET':
+        if id==0:
+            form = RulesetForm()
+        else:
+            rs = Ruleset.objects.all(pk=id)
+            form = Ruleset(instance=rs)
+        return render(request, "ruleset_register/ruleset_form.html", {'form': form})
+    else:
+        if id==0:
+            form = RulesetForm(request.POST)
+        else:
+            rs = Ruleset.objects.get(pk=id)
+            form = RulesetForm(instance=rs)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            return render(request, "ruleset_register/ruleset_form.html", {'form': form})
+
+
+

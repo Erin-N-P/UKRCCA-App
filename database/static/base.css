@@ -1,7 +1,33 @@
 body {
     display: flex;
-    background-color: rgb(159, 189, 253);
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.head-wrap {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.g-wrapper {
+    margin-top: 1.7rem;
+    width: 100%;
+    text-align: right;
+    margin-right: 2rem;
+}
+
+.wrapper-create-wrap {
+    display: grid;
+    grid-template-columns: 15% auto;
+    grid-template-rows: 100%;
+    height: 21px;
+}
+
+p {
     margin: 0;
 }
 

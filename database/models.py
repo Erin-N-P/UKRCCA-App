@@ -55,35 +55,36 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.user_name
 
+class Ruleset(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+    
+class Rule(models.Model):
+    name = models.CharField(max_length=100)
+    point = models.IntegerField()
+    ruleset = models.ForeignKey(Ruleset, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+    
 class Competition(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=50)
     no_of_rounds = models.IntegerField(validators= [MinValueValidator (1, message='Please enter a number greater than or equal to 1'), MaxValueValidator (30, message='Please enter a number less than or equal to 30')])
     gates_per_round = models.IntegerField(validators= [MinValueValidator (1), MaxValueValidator (30)])
+    ruleset = models.ForeignKey(Ruleset, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
-
+    
 class Score(models.Model):
     round = models.IntegerField(validators= [MinValueValidator (1, message='Please enter a number greater than or equal to 1'), MaxValueValidator (30, message='Please enter a number less than or equal to 30')])
     total_score = models.IntegerField()
     time_taken = models.CharField(max_length=20)
     user = models.ForeignKey(NewUser, on_delete=models.CASCADE)
     comp = models.ForeignKey(Competition, on_delete=models.CASCADE)
-
-class Rule(models.Model):
-    name = models.CharField(max_length=100)
-    point = models.IntegerField()
-
-    def __str__(self):
-        return self.name
-
-class Ruleset(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    rule = models.ForeignKey(Rule, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
 
 class TruckClass(models.Model):
     type = models.CharField(max_length=20)
