@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils.crypto import get_random_string
+import string
 
 # Create your models here.
 class CustomAccountManager(BaseUserManager):
@@ -75,10 +77,22 @@ class Competition(models.Model):
     no_of_rounds = models.IntegerField(validators= [MinValueValidator (1, message='Please enter a number greater than or equal to 1'), MaxValueValidator (30, message='Please enter a number less than or equal to 30')])
     gates_per_round = models.IntegerField(validators= [MinValueValidator (1), MaxValueValidator (30)])
     ruleset = models.ForeignKey(Ruleset, on_delete=models.CASCADE)
+    ref_code = models.CharField(
+           max_length = 10,
+           blank=True,
+           editable=False,
+           unique=True,
+           default=get_random_string(5, allowed_chars=string.ascii_uppercase + string.digits)
+    )
+
+    def save(self, *args, **kwargs):
+        if not self.pk: # its a first save
+            self.ref_code = get_random_string(10, allowed_chars=string.ascii_uppercase + string.digits)
+        return super(Competition, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
-    
+        
 class Score(models.Model):
     round = models.IntegerField(validators= [MinValueValidator (1, message='Please enter a number greater than or equal to 1'), MaxValueValidator (30, message='Please enter a number less than or equal to 30')])
     total_score = models.IntegerField()

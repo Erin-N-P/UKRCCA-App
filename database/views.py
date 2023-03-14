@@ -153,6 +153,10 @@ def comp_delete(id):
     comp.delete()
     return redirect('/user/comp/list/')
 
+def comp_test(request, code):
+    reference = Competition.objects.filter(ref_code=code)
+    return render(request, 'comp_test.html', {'code': code}, {'reference': reference})
+
 
 def test(request):
     return render(request, 'test.html')
