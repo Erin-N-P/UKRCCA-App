@@ -1,0 +1,9 @@
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'list.css' %}">
+{% endblock %}
+
+{% block content %}
+    <p>Welcome to the <a>{{comp.name}}</a> competition</p>
+{% endblock %}

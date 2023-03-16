@@ -16,12 +16,32 @@
 {% block head %}  {% endblock %}
 
 <body>
-    <div class="wrap">
-        <div class="sign-in">
-            {% block content %}
+    <div class="head-wrap">
+        <div class="g-wrapper">
+            <p class="greeting">Hello, Chloe!</p>
+        </div>
+        <div class="head-head">
+            <h1 class="title">Database testing</h1>
+            <hr>
+            <div class="create-wrap">
+                <div class="wrapper-create-wrap">
+                    <img src="/database/static/hamburg.png">
+                    <p>Create a new Item</p>
+                </div>
+                
+            </div>
+            <hr>
+            <p class="tiny">Create a Rule</p>
+            <hr>
+        </div>
+        <div class="wrap">
+            <div class="sign-in">
+                {% block content %}
 
-            {% endblock %}
+                {% endblock %}
+            </div>
         </div>
     </div>
+        
 </body>
 </html>

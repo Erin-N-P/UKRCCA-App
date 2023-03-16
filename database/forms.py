@@ -91,3 +91,41 @@ class createUser(forms.Form):
         attrs={'placeholder': 'Second Name..'}))
     teamName = forms.CharField(max_length=30, label="", widget=forms.TextInput(
         attrs={'placeholder': 'Team Name...'}))
+    
+class UserScore(forms.ModelForm):
+    class Meta:
+        model = Score
+        fields = ['user', 'comp']
+        widgets = {
+
+        }
+    
+class RulesetForm(forms.ModelForm):
+    class Meta:
+        model = Ruleset
+        fields = ['name']
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'placeholder': 'Ruleset Name',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
+            }),
+        }
+
+class RuleForm(forms.ModelForm):
+    class Meta:
+        model = Rule
+        fields = '__all__'
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'placeholder': 'Rule Name',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
+            }),
+            'point': forms.TextInput(attrs={
+                'placeholder': 'Number of points',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
+            }),
+        }
+

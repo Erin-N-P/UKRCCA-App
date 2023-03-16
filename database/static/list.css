@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-#user td, #user th {
+#user td, #user th, #comp td, #comp th {
     border: 1px solid #ddd;
     padding: 8px;
     font-family: 'Oswald', sans-serif;
@@ -16,7 +16,7 @@
 
 #user tr:hover {background-color: #ddd;}
 
-#user th {
+#user th, #comp th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
