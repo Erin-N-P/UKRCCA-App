@@ -8,7 +8,7 @@
 {% block content %}
 <div class="contentContainer">
     <p>Please enter your competition ID:</p>
-    <form class="form" action="{% url 'home' %}">
+    <form class="form" action="/comp/{{ ref }}">
         <input type="text" id="entry" placeholder="ID ENTRY HERE...">
         <button type="submit" id="entrySubmit" value="SUBMIT">SUBMIT</button>
     </form>
