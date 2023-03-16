@@ -32,10 +32,6 @@ p{
     right: 0;
     border-radius: 3px 0 0 3px;
 }
-.column {
-    float: left;
-    width: 16.66%;
-}
 .img3{
     margin: 1vh;
     margin-top: 3vh;
@@ -43,6 +39,10 @@ p{
     width: 43vh;
     height: 25vh;
     border-radius: 30px;
+}
+.column {
+    float: left;
+    width: 16.66%;
 }
 .lbmain{
     display: flex;
