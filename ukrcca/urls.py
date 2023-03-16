@@ -35,5 +35,9 @@ urlpatterns = [
     path('base/', views.base, name='base'),
     path('', views.login, name='login'),
     path('ruleset/', views.ruleset_form, name='ruleset'),
+    path('ruleset/rule', views.rule_form, name='rule'),
     path('comp/', views.comp_form, name='comp_insert'),
+    path('comp/<str:ref>/', views.comp_test, name='competition'),
+    path('comp/success/<int:id>/', views.comp_success, name='comp_success')
+
 ]
