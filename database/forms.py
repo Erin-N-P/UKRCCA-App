@@ -91,3 +91,17 @@ class createUser(forms.Form):
         attrs={'placeholder': 'Second Name..'}))
     teamName = forms.CharField(max_length=30, label="", widget=forms.TextInput(
         attrs={'placeholder': 'Team Name...'}))
+    
+class UserScore(forms.ModelForm):
+    class Meta:
+        model = Score
+        fields = ['user', 'comp']
+        widgets = {
+
+        }
+    
+class RulesetForm(forms.ModelForm):
+    class Meta:
+        model = Ruleset
+        fields = ['name']
+

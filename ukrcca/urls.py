@@ -34,4 +34,6 @@ urlpatterns = [
     path('submit/', views.submit, name='submit'),
     path('base/', views.base, name='base'),
     path('', views.login, name='login'),
+    path('ruleset/', views.ruleset_form, name='ruleset'),
+    path('comp/', views.comp_form, name='comp_insert'),
 ]

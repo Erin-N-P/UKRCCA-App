@@ -153,6 +153,10 @@ def comp_delete(id):
     comp.delete()
     return redirect('/user/comp/list/')
 
+def comp_test(request, code):
+    reference = Competition.objects.filter(ref_code=code)
+    return render(request, 'comp_test.html', {'code': code}, {'reference': reference})
+
 
 def test(request):
     return render(request, 'test.html')
@@ -179,9 +183,35 @@ def score(request):
 
 
 def submit(request):
-    form = createUser()
+    form = UserScore()
     return render(request, 'submit.html', {"form": form})
 
 
 def base1(request):
     return render(request, 'base1.html')
+
+def ruleset_form(request, id=0):
+    # context = {
+    #     'name': 'Ruleset',
+    # }
+    if request.method == 'GET':
+        if id==0:
+            form = RulesetForm()
+        else:
+            rs = Ruleset.objects.all(pk=id)
+            form = Ruleset(instance=rs)
+        return render(request, "ruleset_register/ruleset_form.html", {'form': form})
+    else:
+        if id==0:
+            form = RulesetForm(request.POST)
+        else:
+            rs = Ruleset.objects.get(pk=id)
+            form = RulesetForm(instance=rs)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            return render(request, "ruleset_register/ruleset_form.html", {'form': form})
+
+
+

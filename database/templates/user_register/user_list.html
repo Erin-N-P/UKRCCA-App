@@ -40,11 +40,11 @@
             {% endif %}
             <td class="add-new">
                 <a href="{% url 'user_update' user.id %}">
-                    <img src="/static/edit.png" alt="" class="edit" style="height: 20px;">
+                    <img src="/database/static/edit.png" alt="" class="edit" style="height: 20px;">
                 </a>
                 <form action="{% url 'user_delete' user.id %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="del" onclick="return confirm('Do you really want to delete user {{user.first_name}} {{user.last_name}}?')"><img src="/static/delete.png" style="height:20px"></button>
+                    <button type="submit" class="del" onclick="return confirm('Do you really want to delete user {{user.first_name}} {{user.last_name}}?')"><img src="/database/static/delete.png" style="height:20px"></button>
                 </form>
             </td>
         </tr>
