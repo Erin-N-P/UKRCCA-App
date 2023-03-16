@@ -71,6 +71,7 @@ class CompetitionForm(forms.ModelForm):
         super(CompetitionForm, self).__init__(*args, **kwargs)
         self.fields['name'].required = True
 
+
 class ScoreForm(forms.ModelForm):
     class Meta:
         model = Score
@@ -91,7 +92,8 @@ class createUser(forms.Form):
         attrs={'placeholder': 'Second Name..'}))
     teamName = forms.CharField(max_length=30, label="", widget=forms.TextInput(
         attrs={'placeholder': 'Team Name...'}))
-    
+
+
 class UserScore(forms.ModelForm):
     class Meta:
         model = Score
@@ -99,13 +101,12 @@ class UserScore(forms.ModelForm):
         widgets = {
 
         }
-    
+
+
 class RulesetForm(forms.ModelForm):
     class Meta:
         model = Ruleset
         fields = ['name']
-<<<<<<< HEAD
-=======
         widgets = {
             'name': forms.TextInput(attrs={
                 'placeholder': 'Ruleset Name',
@@ -113,6 +114,7 @@ class RulesetForm(forms.ModelForm):
                 'style': 'padding-left: 10px; width: 310px'
             }),
         }
+
 
 class RuleForm(forms.ModelForm):
     class Meta:
@@ -130,5 +132,3 @@ class RuleForm(forms.ModelForm):
                 'style': 'padding-left: 10px; width: 310px'
             }),
         }
->>>>>>> a779b3cc11b1f0644b24c7e8c23109e4b3c12388
-
