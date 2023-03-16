@@ -104,4 +104,31 @@ class RulesetForm(forms.ModelForm):
     class Meta:
         model = Ruleset
         fields = ['name']
+<<<<<<< HEAD
+=======
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'placeholder': 'Ruleset Name',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
+            }),
+        }
+
+class RuleForm(forms.ModelForm):
+    class Meta:
+        model = Rule
+        fields = '__all__'
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'placeholder': 'Rule Name',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
+            }),
+            'point': forms.TextInput(attrs={
+                'placeholder': 'Number of points',
+                'class': 'form-control',
+                'style': 'padding-left: 10px; width: 310px'
+            }),
+        }
+>>>>>>> a779b3cc11b1f0644b24c7e8c23109e4b3c12388
 

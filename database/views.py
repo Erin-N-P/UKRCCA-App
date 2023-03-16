@@ -123,7 +123,7 @@ def comp_form(request, id=0):
             form = CompetitionForm(request.POST, instance=comp)
         if form.is_valid():
             form.save()
-            return redirect('/user/comp/list/')
+            return redirect('/comp/success/<int:id>/')
         else:
             return render(request, "competition_register/comp_form.html", {'form': form})
         
@@ -153,10 +153,51 @@ def comp_delete(id):
     comp.delete()
     return redirect('/user/comp/list/')
 
+<<<<<<< HEAD
 def comp_test(request, code):
     reference = Competition.objects.filter(ref_code=code)
     return render(request, 'comp_test.html', {'code': code}, {'reference': reference})
 
+=======
+def comp_test(request, ref):
+    context = {
+        'comp': Competition.objects.get(ref_code=f'{ref}')
+    }
+    try:
+        return render(request, "competition_register/comp_test.html", context)
+    except Competition.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+def comp_success(request, id):
+    context = {
+        'comp': Competition.objects.get(pk=id)
+    }
+    try:
+        return render(request, "competition_register/success.html", context)
+    except Competition.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+def rule_form(request, id=0):
+    if request.method == "GET":
+        if id == 0:
+            form = RuleForm()
+        else:
+            rule = Rule.objects.get(pk=id)
+            form = RuleForm(instance=rule)
+        return render(request, "ruleset_register/rule_form.html", {'form': form})
+    else:
+        if id == 0:
+            form = RuleForm(request.POST)
+        else:
+            rule = Rule.objects.get(pk=id)
+            form = RuleForm(request.POST, instance=rule)
+        if form.is_valid():
+            form.save()
+            return redirect('/ruleset')
+        return render(request, "ruleset_register/rule_form.html", {'form': form})
+         
+>>>>>>> a779b3cc11b1f0644b24c7e8c23109e4b3c12388
 
 def test(request):
     return render(request, 'test.html')
