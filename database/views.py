@@ -6,6 +6,17 @@ from .serializers import ScoreSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import serializers, status, viewsets
+from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.sites.shortcuts import get_current_site
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+
+from .tokens import account_activation_token
+
 
 class ScoreViewSet(viewsets.ModelViewSet):
     queryset = Score.objects.all()
@@ -71,28 +82,33 @@ def user_list(request):
 # put and post request // insert and update
 
 
-def user_form(request, id=0):
-    if request.method == "GET":
-        if id == 0:
-            form = UserForm()
-        else:
-            # i thought pk was just a variable name but no, it has to be pk
-            user = NewUser.objects.get(pk=id)
-            form = UserForm(instance=user)
-        return render(request, "user_register/user_form.html", {'form': form})
-    else:
-        if id == 0:
-            form = UserForm(request.POST)
-        else:
-            user = NewUser.objects.get(pk=id)
-            form = UserForm(request.POST, instance=user)
-        if form.is_valid():
-            form.save()
-            return redirect('/user/list')
-        else:
-            return render(request, "user_register/user_form.html", {'form':form})
-# delete request
+def account_register(request):
+    # if request.user.is_authenticated:
+    #     return redirect('/')
 
+    if request.method == 'POST':
+        registerForm = RegistrationForm(request.POST)
+        if registerForm.is_valid():
+            user = registerForm.save(commit=False)
+            user.email = registerForm.cleaned_data['email']
+            user.set_password(registerForm.cleaned_data['password'])
+            user.is_active = False
+            user.save()
+            current_site = get_current_site(request)
+            subject = 'Activate your Account'
+            message = render_to_string('user_register/account_activation_email.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
+            })
+            user.email_user(subject=subject, message=message)
+            return render(request, 'user_register/register_email_confirm.html', {'form': registerForm})
+    else:
+        registerForm = RegistrationForm()
+    return render(request, 'user_register/account_register.html', {'form': registerForm})
+
+# delete request
 
 def user_delete(request, id):
     user = NewUser.objects.get(pk=id)

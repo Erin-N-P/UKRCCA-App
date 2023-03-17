@@ -13,9 +13,10 @@ body {
 .headerContainer {
   background-color: #141115;
   height: 150px;
-  display: flex;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 40% 60%;
   align-items: center;
-  justify-content: space-between;
   padding: 30px;
   border-radius: 0px 0px 25px 25px;
 }
