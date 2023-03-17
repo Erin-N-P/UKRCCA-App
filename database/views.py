@@ -108,6 +108,9 @@ def account_register(request):
             user.email_user(subject=subject, message=message)
             return render(request, 'user_register/register_email_confirm.html', {'form': registerForm})
     else:
+        registerForm = RegistrationForm()
+    return render(request, 'user_register/account_register.html', {'form': registerForm})
+
         # if id == 0:
         #     form = UserForm(request.POST)
         # else:
