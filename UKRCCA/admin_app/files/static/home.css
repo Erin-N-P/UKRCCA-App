@@ -10,6 +10,12 @@ p{
     margin: 0;
     padding-top: 1vh;
     color: #ffffff;
+    text-decoration: none;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
 }
 .container {
     position: relative;
@@ -88,8 +94,12 @@ p{
 .img1{
     width: 10vh;
     height: 10vh;
+    margin-left: 120px;
+    margin-right: 120px;
 }
 .img2{
     width: 8vh;
     height: 8vh;
+    margin-left: 120px;
+    margin-right: 120px;
 }

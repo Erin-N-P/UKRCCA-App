@@ -34,7 +34,8 @@ html{
     color: #E1E1E1;
 }
 .entry{
-    margin: 3vh;
+    margin-left: 3vh;
+    margin-bottom: 2vh;
 }
 .Text{
     font-family: 'Nunito';
@@ -52,18 +53,21 @@ html{
     color: #D5E4D9;
 }
 .box{
+    padding-left:2vh;
+    padding-right: 2vh;
+    font-size: 3vh;
     background-color: #E1E1E1;
-    width: 85vw;
+    width: 76vw;
     height: 6vh;
     border-radius: 3vw;
-    margin-bottom: 4vh;
+    margin-bottom: 2vh;
 }
 .Gates{
     background-color: #E1E1E1;
     width: 85vw;
     height: 6vh;
     border-radius: 3vw;
-    margin-bottom: 4vh;
+    margin-bottom: 2vh;
 
     font-family: 'Nunito';
     font-style: normal;
@@ -76,7 +80,7 @@ html{
     width: 85vw;
     height: 6vh;
     border-radius: 3vw;
-    margin-bottom: 4vh;
+    margin-bottom: 2vh;
 
     font-family: 'Nunito';
     font-style: normal;
