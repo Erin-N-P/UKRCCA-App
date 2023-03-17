@@ -35,8 +35,15 @@
     <div class="astrodividermask"></div><span><i>&#10038;</i></span>
 </div>
 
-<div class="rulesLight">
+<div class="rulesLight" id="ruleLight">
     <h1>RULES</h1>
+    <div class="selector">
+        <label id="dropLabel" for="dropDown"> Select a rule set: </label>
+        <select onchange=changeDrop() name="dropper" id="dropDown">
+            <option value="light">Light</option>
+            <option value="heavy">Heavy</option>
+        </select>
+    </div>
     <ul class="gradient-list" style="font-size: 3rem;">
         <li class="list-text">
             A Ready To Run (RTR) or competition RC Crawler with 2.4ghz transmitter and receiver is required.
@@ -95,7 +102,16 @@
     </ul>
 </div>
 
-<div class="rulesHeavy">
+<div class="rulesHeavy" id="ruleHeavy">
+    <h1>RULES</h1>
+    <div class="selector">
+        <label for="dropDowns" id="dropLabel"> Select a rule set: </label>
+        <select onchange=changeDrops() name="dropper" id="dropDowns">
+            <option value="heavy">Heavy</option>
+            <option value="light">Light</option>
+
+        </select>
+    </div>
     <p>For access to the rules, please visit <a href="https://drive.google.com/file/d/1E9RrArFlg3z6CCUAL3QpIQDAjKT0UE62"
             target="_blank">this</a> link.</p>
 
@@ -118,5 +134,46 @@
             prevEl: ".swiper-button-prev",
         },
     });
+
+    function changeDrop() {
+        var dropValue = document.getElementById('dropDown').value;
+        var drop = document.getElementById('dropDown');
+        var lightRules = document.getElementById('ruleLight');
+        var heavyRules = document.getElementById('ruleHeavy');
+        if (dropValue == "heavy") {
+            lightRules.style.display = "none";
+            heavyRules.style.display = "block";
+            drop.value = "light";
+
+
+        }
+
+        else if (dropValue == "light") {
+            heavyRules.style.display = "none";
+            lightRules.style.display = "block";
+            drop.value = "heavy";
+
+        }
+    }
+    function changeDrops() {
+        var dropValue = document.getElementById('dropDowns').value;
+        var drop = document.getElementById('dropDowns');
+        var lightRules = document.getElementById('ruleLight');
+        var heavyRules = document.getElementById('ruleHeavy');
+        if (dropValue == "heavy") {
+            lightRules.style.display = "none";
+            heavyRules.style.display = "block";
+            drop.value = "light";
+
+
+        }
+
+        else if (dropValue == "light") {
+            heavyRules.style.display = "none";
+            lightRules.style.display = "block";
+            drop.value = "heavy";
+
+        }
+    }
 </script>
 {% endblock %}

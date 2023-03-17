@@ -95,7 +95,8 @@ body {
     /* display: none; */
 }
 
-.rulesLight h1 {
+.rulesLight h1,
+.rulesHeavy h1 {
     font-family: 'Outfit', sans-serif;
     font-size: 4.5rem;
     text-align: center;
@@ -194,11 +195,43 @@ li::before {
 .rulesHeavy {
     font-size: 3rem;
     font-family: 'Outfit', sans-serif;
-    padding: 50px;
     padding-bottom: 30vh;
+    padding-left: 30px;
+    padding-right: 30px;
     display: none;
 }
 
 .rulesLight li {
     font-size: 3rem;
+}
+
+.rulesHeavy #dropLabel,
+.rulesLight #dropLabel {
+    font-size: 3rem;
+    font-family: 'Outfit', 'sans-serif';
+    padding-right: 30px;
+
+
+}
+
+.rulesHeavy #dropDowns,
+.rulesLight #dropDown {
+    font-size: 3rem;
+    font-family: 'Outfit', 'sans-serif';
+
+}
+
+.rulesHeavy #dropDowns option,
+.rulesLight #dropDown option {
+    font-size: 1rem;
+    height: 10px;
+}
+
+.selector {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
