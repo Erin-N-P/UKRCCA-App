@@ -6,6 +6,8 @@ urlpatterns = [
     # calling the functions from views
     # get and post req. for insert operations
     path('register/', views.account_register, name='register'),
+    path('activate/<slug:uidb64>/<slug:token>)/', views.account_activate, name='activate'),
+
     path('score/', views.score_form, name='score_insert'),
     # get and post req. for update operations
     path('<int:id>/', views.account_register, name='user_update'),
