@@ -33,6 +33,7 @@ hr {
     border-width: 3px;
 }
 .buttonlist{
+    margin-top: 1.5vh;
     position: relative;
     overflow: scroll;
     display: flex;

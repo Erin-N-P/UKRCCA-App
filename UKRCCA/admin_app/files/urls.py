@@ -9,5 +9,5 @@ urlpatterns = [
     path('leadb/', LeadBPageView.as_view(), name='leadb'),
     path('rules/', RulesPageView.as_view(), name='rules'),
     path('lightrules/', LightRulesPageView.as_view(), name='lightrules'),
-    path('heavyrules/', HeavyRulesPageView.as_view, name='heavyrules')
+    path('fullrules/', HeavyRulesPageView.as_view, name='fullrules')
 ]

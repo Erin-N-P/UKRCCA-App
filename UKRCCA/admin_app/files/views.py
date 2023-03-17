@@ -22,4 +22,4 @@ class LightRulesPageView(TemplateView):
     template_name = 'lightrules.html'
 
 class HeavyRulesPageView(TemplateView):
-    template_name = 'heavyrules.html'
+    template_name = 'fullrules.html'
