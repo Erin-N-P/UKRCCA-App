@@ -22,39 +22,42 @@ class ScoreViewSet(viewsets.ModelViewSet):
     queryset = Score.objects.all()
     serializer_class = ScoreSerializer
 
+
 @api_view(['GET'])
 def getRoutes(request):
     routes = [
         {
-        'Endpoint': '/score-post/',
-        'method': 'PUT',
-        'total_score': {'points': ""},
-        'time_taken': {'time': ""},
+            'Endpoint': '/score-post/',
+            'method': 'PUT',
+            'total_score': {'points': ""},
+            'time_taken': {'time': ""},
         },
     ]
     return Response(routes)
 
+
 @api_view(['POST'])
 def add_items(request):
     score = ScoreSerializer(data=request.data)
- 
+
     # validating for already existing data
     if Score.objects.filter(**request.data).exists():
         raise serializers.ValidationError('This data already exists')
- 
+
     if score.is_valid():
         score.save()
         return Response(score.data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-@api_view(['GET','PUT','DELETE'])
+
+@api_view(['GET', 'PUT', 'DELETE'])
 def edit_items(request, id):
     try:
         score = Score.objects.get(pk=id)
     except Score.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
-    
+
     if request.method == 'GET':
         serializer = ScoreSerializer(score)
         return Response(serializer.data)
@@ -105,9 +108,16 @@ def account_register(request):
             user.email_user(subject=subject, message=message)
             return render(request, 'user_register/register_email_confirm.html', {'form': registerForm})
     else:
-        registerForm = RegistrationForm()
-    return render(request, 'user_register/account_register.html', {'form': registerForm})
-
+        # if id == 0:
+        #     form = UserForm(request.POST)
+        # else:
+        #     user = NewUser.objects.get(pk=id)
+        #     form = UserForm(request.POST, instance=user)
+        # if form.is_valid():
+        #     form.save()
+        #     return redirect('/user/list')
+        # else:
+        #     return render(request, "user_register/user_form.html", {'form':form})
 # delete request
 
 def user_delete(request, id):
@@ -142,7 +152,8 @@ def comp_form(request, id=0):
             return redirect('/comp/success/<int:id>/')
         else:
             return render(request, "competition_register/comp_form.html", {'form': form})
-        
+
+
 def score_form(request, id=0):
     if request.method == "GET":
         if id == 0:
@@ -169,6 +180,7 @@ def comp_delete(id):
     comp.delete()
     return redirect('/user/comp/list/')
 
+
 def comp_test(request, ref):
     context = {
         'comp': Competition.objects.get(ref_code=f'{ref}')
@@ -177,6 +189,7 @@ def comp_test(request, ref):
         return render(request, "competition_register/comp_test.html", context)
     except Competition.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
+
 
 def comp_success(request, id):
     context = {
@@ -206,7 +219,7 @@ def rule_form(request, id=0):
             form.save()
             return redirect('/ruleset')
         return render(request, "ruleset_register/rule_form.html", {'form': form})
-         
+
 
 def test(request):
     return render(request, 'test.html')
@@ -240,19 +253,20 @@ def submit(request):
 def base1(request):
     return render(request, 'base1.html')
 
+
 def ruleset_form(request, id=0):
     # context = {
     #     'name': 'Ruleset',
     # }
     if request.method == 'GET':
-        if id==0:
+        if id == 0:
             form = RulesetForm()
         else:
             rs = Ruleset.objects.all(pk=id)
             form = Ruleset(instance=rs)
         return render(request, "ruleset_register/ruleset_form.html", {'form': form})
     else:
-        if id==0:
+        if id == 0:
             form = RulesetForm(request.POST)
         else:
             rs = Ruleset.objects.get(pk=id)
@@ -262,6 +276,3 @@ def ruleset_form(request, id=0):
             return redirect('/')
         else:
             return render(request, "ruleset_register/ruleset_form.html", {'form': form})
-
-
-

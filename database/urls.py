@@ -14,5 +14,6 @@ urlpatterns = [
     path('comp/list/', views.comp_list),
     path('api-auth/', include('rest_framework.urls')),
     path(r'api/input/<int:id>/', views.edit_items, name='api'),
+    path(r'comp/<str:code>/', views.comp_test, name='competition')
 
 ]
