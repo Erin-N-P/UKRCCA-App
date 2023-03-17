@@ -79,7 +79,7 @@ hr{
 }
 .leadsquare{
     width: 85vw;
-    height: 60vh;
+    height: 58vh;
     background-color: #203D50;
     margin-left: 3vh;
     margin-right: 3vh;
@@ -108,7 +108,7 @@ hr{
 }
 .table{
     width: 85vw;
-    height: 53vh;
+    height: 51vh;
     overflow: scroll;
 }
 .body{

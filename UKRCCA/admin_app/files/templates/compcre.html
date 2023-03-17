@@ -9,7 +9,7 @@ Competition Creation
 {% block content%}
 <div class="heading">
     <a class="backicon" href="{% url 'home' %}"><img class="img1" src="{% static 'back_icon.png' %}" alt="backicon"></a>
-    <p class="title">Create Competition</p>
+    <p class="title">Create Comp</p>
 </div>
 <div class="entry">
     <p class="Text">Name</p>
@@ -63,6 +63,12 @@ Competition Creation
     </div>
 </div>
 <div class="button">
-    <input type="button" class="create" value="Create"></input>
+    <button type="submit" class="create" value="Create" onclick=popUp()>Create</button>
 </div>
+
+<script>
+    function popUp(){
+        window.alert("Competition Created!");
+    }
+</script>
 {% endblock %}
