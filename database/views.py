@@ -88,11 +88,11 @@ def user_list(request):
 @login_required
 def dashboard(request):
     return render(request,
-                  'home.html',)
+                  'login.html',)
 
 def account_register(request):
-    # if request.user.is_authenticated:
-    #     return redirect('/')
+    if request.user.is_authenticated:
+        return redirect('/')
 
     if request.method == 'POST':
         registerForm = RegistrationForm(request.POST)
@@ -104,17 +104,17 @@ def account_register(request):
             user.save()
             current_site = get_current_site(request)
             subject = 'Activate your Account'
-            message = render_to_string('user_register/account_activation_email.html', {
+            message = render_to_string('account/register/account_activation_email.html', {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject=subject, message=message)
-            return render(request, 'user_register/register_email_confirm.html', {'form': registerForm})
+            return render(request, 'account/register/register_email_confirm.html', {'form': registerForm})
     else:
         registerForm = RegistrationForm()
-    return render(request, 'user_register/account_register.html', {'form': registerForm})
+    return render(request, 'account/register/account_register.html', {'form': registerForm})
 
 def account_activate(request, uidb64, token):
     try:
@@ -128,7 +128,7 @@ def account_activate(request, uidb64, token):
         auth_login(request, user)
         return redirect('/')
     else:
-        return render(request, 'user_register/activation_invalid.html')
+        return render(request, 'account/register/activation_invalid.html')
 
 def user_delete(request, id):
     user = NewUser.objects.get(pk=id)
