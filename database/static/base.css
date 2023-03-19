@@ -14,6 +14,15 @@ body {
     padding: 1rem;
 }
 
+.head-head {
+    margin-bottom: 2rem;
+
+}
+
+.mb-4 {
+    margin-left: 0;
+}
+
 .g-wrapper {
     margin-top: 1.7rem;
     width: 100%;
@@ -52,4 +61,18 @@ p {
     align-items: center;
     width: 100%;
     height: auto;
+}
+
+a.button {
+    display: flex;
+    gap: 5px;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    justify-content: flex-end;
+}
+  
+a.button:hover {
+    text-decoration: underline;
+    transition: 0.5s;
 }
