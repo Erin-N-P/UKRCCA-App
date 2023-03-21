@@ -1,4 +1,10 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load static %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Carme&family=Nunito:wght@600&family=Rubik:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'admin-login.css' %}" />
+{% endblock %}
 {% block title %}Log-in{% endblock %}
 {% block content %}
 
