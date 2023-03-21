@@ -9,9 +9,18 @@
 
 {% block content %}
 <h1 class="head">Create a Competition</h1>
-<form class="properties" action="" method="post" autocomplete="off">
+<form class="properties" action="/comp/success/{{ form.id }}" method="post" autocomplete="off">
     {% csrf_token %}
     {{ form }}
-    <button type="submit" class="btn"><img src="/static/narwhal.png" alt="" class="narwhal">SUBMIT</button>
+    <button type="submit" class="btn"><img src="/static/narwhal.png" onclick=redirected() alt=""
+            class="narwhal">SUBMIT</button>
 </form>
+
+<script>
+    function redirected() {
+        var ID = "{{ form.id }}";
+        var url = `/comp/success/${ID}`
+        window.location.replace(url)
+    }
+</script>
 {% endblock %}

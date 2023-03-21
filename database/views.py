@@ -1,3 +1,5 @@
+from .tokens import account_activation_token
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
@@ -16,9 +18,6 @@ from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
 django.utils.encoding.force_text = force_str
-from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-
-from .tokens import account_activation_token
 
 
 class ScoreViewSet(viewsets.ModelViewSet):
@@ -85,10 +84,12 @@ def user_list(request):
 
     return render(request, "user_register/user_list.html", context)
 
+
 @login_required
 def dashboard(request):
     return render(request,
                   'login.html',)
+
 
 def account_register(request):
     if request.user.is_authenticated:
@@ -116,6 +117,7 @@ def account_register(request):
         registerForm = RegistrationForm()
     return render(request, 'account/register/account_register.html', {'form': registerForm})
 
+
 def account_activate(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
@@ -129,6 +131,7 @@ def account_activate(request, uidb64, token):
         return redirect('/')
     else:
         return render(request, 'account/register/activation_invalid.html')
+
 
 def user_delete(request, id):
     user = NewUser.objects.get(pk=id)
