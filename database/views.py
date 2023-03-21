@@ -159,7 +159,7 @@ def comp_form(request, id=0):
             form = CompetitionForm(request.POST, instance=comp)
         if form.is_valid():
             form.save()
-            return redirect('/comp/success/<int:id>/')
+            return redirect('comp_success')
         else:
             return render(request, "competition_register/comp_form.html", {'form': form})
 
