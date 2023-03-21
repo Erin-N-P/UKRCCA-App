@@ -25,6 +25,24 @@ div.scrollmenu p {
     
     color: #D5E4D9;
 }
+button{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5vh;
+    line-height: 33px;
+
+    height: 4vh;
+    padding: 1vh;
+    border-radius: 1vh;
+    border-width: 0.5px;
+    margin-left: 0.5vh;
+    margin-right: 0.5vh;
+    margin-bottom: 1vh;
+    
+    color: #D5E4D9;
+    background-color: #215A71;
+}
 hr {
     position: sticky;
     margin-left: 3vh;
@@ -39,7 +57,7 @@ hr {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 75vh;
+    height: 77vh;
 }
 .complist{
     width: 875px;
