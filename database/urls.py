@@ -12,7 +12,8 @@ urlpatterns = [
                                                 form_class=UserLoginForm), name='auth-login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='/account/login/'), name='logout'),
     path('register/', views.account_register, name='register'),
-    path('activate/<slug:uidb64>/<slug:token>)/', views.account_activate, name='activate'),
+    path('activate/<slug:uidb64>/<slug:token>)/',
+         views.account_activate, name='activate'),
     path('home/', views.home, name='home'),
     path('score/', views.score_form, name='score_insert'),
     path('enter/', views.dashboard, name='login'),
@@ -24,6 +25,7 @@ urlpatterns = [
     path('comp/list/', views.comp_list),
     path('api-auth/', include('rest_framework.urls')),
     path(r'api/input/<int:id>/', views.edit_items, name='api'),
-    path(r'comp/<str:code>/', views.comp_test, name='competition')
+    path(r'comp/<str:code>/', views.comp_test, name='competition'),
+
 
 ]

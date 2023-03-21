@@ -23,7 +23,7 @@
   height: 100%;
   width: 50px;
   border: none;
-  background-color: #f1bb3a;
+  background-color: #B98EA7;
 }
 
 .clip img {
@@ -46,4 +46,32 @@
   outline: none;
   border-color: #9ecaed;
   box-shadow: 0 0 10px #9ecaed;
+}
+
+.copyHolder .toolTip {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.copyHolder .toolTip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }

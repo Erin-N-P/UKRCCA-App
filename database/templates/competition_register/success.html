@@ -11,7 +11,9 @@
   <div class="copyText">
     <p>Reference Code</p>
   </div>
-  <button onclick=copy() class="clip"><img src="{% static 'copy.png' %}" alt=""></button>
+  <button onclick=copy() onmouseout=outFunc() class="clip"><img src="{% static 'copy.png' %}" alt="">
+    <span class="toolTip" id="tip">Copy to clipboard</span>
+  </button>
   <input class="referenceInput" id="inputs" value="{{comp.ref_code}}">
 </div>
 <script>
@@ -19,6 +21,13 @@
     var text = document.getElementById("inputs");
     text.select();
     navigator.clipboard.writeText(text.value);
+    var tooltip = document.getElementById("tip");
+    tooltip.innerHTML = "Copied: " + text.value;
+  }
+
+  function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
   }
 </script>
 {% endblock %}
