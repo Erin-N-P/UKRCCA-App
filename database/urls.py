@@ -25,8 +25,7 @@ urlpatterns = [
     path('comp/list/', views.comp_list, name='finn'),
     path('api-auth/', include('rest_framework.urls')),
     path(r'api/input/<int:id>/', views.edit_items, name='api'),
-    path(r'comp/<str:code>/', views.comp_test, name='competition'),
     path('comp/<int:id>/', views.comp_form, name='comp_update'),
-    path('/comp/delete/<int:id>/', views.comp_delete, name='comp_delete'),
+    path('comp/delete/<int:id>/', views.comp_delete, name='comp_delete'),
 
 ]

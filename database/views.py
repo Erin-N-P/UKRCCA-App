@@ -188,10 +188,10 @@ def score_form(request, id=0):
             return render(request, "score_register/score_form.html", {'form': form})
 
 
-def comp_delete(id):
+def comp_delete(request, id):
     comp = Competition.objects.get(pk=id)
     comp.delete()
-    return redirect('/user/comp/list/')
+    return redirect('/account/comp/list/')
 
 
 def comp_test(request, ref):
