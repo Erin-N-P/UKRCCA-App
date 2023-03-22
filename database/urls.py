@@ -27,6 +27,5 @@ urlpatterns = [
     path(r'api/input/<int:id>/', views.edit_items, name='api'),
     path(r'comp/<str:code>/', views.comp_test, name='competition'),
     path('comp/<int:id>/', views.comp_form, name='comp_update'),
-    path('/comp/delete/<int:id>/', views.comp_delete, name='comp_delete'),
 
 ]
