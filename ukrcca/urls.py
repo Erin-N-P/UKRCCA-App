@@ -41,3 +41,5 @@ urlpatterns = [
     path('comp/delete/<int:id>/', views.comp_delete, name='comp_delete'),
 
 ]
+
+handler404 = 'database.views.error_404'

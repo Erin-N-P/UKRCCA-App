@@ -24,6 +24,8 @@ class ScoreViewSet(viewsets.ModelViewSet):
     queryset = Score.objects.all()
     serializer_class = ScoreSerializer
 
+def error_404(request, exception):
+    return render(request, 'competition_register/not-found.html')
 
 @api_view(['GET'])
 def getRoutes(request):
@@ -128,7 +130,7 @@ def account_activate(request, uidb64, token):
         user.is_active = True
         user.save()
         auth_login(request, user)
-        return redirect('/')
+        return redirect('/home')
     else:
         return render(request, 'account/register/activation_invalid.html')
 
