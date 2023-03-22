@@ -33,7 +33,7 @@
 .referenceInput {
   height: 100%;
   padding: 15px;
-  width: 120px;
+  width: 130px;
 }
 
 .referenceInput {
@@ -74,4 +74,16 @@
   border-width: 5px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
+}
+
+.buttonHold {
+  margin-top: 15px;
+}
+
+.listFind {
+  padding: 10px;
+  border: none;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Jost', 'sans-serif';
 }
