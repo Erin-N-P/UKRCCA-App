@@ -16,7 +16,7 @@ body {
 
 .head-head {
     margin-bottom: 2rem;
-
+    display: flex;
 }
 
 .mb-4 {
@@ -71,8 +71,12 @@ a.button {
     color: black;
     justify-content: flex-end;
 }
-  
+
 a.button:hover {
     text-decoration: underline;
     transition: 0.5s;
+}
+
+img.navImg {
+    height: 5px;
 }
