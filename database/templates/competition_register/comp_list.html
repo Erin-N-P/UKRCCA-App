@@ -18,7 +18,7 @@
             <th>Reference Code</th>
             <th>
                 <a href="{% url 'comp_insert' %}" class="add-user">
-                <img src="{% static 'plus.png' %}" alt="" class="edit" style="height: 20px;"> Add New</a>
+                    <img src="{% static 'plus.png' %}" alt="" class="edit" style="height: 20px;"> Add New</a>
             </th>
         </tr>
     </thead>
@@ -38,7 +38,9 @@
                 </a>
                 <form action="{% url 'comp_delete' comp.id %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="del" onclick="return confirm('Do you really want to delete user {{comp.name}}?')"><img src="/database/static/delete.png" style="height:20px"></button>
+                    <button type="submit" class="del"
+                        onclick="return confirm('Do you really want to delete user {{comp.name}}?')"><img
+                            src="/database/static/delete.png" style="height:20px"></button>
                 </form>
             </td>
         </tr>
