@@ -161,8 +161,8 @@ def comp_form(request, id=0):
             comp = Competition.objects.get(pk=id)
             form = CompetitionForm(request.POST, instance=comp)
         if form.is_valid():
-            form.save()
-            return redirect('finn')
+            comp = form.save()
+            return redirect(f'/comp/success/{comp.id}')
         else:
             return render(request, "competition_register/comp_form.html", {'form': form}, {'comp_id': comp.id})
 
