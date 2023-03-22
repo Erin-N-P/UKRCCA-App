@@ -90,7 +90,6 @@ body {
 
 .rulesLight {
     padding: 30px;
-    width: fit-content;
     margin-top: -2.5vh;
     /* display: none; */
 }
@@ -105,7 +104,7 @@ body {
     padding-bottom: 30px;
 }
 
-/* fun list number code */
+/* fun list number code || I DONT CARE ABOUT YOUR NUMBER CODES!!!!*/
 
 ul {
     counter-reset: index;
