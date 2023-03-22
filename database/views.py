@@ -159,9 +159,9 @@ def comp_form(request, id=0):
             form = CompetitionForm(request.POST, instance=comp)
         if form.is_valid():
             form.save()
-            return redirect('comp_success')
+            return redirect('finn')
         else:
-            return render(request, "competition_register/comp_form.html", {'form': form})
+            return render(request, "competition_register/comp_form.html", {'form': form}, {'comp_id': comp.id})
 
 
 def score_form(request, id=0):
@@ -186,7 +186,7 @@ def score_form(request, id=0):
 
 
 def comp_delete(id):
-    comp = Competition.objects.all(pk=id)
+    comp = Competition.objects.get(pk=id)
     comp.delete()
     return redirect('/user/comp/list/')
 
