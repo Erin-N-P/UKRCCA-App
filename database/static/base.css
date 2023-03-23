@@ -20,7 +20,19 @@ body {
 }
 
 .mb-4 {
-    margin-left: 0;
+    position: relative;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 83px;
+    display: block;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    margin-bottom: 10vh;
+
+    color: #D5E4D9;
 }
 
 .g-wrapper {
@@ -50,7 +62,7 @@ p {
     align-items: center;
     height: 500px;
     width: auto;
-    background-color: rgb(255, 255, 255);
+    background-color: #183034;
     margin-bottom: 2rem;
 }
 
