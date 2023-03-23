@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,48 +11,67 @@
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Ruda:wght@500&family=Signika+Negative:wght@300;400&family=Red+Hat+Display:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Ruda:wght@500&family=Signika+Negative:wght@300;400&family=Red+Hat+Display:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Jost&family=Outfit&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
 </head>
 
-{% block head %}  {% endblock %}
+{% block head %} {% endblock %}
 
 <body>
-    <div class="head-wrap">
-        <div class="g-wrapper">
-            {% if user.is_authenticated %}
-            <p class="greeting">Hello, {{ user.first_name }}!</p>
-            <a href="{% url 'logout' %}" class="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
-                  <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
-                  <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
-                </svg> LOGOUT
-              </a>
-            {% else %}
-            <p class="greeting">Hello, please sign in.</p>
-            <a href="{% url 'auth-login' %}" class="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
-                  <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
-                  <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
-                </svg> LOGIN
-              </a>
-            {% endif %}
-        </div>
-        <div class="head-head">
-            <h1 class="title">Database testing</h1>
-            <hr>
-            <div class="create-wrap">
-                <div class="wrapper-create-wrap">
-                    <img src="/database/static/hamburg.png">
-                    <p>Create a new Item</p>
-                </div>
-                
+    <div class="head-wrap" style="width: 100%; padding: 0; margin: 0;">
+        <div class="head-head"
+            style=" width: 100%;display: flex;justify-content: space-between; align-items:center; padding: 10px; background-color: rgb(202, 202, 202);">
+            <div class="left" style="margin-left: 20px; display: flex; gap: 50px;">
+                <a class="nav"
+                    style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #000000; gap: 5px;"
+                    href="{% url 'comp_insert' %}"><img class="navImg" style="height: 40px;"
+                        src="{% static 'plus.png' %}" alt="">Create</a>
+                <a class="nav"
+                    style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #000000; gap: 5px;"
+                    href="{% url 'finn' %}"><img class="navImg" style="height: 40px;" src="{% static 'eye.png' %}"
+                        alt="">View</a>
+                <a class="nav"
+                    style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #000000; gap: 5px;"
+                    href="{% url 'home' %}"><img class="navImg" style="height: 40px;" src="{% static 'homeHead.png' %}"
+                        alt="">Home</a>
             </div>
-            <hr>
-            <p class="tiny">Create a Rule</p>
-            <hr>
+            <div class="right"
+                style="display: flex; flex-direction: column; align-items: center; margin-right: 15px; margin-top: 5px;">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="button"
+                    style="margin-top: 10px; margin-bottom: 10px; font-size: 17px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-door-open" viewBox="0 0 16 16">
+                        <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+                        <path
+                            d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z" />
+                    </svg> LOGOUT
+                </a>
+                <p class="greeting">Hello, {{ user.first_name }}!</p>
+                {% else %}
+                <a href="{% url 'auth-login' %}" class="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-door-open" viewBox="0 0 16 16">
+                        <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+                        <path
+                            d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z" />
+                    </svg> LOGIN
+                </a>
+                {% endif %}
+            </div>
         </div>
         <div class="wrap">
             <div class="sign-in">
@@ -61,6 +81,7 @@
             </div>
         </div>
     </div>
-        
+
 </body>
+
 </html>

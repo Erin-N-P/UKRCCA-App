@@ -1,3 +1,5 @@
+from .tokens import account_activation_token
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
@@ -16,15 +18,14 @@ from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
 django.utils.encoding.force_text = force_str
-from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-
-from .tokens import account_activation_token
 
 
 class ScoreViewSet(viewsets.ModelViewSet):
     queryset = Score.objects.all()
     serializer_class = ScoreSerializer
 
+def error_404(request, exception):
+    return render(request, 'competition_register/not-found.html')
 
 @api_view(['GET'])
 def getRoutes(request):
@@ -85,10 +86,12 @@ def user_list(request):
 
     return render(request, "user_register/user_list.html", context)
 
+
 @login_required
 def dashboard(request):
     return render(request,
                   'login.html',)
+
 
 def account_register(request):
     if request.user.is_authenticated:
@@ -116,6 +119,7 @@ def account_register(request):
         registerForm = RegistrationForm()
     return render(request, 'account/register/account_register.html', {'form': registerForm})
 
+
 def account_activate(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
@@ -126,9 +130,10 @@ def account_activate(request, uidb64, token):
         user.is_active = True
         user.save()
         auth_login(request, user)
-        return redirect('/')
+        return redirect('/home')
     else:
         return render(request, 'account/register/activation_invalid.html')
+
 
 def user_delete(request, id):
     user = NewUser.objects.get(pk=id)
@@ -142,7 +147,7 @@ def comp_list(request):
     }
     return render(request, "competition_register/comp_list.html", context)
 
-
+@login_required
 def comp_form(request, id=0):
     if request.method == "GET":
         if id == 0:
@@ -158,10 +163,10 @@ def comp_form(request, id=0):
             comp = Competition.objects.get(pk=id)
             form = CompetitionForm(request.POST, instance=comp)
         if form.is_valid():
-            form.save()
-            return redirect('comp_success')
+            comp = form.save()
+            return redirect(f'/comp/success/{comp.id}')
         else:
-            return render(request, "competition_register/comp_form.html", {'form': form})
+            return render(request, "competition_register/comp_form.html", {'form': form}, {'comp_id': comp.id})
 
 
 def score_form(request, id=0):
@@ -184,13 +189,13 @@ def score_form(request, id=0):
         else:
             return render(request, "score_register/score_form.html", {'form': form})
 
-
-def comp_delete(id):
-    comp = Competition.objects.all(pk=id)
+@login_required
+def comp_delete(request, id):
+    comp = Competition.objects.get(pk=id)
     comp.delete()
-    return redirect('/user/comp/list/')
+    return redirect('/account/comp/list/')
 
-
+@login_required
 def comp_test(request, ref):
     context = {
         'comp': Competition.objects.get(ref_code=f'{ref}')
@@ -200,7 +205,7 @@ def comp_test(request, ref):
     except Competition.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-
+@login_required
 def comp_success(request, id):
     context = {
         'comp': Competition.objects.get(pk=id)
@@ -210,7 +215,7 @@ def comp_success(request, id):
     except Competition.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-
+@login_required
 def rule_form(request, id=0):
     if request.method == "GET":
         if id == 0:
@@ -227,34 +232,41 @@ def rule_form(request, id=0):
             form = RuleForm(request.POST, instance=rule)
         if form.is_valid():
             form.save()
-            return redirect('/ruleset')
+            return redirect('/ruleset/rule')
         return render(request, "ruleset_register/rule_form.html", {'form': form})
 
+@login_required   
+def rule_list(request):
+    
+    return render(request, "home.html")
 
+@login_required
 def test(request):
     return render(request, 'test.html')
 
-
+@login_required
 def base(request):
     return render(request, 'base.html')
 
-
+@login_required
 def login(request):
     return render(request, 'login.html')
 
-
 def home(request):
-    return render(request, 'home.html')
+    context = {
+        'rule_list': Rule.objects.all()
+    }
+    return render(request, 'home.html', context)
 
-
+@login_required
 def lboard(request):
     return render(request, 'leaderboard.html')
 
-
+@login_required
 def score(request):
     return render(request, 'score.html')
 
-
+@login_required
 def submit(request):
     form = UserScore()
     return render(request, 'submit.html', {"form": form})
@@ -263,7 +275,7 @@ def submit(request):
 def base1(request):
     return render(request, 'base1.html')
 
-
+@login_required
 def ruleset_form(request, id=0):
     # context = {
     #     'name': 'Ruleset',

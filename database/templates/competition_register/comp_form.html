@@ -14,4 +14,13 @@
     {{ form }}
     <button type="submit" class="btn"><img src="/static/narwhal.png" alt="" class="narwhal">SUBMIT</button>
 </form>
+
+<script>
+    function redirected() {
+        var ID = "{{ form.id }}";
+        var url = `/comp/success/${ID}`
+        var nUrl = toString(url);
+        window.location.replace("/home");
+    }
+</script>
 {% endblock %}

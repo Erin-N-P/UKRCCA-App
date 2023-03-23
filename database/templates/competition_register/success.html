@@ -2,70 +2,38 @@
 {% load static %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'success.css' %}">
+<link rel="stylesheet" href="{% static 'success.css' %}">
 {% endblock %}
 
 {% block content %}
-    <p class="success">You have successfully created competition '{{ comp.name }}'</p>
-    <div class="input-group">
-        <span class="input-group-addon hidden-xs linkname">
-          <strong>Reference Code</strong>
-        </span>
-        <span id="copyButton" class="input-group-addon btn" title="Click to copy">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-              </svg>
-        </span>
-        <input type="text" id="copyTarget" class="form-control" value="{{comp.ref_code}}">
-        <span class="copied">Copied !</span>
-    </div>
-    <script>
-        (function() {
+<p class="success">You have successfully created competition '{{ comp.name }}'.</p>
+<div class="copyHolder">
+  <div class="copyText">
+    <p>Reference Code</p>
+  </div>
+  <button onclick=copy() onmouseout=outFunc() class="clip"><img src="{% static 'copy.png' %}" alt="">
+    <span class="toolTip" id="tip">Copy to clipboard</span>
+  </button>
+  <input class="referenceInput" id="inputs" value="{{comp.ref_code}}">
+</div>
+<form action="/account/comp/list" class="buttonHold">
+  <button class="listFind">View List</button>
+</form>
+<script>
+  function copy() {
+    var text = document.getElementById("inputs");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+    var tooltip = document.getElementById("tip");
+    tooltip.innerHTML = "Copied: " + text.value;
+  }
 
-          
-            function copyToClipboard(elem) {
-              var target = elem;
-          
-              // select the content
-              var currentFocus = document.activeElement;
-          
-              target.focus();
-              target.setSelectionRange(0, target.value.length);
-          
-              // copy the selection
-              var succeed;
-          
-              try {
-                succeed = document.execCommand("copy");
-              } catch (e) {
-                console.warn(e);
-          
-                succeed = false;
-              }
-          
-              // Restore original focus
-              if (currentFocus && typeof currentFocus.focus === "function") {
-                currentFocus.focus();
-              }
-          
-              if (succeed) {
-                $(".copied").animate({ top: -25, opacity: 0 }, 700, function() {
-                  $(this).css({ top: 0, opacity: 1 });
-                });
-              }
-          
-              return succeed;
-            }
-          
-            $("#copyButton, #copyTarget").on("click", function() {
-              copyToClipboard(document.getElementById("copyTarget"));
-            });
-          })();
-          
-    </script>
+  function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
+  }
+</script>
 {% endblock %}
 
 <!-- can someone fix this pls -->
 <!-- reference: https://codepen.io/LattyS/pen/QvGyKL -->
-

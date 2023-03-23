@@ -44,62 +44,15 @@
             <option value="heavy">Heavy</option>
         </select>
     </div>
+    {% for rule in rule_list %}
     <ul class="gradient-list" style="font-size: 3rem;">
+        {% if rule.ruleset == "Light Competition" %}
         <li class="list-text">
-            A Ready To Run (RTR) or competition RC Crawler with 2.4ghz transmitter and receiver is required.
+            {{rule.name}}
         </li>
-        <li class="list-text"> Vehicle touches (including any repairs or repositions) will be given an automatic 10
-            points, unless
-            accidental.
-        </li>
-        <li class="list-text">
-            On Course Repairs must be completed on course, and completed within the course time.
-        </li>
-        <li class="list-text">
-            Off Course Repairs can be called when deemed acceptable. These should be complete within 30 minutes. If
-            completed on time, a 1 minute penalty is given and the
-            driver returns to the previous gate cleared.
-        </li>
-        <li class="list-text">
-            If at any point the Judge has reason to believe the vehicle is out of spec, they may call time to stop.
-            If
-            the vehicle is determined to have an unfair advantage, a repair must be done to
-            correct the problem. If this is impossible, the driver is marked with a DNF.
-        </li>
-        <li class="list-text">
-            10 points are given when 4 wheels do not travel through the gate marker or any part of the vehicle
-            touches
-            the gate marker.
-        </li>
-        <li class="list-text">
-            10 points are given when any part of the vehicle touches a boundary marker, and the vehicle is moved
-            back to
-            the previously cleared gate.
-        </li>
-        <li class="list-text">
-            The maximum amount of points per course is 100. If surpassed, the driver is given a DNF and the vehicle
-            should be removed from the course.
-        </li>
-        <li class="list-text">
-            DNFs should be given at any time a driver cannot complete a course. A DNS should be given when the
-            course
-            cannot be started.
-        </li>
-        <li class="list-text">
-            A driver may call for a time pause in order to reposition themselves safely on the course.
-        </li>
-        <li class="list-text">
-            Completing gates in the unintended order will result in a 10 point penalty.
-        </li>
-        <li class="list-text"><a
-                href="https://docs.google.com/document/d/11PhTJvChtI0sOyUqGONaLDCZ6TqLegj2ZuQZZf2_a78/edit#"
-                target="_blank">
-                For more detailed rules,
-                please click here</a>.
-        </li>
-
 
     </ul>
+
 </div>
 
 <div class="rulesHeavy" id="ruleHeavy">
@@ -112,9 +65,16 @@
 
         </select>
     </div>
+    <ul class="gradient-list" style="font-size: 3rem;">
+        {% else %}
+        <li class="list-text">
+            {{rule.name}}
+        </li>
+        {% endif %}
+    </ul>
+    {% endfor %}
     <p>For access to the rules, please visit <a href="https://drive.google.com/file/d/1E9RrArFlg3z6CCUAL3QpIQDAjKT0UE62"
             target="_blank">this</a> link.</p>
-
 </div>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script>

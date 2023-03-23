@@ -37,6 +37,9 @@ urlpatterns = [
     path('ruleset/rule', views.rule_form, name='rule'),
     path('comp/', views.comp_form, name='comp_insert'),
     path('comp/<str:ref>/', views.comp_test, name='competition'),
-    path('comp/success/<int:id>/', views.comp_success, name='comp_success')
+    path('comp/success/<int:id>/', views.comp_success, name='comp_success'),
+    path('comp/delete/<int:id>/', views.comp_delete, name='comp_delete'),
 
 ]
+
+handler404 = 'database.views.error_404'
