@@ -15,7 +15,7 @@
 {% block head %}
 {% endblock %}
 
-<div class="headerContainer">
+<div class="headerContainer" style="display: flex; justify-content: space-between; align-items: center;">
   <a href={% block back %}{% endblock %}><img src="{% static 'back.png' %}" alt="" /></a>
   {% block pagename %}{% endblock %}
   {% if user.is_authenticated %}
