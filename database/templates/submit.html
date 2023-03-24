@@ -43,55 +43,13 @@
     </form>
 </div>
 
-<!-- <script>
-    const fs = require('fs');
+<script>
+    var finalTotal = sessionStorage.getItem("finalTotalS");
+    var finalTime = sessionStorage.getItem("finalTimeS");
+    var racerData = sessionStorage.getItem("racerData");
+    console.log(racerData);
+    console.log(finalTime);
 
-    function submitForm(event) {
-        event.preventDefault();
-    }
 
-    function check() {
-        var fName = document.getElementById('entry1').value;
-        var sName = document.getElementById('entry2').value;
-        var tName = document.getElementById('entry3').value;
-        var ctName = document.getElementById('entry4').value;
-        try {
-            if (tName !== ctName) throw "Team names do not match";
-            if (fName.trim() == "") throw "Please fill in your first name.";
-            if (sName.trim() == "") throw "Please fill in your second name.";
-            if (tName.trim() == "") throw "Please fill in your team name.";
-            if (ctName.trim() == "") throw "Please confirm your team name.";
-        }
-        catch (err) {
-            form.addEventListener('submit', submitForm);
-            window.alert(err);
-        }
-
-        finally {
-            removeEventListener('submit', submitForm);
-            location.reload();
-            jsonTime(fName, sName, tName);
-        }
-    }
-
-    function writeSuccess(err) {
-        // check if there is error
-        if (err) console.error(err);
-        else console.log('write success');
-    }
-
-    function jsonTime(first_name, second_name, third_name) {
-
-        const racer = {
-            first_name: first_name,
-            second_name: second_name,
-            team_name: third_name
-        };
-        const jsonString = JSON.stringify(racer)
-        console.log(jsonString)
-        fs.writeFileSync("{% static 'userList.json' %}", jsonString, writeSuccess)
-
-    }
-
-</script> -->
+</script>
 {% endblock %}

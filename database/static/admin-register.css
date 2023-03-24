@@ -1,22 +1,13 @@
 body {
     background: #183034;
 }
-.form-label{
-    font-family: 'Nunito';
-    font-style: 'bold';
-    font-weight: 700;
-    font-size: 23px;
-    line-height: 27px;
-
-    color: #D5E4D9;
-}
-.mb-4 {
+.mb-2 {
     position: relative;
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
-    font-size: 60px;
-    line-height: 83px;
+    font-size: 40px;
+    line-height: 70px;
     display: block;
     align-items: center;
     text-align: center;
@@ -25,7 +16,19 @@ body {
 
     color: #D5E4D9;
 }
+label{
+    font-family: 'Nunito';
+    font-style: 'bold';
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 27px;
 
+    color: #D5E4D9;
+}
+.text-muted {
+    font-size: 15px;
+    color: rgb(213 228 217)!important;
+}
 .bt-4 {
     font-family: 'Nunito';
     font-style: 'bold';
@@ -38,8 +41,7 @@ body {
     background-color: rgba(84, 134, 135, 0.5);
     border-color: rgba(84, 134, 135, 0.5);
 }
-
 a{
-   color: #D5E4D9; 
-   
-}
+    color: #D5E4D9; 
+    
+ }
