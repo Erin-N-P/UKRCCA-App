@@ -41,6 +41,10 @@ label {
     line-height: 23px;
     color: #D5E4D9;
 }
+.scroll-table{
+    width: 75px;
+    overflow-x: scroll;
+}
 
 .properties button.btn {
     margin-top: 1rem;

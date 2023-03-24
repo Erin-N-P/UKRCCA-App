@@ -10,7 +10,9 @@
     <tr>
         <th>Id</th>
         {% for comp in comp_list %}
-        <td>{{comp.id}}</td>
+        <div class="scroll-table">
+            <td>{{comp.id}}</td>
+        </div>
         {% endfor %}
     </tr>
     <tr>
