@@ -7,31 +7,55 @@
 
 {% block content %}
 <table id="comp">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Rounds</th>
-            <th>Gates per round</th>
-            <th>Ruleset</th>
-            <th>Reference Code</th>
-            <th>
-                <a href="{% url 'comp_insert' %}" class="add-user">
-                    <img src="{% static 'plus.png' %}" alt="" class="edit" style="height: 20px;"> Add New</a>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
+    <tr>
+        <th>Id</th>
         {% for comp in comp_list %}
-        <tr>
-            <td>{{comp.id}}</td>
-            <td>{{comp.name}}</td>
-            <td>{{comp.location}}</td>
-            <td>{{comp.no_of_rounds}}</td>
-            <td>{{comp.gates_per_round}}</td>
-            <td>{{comp.ruleset}}</td>
-            <td>{{comp.ref_code}}</td>
+        <td>{{comp.id}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Name</th>
+        {% for comp in comp_list %}
+        <td>{{comp.name}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Location</th>
+        {% for comp in comp_list %}
+        <td>{{comp.location}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Rounds</th>
+        {% for comp in comp_list %}
+        <td>{{comp.no_of_rounds}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Gates per round</th>
+        {% for comp in comp_list %}
+        <td>{{comp.gates_per_round}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Ruleset</th>
+        {% for comp in comp_list %}
+        <td>{{comp.ruleset}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Reference Code</th>
+        {% for comp in comp_list %}
+        <td>{{comp.ref_code}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>
+            <a href="{% url 'comp_insert' %}" class="add-user">
+                <img src="{% static 'plus.png' %}" alt="" class="edit" style="height: 20px;"> Add New</a>
+        </th>
+        <div class="add-new-column">
+            {% for comp in comp_list %}
             <td class="add-new">
                 <a href="{% url 'comp_update' comp.id %}">
                     <img src="{% static 'edit.png' %}" alt="" class="edit" style="height: 20px;">
@@ -43,9 +67,9 @@
                             src="/database/static/delete.png" style="height:20px"></button>
                 </form>
             </td>
-        </tr>
-        {% endfor %}
-    </tbody>
+            {% endfor %}
+        </div>
+    </tr>
 
 
 </table>

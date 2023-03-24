@@ -69,7 +69,10 @@ a.add-user:hover {
     color: rgb(31, 134, 224)!important;
     transition: 0.19s;
 }
-
+div.add-new-column{
+    display: flex;
+    flex-direction: row;
+}
 td.add-new {
     display: flex;
     flex-direction: row;
