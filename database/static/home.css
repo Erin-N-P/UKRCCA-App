@@ -116,7 +116,7 @@ li {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 3rem;
     font-family: 'Jost', sans-serif;
     padding-bottom: 20px;
 }
@@ -198,10 +198,6 @@ li::before {
     padding-left: 30px;
     padding-right: 30px;
     display: none;
-}
-
-.rulesLight li {
-    font-size: 3rem;
 }
 
 .rulesHeavy #dropLabel,
