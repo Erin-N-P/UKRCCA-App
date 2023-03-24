@@ -74,7 +74,7 @@ class Ruleset(models.Model):
         return self.name
     
 class Rule(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.TextField(max_length=None)
     point = models.IntegerField()
     ruleset = models.ForeignKey(Ruleset, on_delete=models.CASCADE)
 

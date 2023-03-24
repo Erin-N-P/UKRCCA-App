@@ -44,13 +44,12 @@
             <option value="heavy">Heavy</option>
         </select>
     </div>
-    {% for rule in rule_list %}
     <ul class="gradient-list" style="font-size: 3rem;">
-        {% if rule.ruleset == "Light Competition" %}
+    {% for l in light %}
         <li class="list-text">
-            {{rule.name}}
+            {{l.name}}
         </li>
-
+    {% endfor %}
     </ul>
 
 </div>
@@ -66,13 +65,12 @@
         </select>
     </div>
     <ul class="gradient-list" style="font-size: 3rem;">
-        {% else %}
+        {% for f in full %}
         <li class="list-text">
-            {{rule.name}}
+            {{f.name}}
         </li>
-        {% endif %}
+        {% endfor %}
     </ul>
-    {% endfor %}
     <p>For access to the rules, please visit <a href="https://drive.google.com/file/d/1E9RrArFlg3z6CCUAL3QpIQDAjKT0UE62"
             target="_blank">this</a> link.</p>
 </div>
@@ -94,7 +92,6 @@
             prevEl: ".swiper-button-prev",
         },
     });
-
     function changeDrop() {
         var dropValue = document.getElementById('dropDown').value;
         var drop = document.getElementById('dropDown');

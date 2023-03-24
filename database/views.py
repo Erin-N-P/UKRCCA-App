@@ -208,7 +208,7 @@ def comp_test(request, ref):
     try:
         return render(request, "competition_register/comp_test.html", context)
     except Competition.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        return render(request, "competition_register/not-found.html")
 
 
 @login_required
@@ -266,7 +266,8 @@ def login(request):
 
 def home(request):
     context = {
-        'rule_list': Rule.objects.all()
+        'light': Rule.objects.filter(ruleset_id=3),
+        'full': Rule.objects.filter(ruleset_id=4),
     }
     return render(request, 'home.html', context)
 

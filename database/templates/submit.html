@@ -7,35 +7,12 @@
 {% block back %}{% url 'score' %} {% endblock %}
 
 {% block content %}
-<script src="{% static 'submit.js' %}"></script>
-<!-- <div class="contentContainer">
-    <form class="form" id="form" action="{% url 'home' %}">
-        <div class="box">
-            <p>First Name:</p>
-            <input type="text" id="entry1" placeholder="Enter here...">
-        </div>
-        <div class="box">
-            <p>Surname:</p>
-            <input type="text" id="entry2" placeholder="Enter here...">
-        </div>
-        <div class="box">
-            <p>Team Name:</p>
-            <input type="text" id="entry3" placeholder="Enter here...">
-        </div>
-        <div class="box">
-            <p>Confirm Team Name:</p>
-            <input type="text" id="entry4" placeholder="Enter here...">
-        </div>
 
-        <div class="buttonSubmit" onclick="check()">
-            <input type="submit" id="entrySubmit" value="SUBMIT">
-            <p id="p1"></p>
-        </div>
-    </form>
-
-
-</div> -->
 <div class="wrapper">
+    <div class="transfer">
+        <p id="time" class="time">TEST</p>
+        <p id="score" class="score">TEST</p>
+    </div>
     <form class="properties" method="post" action="{% url 'home' %}">
         {% csrf_token %}
         {{form.as_p}}
@@ -44,11 +21,14 @@
 </div>
 
 <script>
-    var finalTotal = sessionStorage.getItem("finalTotalS");
-    var finalTime = sessionStorage.getItem("finalTimeS");
-    var racerData = sessionStorage.getItem("racerData");
-    console.log(racerData);
-    console.log(finalTime);
+
+    let timer = sessionStorage.getItem("time");
+    document.getElementById("time").innerHTML = "Your final time was " + timer + ".";
+
+    let scored = sessionStorage.getItem("scorer");
+    document.getElementById("score").innerHTML = "Your final score was " + scored + " points.";
+
+
 
 
 </script>

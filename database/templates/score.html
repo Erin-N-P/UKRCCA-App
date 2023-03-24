@@ -222,11 +222,8 @@
             var finalTotal = document.getElementById('points').innerHTML;
             console.log(finalTotal);
 
-            var finalTimeS = toString(finalTime)
-            var finalTotalS = toString(finalTotal)
-
-            sessionStorage.setItem("finalTimeS", finalTimeS);
-            sessionStorage.setItem("finalTotalS", finalTotalS);
+            sessionStorage.setItem("time", finalTime);
+            sessionStorage.setItem("scorer", finalTotal);
 
             const racerData = {
                 id: 9,
@@ -236,8 +233,6 @@
                 user: 4,
                 comp: 1
             };
-
-            sessionStorage.setItem("racerData", racerData);
 
             const request = new Request("http://127.0.0.1:8000/api/input/", {
                 method: "POST",
