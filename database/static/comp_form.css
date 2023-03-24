@@ -1,6 +1,16 @@
 .head {
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 3px;
+    position: relative;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 83px;
+    display: block;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    margin-bottom: 10vh;
+    color: #D5E4D9;
 }
 
 .properties {

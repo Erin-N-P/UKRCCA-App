@@ -19,22 +19,6 @@ body {
     display: flex;
 }
 
-.mb-4 {
-    position: relative;
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 83px;
-    display: block;
-    align-items: center;
-    text-align: center;
-    justify-items: center;
-    margin-bottom: 10vh;
-
-    color: #D5E4D9;
-}
-
 .g-wrapper {
     margin-top: 1.7rem;
     width: 100%;

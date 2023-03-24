@@ -1,11 +1,16 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load static %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Carme&family=Nunito:wght@600&family=Rubik:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'admin-register.css' %}" />
+{% endblock %}
 {% block title %}Register Account{% endblock %}
 {% block content %}
 
 <form class="account-form" action="." method="post">
   {% csrf_token %}
   <h3 class="mb-2">Create an account</h3>
-  <p class="mb-4">Please just do it.</p>
 
   {% if form.errors %}
   <p>Please correct the following errors:</p>
@@ -33,7 +38,7 @@
   <label>{{ form.password2.label}}<span class="text-muted small">
       (Required)</span></label>
   {{ form.password2 }}
-  <button class="btn btn-primary btn-block py-2 mb-4 mt-5 fw500 w-100" type="submit">Register</button>
+  <button class="btn bt-4 btn-block py-2 mb-4 mt-5 fw500 w-100" type="submit">Register</button>
   <p class="text-center">
     <a href="/">Already have an account?</a>
   </p>
