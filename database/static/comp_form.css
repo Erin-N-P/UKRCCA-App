@@ -1,14 +1,25 @@
-.head {
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 3px;
+body{
+    background-color: #183034;
+}
+h1.head {
+    position: relative;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 2px;
+    display: block;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    margin-bottom: 7vh;
+    color: #D5E4D9;
 }
 
 .properties {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Nunito';
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 85vw;
     line-height: 2rem;
 }
 
@@ -20,16 +31,15 @@
     height: 35px;
     margin-bottom: 1rem;
     box-shadow: 0px 4px 17px rgba(93, 93, 93, 0.25);
-
 }
 
 label {
-    padding-left: 1rem;
-    color: rgb(134, 134, 134);
-    display: flex;
-    font-family: 'Red Hat Display', sans-serif;
-    letter-spacing: 1px;
-    width: 320px;
+    font-family: 'Nunito';
+    font-style: 'bold';
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 23px;
+    color: #D5E4D9;
 }
 
 .properties button.btn {
@@ -45,13 +55,13 @@ label {
     font-weight: 400;
     border-radius: 8px;
     border: none;
-    background-color: #6814a8;
+    background-color: rgba(84, 134, 135, 0.5);;
     color: white;
     box-shadow: 0px 6px 7px 1px rgba(0, 0, 0, 0.25);
 }
 
 button.btn:hover {
-    background-color: #ad46fc;
+    background-color: rgba(84, 134, 135, 0.5);;
     transition: 0.19s;
 }
 
