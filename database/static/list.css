@@ -26,12 +26,11 @@ body{
     text-align: left;
     background-color: #6814a8;
     color: white;
-}
-#comp{
-    width: 300px;
+    position: static;
+    width: 80px;;
 }
 .Tscroll{
-    width: 300px;
+    width: 350px;
     overflow: scroll;
 }
 .popup {

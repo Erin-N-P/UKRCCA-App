@@ -6,72 +6,71 @@
 {% endblock %}
 
 {% block content %}
-<table id="comp">
-    <div class="Tscroll">
-        <tr>
-            <th>Id</th>
-            {% for comp in comp_list %}
-            <td>{{comp.id}}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <th>Name</th>
-            {% for comp in comp_list %}
-            <td>{{comp.name}}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <th>Location</th>
-            {% for comp in comp_list %}
-            <td>{{comp.location}}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <th>Rounds</th>
-            {% for comp in comp_list %}
-            <td>{{comp.no_of_rounds}}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <th>Gates per round</th>
-            {% for comp in comp_list %}
-            <td>{{comp.gates_per_round}}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <th>Ruleset</th>
-            {% for comp in comp_list %}
-            <td>{{comp.ruleset}}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <th>Reference Code</th>
-            {% for comp in comp_list %}
-            <td>{{comp.ref_code}}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <th>
-                <a href="{% url 'comp_insert' %}" class="add-user">
-                    <img src="{% static 'plus.png' %}" alt="" class="edit" style="height: 20px;"> Add New</a>
-            </th>
-            {% for comp in comp_list %}
-            <td class="add-new">
-                <div class="please">
-                    <a href="{% url 'comp_update' comp.id %}">
-                        <img src="{% static 'edit.png' %}" alt="" class="edit" style="height: 20px;">
-                    </a>
-                    <form action="{% url 'comp_delete' comp.id %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="del"
-                            onclick="return confirm('Do you really want to delete user {{comp.name}}?')"><img
-                                src="/database/static/delete.png" style="height:20px"></button>
-                    </form>
-                </div>
-            </td>
-            {% endfor %}
-        </tr>
-
+<div class="Tscroll">
+    <table id="comp">
+            <tr>
+                <th>Id</th>
+                {% for comp in comp_list %}
+                <td>{{comp.id}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Name</th>
+                {% for comp in comp_list %}
+                <td>{{comp.name}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Location</th>
+                {% for comp in comp_list %}
+                <td>{{comp.location}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Rounds</th>
+                {% for comp in comp_list %}
+                <td>{{comp.no_of_rounds}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Gates per round</th>
+                {% for comp in comp_list %}
+                <td>{{comp.gates_per_round}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Ruleset</th>
+                {% for comp in comp_list %}
+                <td>{{comp.ruleset}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Reference Code</th>
+                {% for comp in comp_list %}
+                <td>{{comp.ref_code}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>
+                    <a href="{% url 'comp_insert' %}" class="add-user">
+                        <img src="{% static 'plus.png' %}" alt="" class="edit" style="height: 20px;"> Add New</a>
+                </th>
+                {% for comp in comp_list %}
+                <td class="add-new">
+                    <div class="please">
+                        <a href="{% url 'comp_update' comp.id %}">
+                            <img src="{% static 'edit.png' %}" alt="" class="edit" style="height: 20px;">
+                        </a>
+                        <form action="{% url 'comp_delete' comp.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="del"
+                                onclick="return confirm('Do you really want to delete user {{comp.name}}?')"><img
+                                    src="/database/static/delete.png" style="height:20px"></button>
+                        </form>
+                    </div>
+                </td>
+                {% endfor %}
+            </tr>
+        </table>
     </div>
-</table>
 {% endblock %}
