@@ -8,7 +8,7 @@ body{
 
 #user td, #user th, #comp td, #comp th {
     border: 1px solid #333;
-    padding: 8px;
+    padding: 10.5px;
     font-family: 'Oswald', sans-serif;
     color:#183034;
     background-color: #D5E4D9;
@@ -27,7 +27,13 @@ body{
     background-color: #6814a8;
     color: white;
 }
-
+#comp{
+    width: 300px;
+}
+.Tscroll{
+    width: 300px;
+    overflow: scroll;
+}
 .popup {
     width: 400px;
     background: white;
