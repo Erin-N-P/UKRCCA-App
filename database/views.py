@@ -24,8 +24,10 @@ class ScoreViewSet(viewsets.ModelViewSet):
     queryset = Score.objects.all()
     serializer_class = ScoreSerializer
 
+
 def error_404(request, exception):
     return render(request, 'competition_register/not-found.html')
+
 
 @api_view(['GET'])
 def getRoutes(request):
@@ -147,6 +149,7 @@ def comp_list(request):
     }
     return render(request, "competition_register/comp_list.html", context)
 
+
 @login_required
 def comp_form(request, id=0):
     if request.method == "GET":
@@ -189,11 +192,13 @@ def score_form(request, id=0):
         else:
             return render(request, "score_register/score_form.html", {'form': form})
 
+
 @login_required
 def comp_delete(request, id):
     comp = Competition.objects.get(pk=id)
     comp.delete()
     return redirect('/account/comp/list/')
+
 
 @login_required
 def comp_test(request, ref):
@@ -205,6 +210,7 @@ def comp_test(request, ref):
     except Competition.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
+
 @login_required
 def comp_success(request, id):
     context = {
@@ -214,6 +220,7 @@ def comp_success(request, id):
         return render(request, "competition_register/success.html", context)
     except Competition.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
+
 
 @login_required
 def rule_form(request, id=0):
@@ -235,22 +242,27 @@ def rule_form(request, id=0):
             return redirect('/ruleset/rule')
         return render(request, "ruleset_register/rule_form.html", {'form': form})
 
-@login_required   
+
+@login_required
 def rule_list(request):
-    
+
     return render(request, "home.html")
+
 
 @login_required
 def test(request):
     return render(request, 'test.html')
 
+
 @login_required
 def base(request):
     return render(request, 'base.html')
 
+
 @login_required
 def login(request):
     return render(request, 'login.html')
+
 
 def home(request):
     context = {
@@ -258,13 +270,16 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
+
 @login_required
 def lboard(request):
     return render(request, 'leaderboard.html')
 
+
 @login_required
 def score(request):
     return render(request, 'score.html')
+
 
 @login_required
 def submit(request):
@@ -274,6 +289,7 @@ def submit(request):
 
 def base1(request):
     return render(request, 'base1.html')
+
 
 @login_required
 def ruleset_form(request, id=0):
