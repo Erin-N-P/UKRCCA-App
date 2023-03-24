@@ -45,11 +45,18 @@ p {
     justify-content: center;
     align-items: center;
     height: 700px;
-    width: auto;
+    width: 100vw;
     background-color: #183034;
     margin-bottom: 2rem;
 }
-
+div.tablepush{
+    display: flex;
+    flex-direction: row;
+}
+.Tscroll{
+    width: 200px;
+    overflow: scroll;
+}
 .wrap {
     display: flex;
     margin: auto;
