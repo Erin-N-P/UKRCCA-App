@@ -11,14 +11,14 @@ body {
 /* Header styling */
 
 .headerContainer {
-  background-color: #141115;
+  /* background-color: #141115;
   height: 150px;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 40% 40% 20%;
+  grid-template-columns: 30% 50% 20%;
   align-items: center;
   padding: 30px;
-  border-radius: 0px 0px 25px 25px;
+  border-radius: 0px 0px 25px 25px; */
 }
 
 .headerContainer img {
