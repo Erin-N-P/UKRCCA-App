@@ -54,9 +54,9 @@
             <a href="{% url 'comp_insert' %}" class="add-user">
                 <img src="{% static 'plus.png' %}" alt="" class="edit" style="height: 20px;"> Add New</a>
         </th>
-        <div class="add-new-column">
-            {% for comp in comp_list %}
-            <td class="add-new">
+        {% for comp in comp_list %}
+        <td class="add-new">
+            <div class="please">
                 <a href="{% url 'comp_update' comp.id %}">
                     <img src="{% static 'edit.png' %}" alt="" class="edit" style="height: 20px;">
                 </a>
@@ -66,9 +66,9 @@
                         onclick="return confirm('Do you really want to delete user {{comp.name}}?')"><img
                             src="/database/static/delete.png" style="height:20px"></button>
                 </form>
-            </td>
-            {% endfor %}
-        </div>
+            </div>
+        </td>
+        {% endfor %}
     </tr>
 
 
