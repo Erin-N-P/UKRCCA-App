@@ -2,41 +2,51 @@
     margin: 0;
     padding: 0;
 }
-body{
-    background-color: #183034;
+
+body {
+    background-color: #6ab5c2;
 }
 
-#comp{
+#comp {
     overflow-x: auto;
 }
 
-#user td, #user th, #comp td, #comp th {
+#user td,
+#user th,
+#comp td,
+#comp th {
     border: 1px solid #333;
     padding: 10.5px;
     font-family: 'Oswald', sans-serif;
-    color:#183034;
+    color: #183034;
     background-color: #D5E4D9;
-  }
-  
-#user tr:nth-child(even){
+}
+
+#user tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-#user tr:hover {background-color: #ddd;}
+#user tr:hover {
+    background-color: #ddd;
+}
 
-#user th, #comp th {
+#user th,
+#comp th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #6814a8;
     color: white;
     position: static;
-    width: 80px;;
+    width: 80px;
+    ;
 }
-.Tscroll{
+
+.Tscroll {
     width: 350px;
     overflow: scroll;
 }
+
 .popup {
     width: 400px;
     background: white;
@@ -79,14 +89,16 @@ a.add-user {
 }
 
 a.add-user:hover {
-    color: rgb(31, 134, 224)!important;
+    color: rgb(31, 134, 224) !important;
     transition: 0.19s;
 }
-div.add-new-column{
+
+div.add-new-column {
     display: flex;
     flex-direction: row;
 }
-.please{
+
+.please {
     display: flex;
     flex-direction: row;
     align-items: center;

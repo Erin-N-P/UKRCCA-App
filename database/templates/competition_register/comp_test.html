@@ -2,9 +2,13 @@
 {% load static %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'list.css' %}">
+<link rel="stylesheet" href="{% static 'home.css' %}">
 {% endblock %}
 
 {% block content %}
-    <p>Welcome to the <a>{{comp.name}}</a> competition</p>
+<p>Welcome to the <a>{{comp.name}}</a> competition!</p>
+<p>Continue to your scorecard here:</p>
+<form action="{% url 'score' %}">
+    <button>ENTER</button>
+</form>
 {% endblock %}

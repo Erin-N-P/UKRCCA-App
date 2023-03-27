@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #f1f2f2;
+    background-color: #6ab5c2;
 }
 
 .head-wrap {
@@ -78,9 +78,10 @@ p {
     align-items: center;
     height: 700px;
     width: 100vw;
-    background-color: #183034;
+    background-color: #6ab5c2;
     margin-bottom: 2rem;
 }
+
 .wrap {
     display: flex;
     margin: auto;

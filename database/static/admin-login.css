@@ -1,12 +1,12 @@
 body {
-    background: #183034;
+    background: #6ab5c2;
 }
 
 .head-wrap {
-    display: none!important;
+    display: none !important;
 }
 
-.form-label{
+.form-label {
     font-family: 'Nunito';
     font-style: 'bold';
     font-weight: 700;
@@ -15,6 +15,7 @@ body {
 
     color: #D5E4D9;
 }
+
 .mb-4 {
     position: relative;
     font-family: 'Rubik';
@@ -44,7 +45,7 @@ body {
     border-color: rgba(84, 134, 135, 0.5);
 }
 
-a{
-   color: #D5E4D9; 
-   
+a {
+    color: #D5E4D9;
+
 }

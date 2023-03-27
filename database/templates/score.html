@@ -47,6 +47,14 @@
     </div>
 
     <div class="scoreChange">
+        <p class="changeName">Bonus Progress (-5 points)</p>
+        <div class="scoreRight">
+            <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, -5)"></button>
+            <button id="minus"><img src="{% static 'minus.png' %}" alt="" onclick="decreasePoint(event, -5)"></button>
+        </div>
+    </div>
+
+    <div class="scoreChange">
         <p class="changeName">Reverse (1 points)</p>
         <div class="scoreRight">
             <button id="add"><img src="{% static 'add.png' %}" alt="" onclick="increasePoint(event, 1)"></button>

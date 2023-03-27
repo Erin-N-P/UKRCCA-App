@@ -194,7 +194,6 @@ li::before {
 .rulesHeavy {
     font-size: 3rem;
     font-family: 'Outfit', sans-serif;
-    padding-bottom: 30vh;
     padding-left: 30px;
     padding-right: 30px;
     display: none;
@@ -229,4 +228,12 @@ li::before {
     align-items: center;
     flex-direction: row;
     justify-content: center;
+}
+
+.rulesLight .gradient-list .anchor {
+    text-decoration: none;
+}
+
+#ruleHeavy {
+    margin-bottom: 0;
 }

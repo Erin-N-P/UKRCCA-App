@@ -28,6 +28,16 @@
     let scored = sessionStorage.getItem("scorer");
     document.getElementById("score").innerHTML = "Your final score was " + scored + " points.";
 
+    let scoreInput = document.getElementById("scoreFinal");
+    scoreInput.value = scored;
+    scoreInput.disabled = true;
+
+    let timeInput = document.getElementById("timeFinal");
+    timeInput.value = timer;
+    timeInput.disabled = true;
+
+
+
 
 
 
