@@ -5,6 +5,7 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
+    background-color: #f1f2f2;
 }
 
 .head-wrap {
@@ -45,11 +46,10 @@ p {
     justify-content: center;
     align-items: center;
     height: 700px;
-    width: auto;
+    width: 100vw;
     background-color: #183034;
     margin-bottom: 2rem;
 }
-
 .wrap {
     display: flex;
     margin: auto;
