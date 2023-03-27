@@ -30,6 +30,6 @@ urlpatterns = [
     path('scorecard/', views.score, name='score'),
     path('submit/', views.submit, name='submit'),
     path('base/', views.base, name='base'),
-    path('/home', redirect_view),
+    path('', redirect_view),
     path('', views.user_form, name='user_insert'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

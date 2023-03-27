@@ -28,7 +28,7 @@ urlpatterns = [
     path('api/', include(router.urls), name='api'),
     path("__reload__/", include("django_browser_reload.urls")),
     path('test/', views.test, name='test'),
-    path('home/', views.home, name='home'),
+    path('', views.home, name='home'),
     path('leaderboard/', views.lboard, name='lboard'),
     path('scorecard/', views.score, name='score'),
     path('submit/', views.submit, name='submit'),

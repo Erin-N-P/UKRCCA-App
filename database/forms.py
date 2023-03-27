@@ -44,6 +44,7 @@ class UserLoginForm(AuthenticationForm):
         }
     ))
 
+
 class RegistrationForm(forms.ModelForm):
 
     user_name = forms.CharField(
@@ -77,7 +78,7 @@ class RegistrationForm(forms.ModelForm):
             raise forms.ValidationError(
                 'Please use another Email, that is already taken')
         return email
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['user_name'].widget.attrs.update(
@@ -98,13 +99,13 @@ class RegistrationForm(forms.ModelForm):
     #     self.fields['first_name'].required = True
     #     self.fields['last_name'].required = True
 
+
 class ScoreForm(forms.ModelForm):
-    
-    
 
     def __init__(self, *args, **kwargs):
         super(ScoreForm, self).__init__(*args, **kwargs)
         self.fields['comp'].required = True
+
 
 class CompetitionForm(forms.ModelForm):
     class Meta:
