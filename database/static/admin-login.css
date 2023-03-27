@@ -1,6 +1,11 @@
 body {
     background: #183034;
 }
+
+.head-wrap {
+    display: none!important;
+}
+
 .form-label{
     font-family: 'Nunito';
     font-style: 'bold';

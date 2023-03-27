@@ -1,6 +1,11 @@
 body {
     background: #183034;
 }
+
+.head-wrap {
+    display: none!important;
+}
+
 .mb-2 {
     position: relative;
     font-family: 'Rubik';
