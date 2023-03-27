@@ -1,9 +1,9 @@
 body {
-    background: #183034;
+    background: #6ab5c2;
 }
 
 .head-wrap {
-    display: none!important;
+    display: none !important;
 }
 
 .mb-2 {
@@ -21,7 +21,8 @@ body {
 
     color: #D5E4D9;
 }
-label{
+
+label {
     font-family: 'Nunito';
     font-style: 'bold';
     font-weight: 700;
@@ -30,10 +31,12 @@ label{
 
     color: #D5E4D9;
 }
+
 .text-muted {
     font-size: 15px;
-    color: rgb(213 228 217)!important;
+    color: rgb(213 228 217) !important;
 }
+
 .bt-4 {
     font-family: 'Nunito';
     font-style: 'bold';
@@ -46,7 +49,8 @@ label{
     background-color: rgba(84, 134, 135, 0.5);
     border-color: rgba(84, 134, 135, 0.5);
 }
-a{
-    color: #D5E4D9; 
-    
- }
+
+a {
+    color: #D5E4D9;
+
+}
