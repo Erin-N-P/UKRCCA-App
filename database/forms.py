@@ -13,22 +13,22 @@ from django.contrib.auth.forms import (AuthenticationForm, PasswordResetForm,
 #             'user_name': forms.TextInput(attrs={
 #                 'placeholder': 'User Name',
 #                 'class': 'form-control',
-#                 'style': 'padding-left: 10px; width: 310px'
+#                 'style': 'padding-left: 10px; width: 600px'
 #             }),
 #             'first_name': forms.TextInput(attrs={
 #                 'placeholder': 'First Name',
 #                 'class': 'form-control',
-#                 'style': 'padding-left: 10px; width: 310px'
+#                 'style': 'padding-left: 10px; width: 600px'
 #             }),
 #             'last_name': forms.TextInput(attrs={
 #                 'placeholder': 'Last Name',
 #                 'class': 'form-control',
-#                 'style': 'padding-left: 10px; width: 310px'
+#                 'style': 'padding-left: 10px; width: 600px'
 #             }),
 #             'email': forms.EmailInput(attrs={
 #                 'placeholder': 'Email',
 #                 'class': 'form-control',
-#                 'style': 'padding-left: 10px; width: 310px'
+#                 'style': 'padding-left: 10px; width: 600px'
 #             })
 #         }
 
@@ -136,23 +136,24 @@ class CompetitionForm(forms.ModelForm):
             'name': forms.TextInput(attrs={
                 'placeholder': 'Name',
                 'class': 'form-control',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
             'location': forms.TextInput(attrs={
                 'placeholder': 'Location',
                 'class': 'form-control',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
             'no_of_rounds': forms.NumberInput(attrs={
                 'placeholder': 'No of Rounds',
                 'class': 'form-control',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
             'gates_per_round': forms.NumberInput(attrs={
                 'placeholder': 'Gates per round',
                 'class': 'form-control',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
+
         }
 
     def __init__(self, *args, **kwargs):
@@ -178,17 +179,17 @@ class UserScore(forms.ModelForm):
             'total_score': forms.TextInput(attrs={
                 'placeholder': 'Final Score',
                 'id': 'scoreFinal',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
             'time_taken': forms.TextInput(attrs={
                 'placeholder': 'Final Time',
                 'id': 'timeFinal',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
             'round': forms.TextInput(attrs={
                 'placeholder': 'Round?',
                 'id': 'roundFinal',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
 
 
@@ -203,7 +204,7 @@ class RulesetForm(forms.ModelForm):
             'name': forms.TextInput(attrs={
                 'placeholder': 'Ruleset Name',
                 'class': 'form-control',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
         }
 
@@ -216,11 +217,11 @@ class RuleForm(forms.ModelForm):
             'name': forms.TextInput(attrs={
                 'placeholder': 'Rule Name',
                 'class': 'form-control',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
             'point': forms.TextInput(attrs={
                 'placeholder': 'Number of points',
                 'class': 'form-control',
-                'style': 'padding-left: 10px; width: 310px'
+                'style': 'padding-left: 10px; width: 600px'
             }),
         }

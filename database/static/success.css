@@ -3,25 +3,42 @@
   margin: 0;
 }
 
+.success {
+  color: #000000;
+}
+
 .copyHolder {
   height: 8vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: 'Jost', 'sans-serif';
+  font-size: 30px;
+  margin-top: 10vh;
+
+}
+
+.copyTool {
+  display: flex;
+  align-items: center;
+  height: 7vh;
+  font-size: 30px;
 }
 
 .copyText {
   height: 100%;
-  width: 160px;
-  padding: 15px;
+  width: 30vw;
+  padding-top: 40px;
+  padding-left: 15px;
   background-color: black;
   color: #ffffff;
+  margin: auto;
 }
 
 .clip {
   height: 100%;
-  width: 50px;
+  width: 10vw;
   border: none;
   background-color: #B98EA7;
 }
@@ -33,7 +50,7 @@
 .referenceInput {
   height: 100%;
   padding: 15px;
-  width: 130px;
+  width: 30vw;
 }
 
 .referenceInput {
