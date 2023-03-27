@@ -21,7 +21,7 @@
 
   {% if user.is_authenticated %}
   <a href="{% url 'logout' %}" class="button"
-    style="font-size: 35px; display: flex; align-items: center; text-decoration: none; color: #ffffff; gap: 5px;">
+    style="font-size: 35px; display: flex; align-items: center; text-decoration: none; color: #ffffff; gap: 5px; margin-right: 20px;">
     <svg xmlns="http://www.w3.org/2000/svg" height="70" width="70" fill="currentColor" class="bi bi-door-open"
       viewBox="0 0 16 16" style="padding-right: 5px; height: 40px; width: 40px;">
       <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
@@ -31,7 +31,7 @@
   </a>
   {% else %}
   <a href="{% url 'auth-login' %}" class="button"
-    style="font-size: 40px; display: flex; align-items: center; text-decoration: none; color: #ffffff; gap: 5px;">
+    style="font-size: 40px; display: flex; align-items: center; text-decoration: none; color: #ffffff; gap: 5px; margin-right: 20px;">
     <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-door-open"
       viewBox="0 0 16 16" style="padding-right: 5px;">
       <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />

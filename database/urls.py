@@ -14,7 +14,7 @@ urlpatterns = [
     path('register/', views.account_register, name='register'),
     path('activate/<slug:uidb64>/<slug:token>)/',
          views.account_activate, name='activate'),
-    path('', views.home, name='home'),
+    path('home/', views.home, name='home'),
     path('score/', views.score_form, name='score_insert'),
     path('enter/', views.dashboard, name='login'),
 

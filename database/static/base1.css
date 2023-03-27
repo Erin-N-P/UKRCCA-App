@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-body {}
-
 /* Header styling */
 
 .headerContainer {
@@ -24,6 +22,7 @@ body {}
 
 .headerContainer img {
   height: 60px;
+  margin-left: 15px;
 }
 
 .headerContainer p {
