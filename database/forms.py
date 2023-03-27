@@ -158,6 +158,7 @@ class CompetitionForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(CompetitionForm, self).__init__(*args, **kwargs)
         self.fields['name'].required = True
+        self.fields['ruleset'].empty_label = "Select Ruleset"
 
 
 class createUser(forms.Form):

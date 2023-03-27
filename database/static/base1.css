@@ -32,6 +32,48 @@
   line-height: 50px;
 }
 
+/* header admin styling */
+  .head-head {
+    background-color: #1B4557;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .top {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .logo-title, .greeting {
+    color: white;
+  }
+
+  .dropdown-item {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .navImg {
+    height: 30px!important;
+  }
+
+  p.greeting {
+    color: white;
+    margin-top: 1rem;
+    font-size: 22px;
+  }
+
 /*  Footer styling */
 
 .footerContainer {
