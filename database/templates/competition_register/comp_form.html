@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 {% load static %}
 
 {% block head %}
@@ -6,12 +6,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,300&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Carme&family=Nunito:wght@600&family=Rubik:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Carme&family=Nunito:wght@600&family=Rubik:wght@700&display=swap"
+    rel="stylesheet">
 {% endblock %}
 
 
 {% block content %}
 <h1 class="head">Create a Competition</h1>
+
 <form class="properties" action="" method="post" autocomplete="off">
     {% csrf_token %}
     {{ form }}

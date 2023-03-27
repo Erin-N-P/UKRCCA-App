@@ -6,19 +6,25 @@
 {% endblock %}
 
 {% block content %}
-<p class="success" style="color: #ffffff;">You have successfully created competition '{{ comp.name }}'.</p>
+
 <div class="copyHolder">
-  <div class="copyText">
-    <p>Reference Code</p>
+  <p class="success" style="color: #000000;">You have successfully created competition '{{ comp.name }}'.</p>
+  <div class="copyTool">
+    <div class="copyText">
+      <p>Reference Code</p>
+    </div>
+    <button onclick=copy() onmouseout=outFunc() class="clip"><img src="{% static 'copy.png' %}" alt="">
+      <span class="toolTip" id="tip">Copy to clipboard</span>
+    </button>
+    <input class="referenceInput" id="inputs" value="{{comp.ref_code}}">
   </div>
-  <button onclick=copy() onmouseout=outFunc() class="clip"><img src="{% static 'copy.png' %}" alt="">
-    <span class="toolTip" id="tip">Copy to clipboard</span>
-  </button>
-  <input class="referenceInput" id="inputs" value="{{comp.ref_code}}">
+  <form action="/account/comp/list" class="buttonHold">
+    <button class="listFind">View List</button>
+
+  </form>
+
 </div>
-<form action="/account/comp/list" class="buttonHold">
-  <button class="listFind">View List</button>
-</form>
+
 <script>
   function copy() {
     var text = document.getElementById("inputs");
