@@ -172,8 +172,20 @@ class createUser(forms.Form):
 class UserScore(forms.ModelForm):
     class Meta:
         model = Score
-        fields = ['user', 'comp']
+        fields = ['user', 'comp', 'total_score', 'time_taken']
         widgets = {
+            'total_score': forms.TextInput(attrs={
+                'placeholder': 'Final Score',
+                'id': 'scoreFinal',
+                'style': 'padding-left: 10px; width: 310px'
+            }),
+            'time_taken': forms.TextInput(attrs={
+                'placeholder': 'Final Time',
+                'id': 'timeFinal',
+                'style': 'padding-left: 10px; width: 310px'
+            }),
+
+
 
         }
 

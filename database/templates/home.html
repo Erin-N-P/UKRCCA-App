@@ -44,17 +44,23 @@
             <option value="heavy">Heavy</option>
         </select>
     </div>
-    <ul class="gradient-list" style="font-size: 3rem;">
-    {% for l in light %}
+    <ul class="gradient-list" style="font-size: 3rem; ">
+        {% for l in light %}
         <li class="list-text">
             {{l.name}}
         </li>
-    {% endfor %}
+        {% endfor %}
+        <a class="anchor" style="text-decoration: none; font-family: 'Jost', sans-serif; color: #874bc0"
+            href="https://docs.google.com/document/d/11PhTJvChtI0sOyUqGONaLDCZ6TqLegj2ZuQZZf2_a78/edit#"
+            target="_blank">
+            For more detailed rules,
+            please click here</a>.
+
     </ul>
 
 </div>
 
-<div class="rulesHeavy" id="ruleHeavy">
+<div style="margin-bottom: 0;" class="rulesHeavy" id="ruleHeavy">
     <h1>RULES</h1>
     <div class="selector">
         <label for="dropDowns" id="dropLabel"> Select a rule set: </label>
@@ -71,8 +77,8 @@
         </li>
         {% endfor %}
     </ul>
-    <p>For access to the rules, please visit <a href="https://drive.google.com/file/d/1E9RrArFlg3z6CCUAL3QpIQDAjKT0UE62"
-            target="_blank">this</a> link.</p>
+    <p style="margin-bottom: 0;">For access to the rules, please visit <a
+            href="https://drive.google.com/file/d/1E9RrArFlg3z6CCUAL3QpIQDAjKT0UE62" target="_blank">this</a> link.</p>
 </div>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script>

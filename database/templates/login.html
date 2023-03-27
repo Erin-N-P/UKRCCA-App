@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block pagename %} <p>SIGN IN</p> {% endblock %}
-{% block back %}"javascript:close_window();"{% endblock %}
+{% block back %}{% url 'home' %}{% endblock %}
 {% block content %}
 <div class="contentContainer">
     <p>Please enter your competition ID:</p>
