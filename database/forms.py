@@ -193,16 +193,11 @@ class UserScore(forms.ModelForm):
                 'id': 'roundFinal',
                 'style': 'padding-left: 10px; width: 600px;'
             }),
-<<<<<<< HEAD
-
-            'user': forms.Select(attrs={})
-
-=======
             'user_id': forms.Select(attrs={'style': 'width:250px'}),
             'comp': forms.Select(attrs={'style': 'width:250px'})
->>>>>>> db063fe19d9a8514c9f9db5d67cbfa169388456d
 
         }
+
     def __init__(self, *args, **kwargs):
         super(UserScore, self).__init__(*args, **kwargs)
         self.fields['user_id'].empty_label = "Select User"

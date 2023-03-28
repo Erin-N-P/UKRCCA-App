@@ -6,6 +6,10 @@ body {
     display: none !important;
 }
 
+.account-form {
+    padding: 20px;
+}
+
 .mb-2 {
     position: relative;
     font-family: 'Rubik';
@@ -28,6 +32,7 @@ label {
     font-weight: 700;
     font-size: 23px;
     line-height: 27px;
+    padding: 0;
 
     color: #D5E4D9;
 }
