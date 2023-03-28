@@ -53,6 +53,8 @@ class RegistrationForm(forms.ModelForm):
         label='Enter Username', min_length=4, max_length=50, help_text='Required')
     email = forms.EmailField(max_length=100, help_text='Required', error_messages={
         'required': 'Sorry, you will need an email'})
+    first_name = forms.CharField(label='First name', help_text='Required')
+    surname = forms.CharField(label='Surname', help_text='Required')
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(
         label='Repeat password', widget=forms.PasswordInput)
@@ -87,6 +89,10 @@ class RegistrationForm(forms.ModelForm):
             {'class': 'form-control mb-3', 'placeholder': 'Username'})
         self.fields['email'].widget.attrs.update(
             {'class': 'form-control mb-3', 'placeholder': 'E-mail', 'name': 'email', 'id': 'id_email'})
+        self.fields['first_name'].widget.attrs.update(
+            {'class': 'form-control mb-3', 'placeholder': 'First name'})
+        self.fields['surname'].widget.attrs.update(
+            {'class': 'form-control mb-3', 'placeholder': 'Surname'})
         self.fields['password'].widget.attrs.update(
             {'class': 'form-control mb-3', 'placeholder': 'Password'})
         self.fields['password2'].widget.attrs.update(
