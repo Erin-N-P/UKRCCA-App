@@ -200,13 +200,10 @@ class UserScore(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(UserScore, self).__init__(*args, **kwargs)
-        self.fields['user_id'].empty_label = "Select User"
-        self.fields['user_id'].label = "User"
+        self.fields['user'].empty_label = "Select User"
+        self.fields['user'].label = "User"
         self.fields['comp'].empty_label = "Select Comp"
         self.fields['comp'].label = "Competition"
-
-    def __init__(self, *args, **kwargs):
-        super(UserScore, self).__init__(*args, **kwargs)
         self.fields['round'].label = "Round No."
 
 
