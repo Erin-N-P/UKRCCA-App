@@ -275,7 +275,8 @@ def home(request):
 @login_required
 def lboard(request):
     context = {
-        'score_list': Competition.objects.all()
+        'score_list': Score.objects.all().order_by('total_score').values(),
+
     }
     return render(request, 'leaderboard.html', context)
 
@@ -302,7 +303,7 @@ def submit(request, id=0):
             form = UserScore(request.POST, instance=score)
         if form.is_valid():
             form.save()
-            return redirect('/submit')
+            return redirect('/')
         else:
             return render(request, 'submit.html', {"form": form})
 
@@ -331,4 +332,3 @@ def ruleset_form(request, id=0):
             return redirect('/')
         else:
             return render(request, "ruleset_register/ruleset_form.html", {'form': form})
-    
