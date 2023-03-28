@@ -299,7 +299,7 @@ def submit(request, id=0):
             form = UserScore(request.POST, instance=score)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('/submit')
         else:
             return render(request, 'submit.html', {"form": form})
 

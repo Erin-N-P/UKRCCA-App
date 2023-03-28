@@ -176,17 +176,15 @@ class createUser(forms.Form):
 class UserScore(forms.ModelForm):
     class Meta:
         model = Score
-        fields = ['user', 'comp', 'total_score', 'time_taken', 'round']
+        fields = '__all__'
         widgets = {
             'total_score': forms.TextInput(attrs={
-                'placeholder': 'Final Score',
                 'id': 'scoreFinal',
-                'style': 'padding-left: 10px; width: 600px'
+                'style': 'display: none;'
             }),
             'time_taken': forms.TextInput(attrs={
-                'placeholder': 'Final Time',
                 'id': 'timeFinal',
-                'style': 'padding-left: 10px; width: 600px'
+                'style': 'display: none;'
             }),
             'round': forms.TextInput(attrs={
                 'placeholder': 'Round',
@@ -201,6 +199,8 @@ class UserScore(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(UserScore, self).__init__(*args, **kwargs)
         self.fields['user'].empty_label = "Select User"
+        self.fields['total_score'].label = ""
+        self.fields['time_taken'].label = ""
         self.fields['user'].label = "User"
         self.fields['comp'].empty_label = "Select Comp"
         self.fields['comp'].label = "Competition"

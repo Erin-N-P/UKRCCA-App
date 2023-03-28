@@ -13,11 +13,12 @@
         <p id="time" class="time">TEST</p>
         <p id="score" class="score">TEST</p>
     </div>
-    <form class="properties" method="post" action="{% url 'home' %}">
+    <form class="properties" method="post" action="">
         {% csrf_token %}
         {{form.as_p}}
         <button type="submit" id="entrySubmit">SUBMIT</button>
     </form>
+
 </div>
 
 <script>
@@ -30,11 +31,11 @@
 
     let scoreInput = document.getElementById("scoreFinal");
     scoreInput.value = scored;
-    scoreInput.disabled = true;
+   
 
     let timeInput = document.getElementById("timeFinal");
     timeInput.value = timer;
-    timeInput.disabled = true;
+ 
 
 
 
