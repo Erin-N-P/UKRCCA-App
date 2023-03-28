@@ -4,7 +4,9 @@
 }
 
 body {
-    background-color: #6ab5c2;
+    background-color: #34585e;
+    width: 100%;
+    height: 100%;
 }
 
 #comp {
@@ -36,7 +38,7 @@ body {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #6814a8;
+    background-color: #293079;
     color: white;
     position: static;
     width: 80px;
