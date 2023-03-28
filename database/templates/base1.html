@@ -13,7 +13,7 @@
 
 {% if user.is_staff == False %}
 <div class="headerContainer"
-  style="margin-bottom: 10vh; display: flex; justify-content: space-between; align-items: center;">
+  style="margin-bottom: 3vh; display: flex; justify-content: space-between; align-items: center;">
   <a href={% block back %}{% endblock %}><img src="{% static 'back.png' %}" alt="" /></a>
   <div class="pageName" style="padding-top: 20px; margin-left: 15%;">{% block pagename %}{% endblock %}</div>
 
