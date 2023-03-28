@@ -29,5 +29,4 @@ urlpatterns = [
     path('comp/delete/<int:id>/', views.comp_delete, name='comp_delete'),
     path('comp/success/<int:id>/', views.comp_success, name='comp_success'),
 
-
 ]
