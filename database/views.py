@@ -175,17 +175,17 @@ def comp_form(request, id=0):
 def score_form(request, id=0):
     if request.method == "GET":
         if id == 0:
-            form = ScoreForm()
+            form = UserScore()
         else:
             score = Score.objects.get(pk=id)
-            form = ScoreForm(instance=score)
+            form = UserScore(instance=score)
         return render(request, "score_register/score_form.html", {'form': form})
     else:
         if id == 0:
-            form = ScoreForm(request.POST)
+            form = UserScore(request.POST)
         else:
             score = Score.objects.get(pk=id)
-            form = ScoreForm(request.POST, instance=score)
+            form = UserScore(request.POST, instance=score)
         if form.is_valid():
             form.save()
             return redirect('/user/score/')
@@ -283,9 +283,25 @@ def score(request):
 
 
 @login_required
-def submit(request):
-    form = UserScore()
-    return render(request, 'submit.html', {"form": form})
+def submit(request, id=0):
+    if request.method == "GET":
+        if id == 0:
+            form = UserScore()
+        else:
+            score = Score.objects.get(pk=id)
+            form = UserScore(instance=score)
+        return render(request, 'submit.html', {'form': form})
+    else:
+        if id == 0:
+            form = UserScore(request.POST)
+        else:
+            score = Score.objects.get(pk=id)
+            form = UserScore(request.POST, instance=score)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            return render(request, 'submit.html', {"form": form})
 
 
 def base1(request):
