@@ -120,7 +120,7 @@ class Score(models.Model):
         30, message='Please enter a number less than or equal to 30')])
     total_score = models.IntegerField()
     time_taken = models.CharField(max_length=20)
-    user_id = models.ForeignKey(NewUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(NewUser, on_delete=models.CASCADE)
     comp = models.ForeignKey(Competition, on_delete=models.CASCADE)
 
 

@@ -11,7 +11,9 @@
 .table {
     font-family: 'Outfit', sans-serif;
     font-size: 2.9rem;
-    width: auto;
+    width: 100%;
+    margin-bottom: 65vh;
+
 }
 
 .table th,
@@ -38,7 +40,7 @@ td {
 /* Miscellaneous Styling */
 
 body {
-    min-height: 100%;
+    height: 100vh;
 }
 
 .footerContainer {
@@ -51,4 +53,8 @@ body {
     position: sticky;
     top: 0;
     left: 0;
+}
+
+.pos {
+    width: 50px;
 }

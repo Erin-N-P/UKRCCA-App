@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import Select
 from .models import *
+from django.forms import Select
 from django.contrib.auth.forms import (AuthenticationForm, PasswordResetForm,
                                        SetPasswordForm)
 
@@ -175,7 +176,7 @@ class createUser(forms.Form):
 class UserScore(forms.ModelForm):
     class Meta:
         model = Score
-        fields = ['user_id', 'comp', 'total_score', 'time_taken', 'round']
+        fields = ['user', 'comp', 'total_score', 'time_taken', 'round']
         widgets = {
             'total_score': forms.TextInput(attrs={
                 'placeholder': 'Final Score',
@@ -188,20 +189,25 @@ class UserScore(forms.ModelForm):
                 'style': 'padding-left: 10px; width: 600px'
             }),
             'round': forms.TextInput(attrs={
-                'placeholder': 'Round?',
+                'placeholder': 'Round',
                 'id': 'roundFinal',
-                'style': 'padding-left: 10px; width: 600px'
+                'style': 'padding-left: 10px; width: 600px;'
             }),
             'user_id': forms.Select(attrs={'style': 'width:250px'}),
             'comp': forms.Select(attrs={'style': 'width:250px'})
 
         }
+
     def __init__(self, *args, **kwargs):
         super(UserScore, self).__init__(*args, **kwargs)
         self.fields['user_id'].empty_label = "Select User"
         self.fields['user_id'].label = "User"
         self.fields['comp'].empty_label = "Select Comp"
         self.fields['comp'].label = "Competition"
+
+    def __init__(self, *args, **kwargs):
+        super(UserScore, self).__init__(*args, **kwargs)
+        self.fields['round'].label = "Round No."
 
 
 class RulesetForm(forms.ModelForm):
