@@ -102,34 +102,6 @@ class RegistrationForm(forms.ModelForm):
     #     self.fields['last_name'].required = True
 
 
-class ScoreForm(forms.ModelForm):
-
-    total_time = forms.CharField(
-        label='Total Time', min_length=4, max_length=50, help_text='Required')
-    total_score = forms.IntegerField(help_text='Required', error_messages={
-        'required': 'Please check if you have the right value'})
-    user = forms.ChoiceField(
-        label='Choose user', widget=forms.Select(attrs={}))
-    competition = forms.ChoiceField(
-        label='Choose competition', widget=forms.Select(attrs={}))
-    round = forms.ChoiceField(label='Choose which round')
-
-    class Meta:
-        model = Score
-        fields = ('total_score', 'time_taken', 'user', 'comp')
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['total_time'].widget.attrs.update(
-            {'class': 'form-control mb-3', 'placeholder': 'Total Time'})
-        self.fields['total_score'].widget.attrs.update(
-            {'class': 'form-control mb-3', 'placeholder': 'Total Score'})
-        self.fields['user'].widget.attrs.update(
-            {'class': 'form-control mb-3', 'placeholder': 'Choose User'})
-        self.fields['comp'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Choose Competition'})
-
-
 class CompetitionForm(forms.ModelForm):
     class Meta:
         model = Competition
@@ -205,6 +177,7 @@ class UserScore(forms.ModelForm):
         self.fields['comp'].empty_label = "Select Comp"
         self.fields['comp'].label = "Competition"
         self.fields['round'].label = "Round No."
+        self.fields['total_score'].label = ""
 
 
 class RulesetForm(forms.ModelForm):
