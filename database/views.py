@@ -274,7 +274,10 @@ def home(request):
 
 @login_required
 def lboard(request):
-    return render(request, 'leaderboard.html')
+    context = {
+        'score_list': Competition.objects.all()
+    }
+    return render(request, 'leaderboard.html', context)
 
 
 @login_required
@@ -310,9 +313,6 @@ def base1(request):
 
 @login_required
 def ruleset_form(request, id=0):
-    # context = {
-    #     'name': 'Ruleset',
-    # }
     if request.method == 'GET':
         if id == 0:
             form = RulesetForm()
@@ -331,3 +331,4 @@ def ruleset_form(request, id=0):
             return redirect('/')
         else:
             return render(request, "ruleset_register/ruleset_form.html", {'form': form})
+    
