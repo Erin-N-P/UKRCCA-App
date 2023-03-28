@@ -1,5 +1,6 @@
 from django import forms
 from .models import *
+from django.forms import Select
 from django.contrib.auth.forms import (AuthenticationForm, PasswordResetForm,
                                        SetPasswordForm)
 
@@ -174,7 +175,7 @@ class createUser(forms.Form):
 class UserScore(forms.ModelForm):
     class Meta:
         model = Score
-        fields = ['user_id', 'comp', 'total_score', 'time_taken', 'round']
+        fields = ['user', 'comp', 'total_score', 'time_taken', 'round']
         widgets = {
             'total_score': forms.TextInput(attrs={
                 'placeholder': 'Final Score',
@@ -187,13 +188,19 @@ class UserScore(forms.ModelForm):
                 'style': 'padding-left: 10px; width: 600px'
             }),
             'round': forms.TextInput(attrs={
-                'placeholder': 'Round?',
+                'placeholder': 'Round',
                 'id': 'roundFinal',
-                'style': 'padding-left: 10px; width: 600px'
+                'style': 'padding-left: 10px; width: 600px;'
             }),
+
+            'user': forms.Select(attrs={})
 
 
         }
+
+    def __init__(self, *args, **kwargs):
+        super(UserScore, self).__init__(*args, **kwargs)
+        self.fields['round'].label = "Round No."
 
 
 class RulesetForm(forms.ModelForm):

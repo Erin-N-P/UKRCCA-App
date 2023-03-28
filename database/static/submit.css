@@ -80,3 +80,7 @@ form {
     align-items: center;
     flex-direction: column;
 }
+
+.contentContainer .properties option {
+    font-size: 1rem;
+}
