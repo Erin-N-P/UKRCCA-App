@@ -18,11 +18,12 @@
         </tr>
         {% for score in score_list %}
         <tr>
-            <td class="pos">1</td>
-            <td>Alan Carr</td>
-            <td>80</td>
-            <td>00:12:51:37</td>
+            <td>{{ forloop.counter}}</td>
+            <td>{{score.user_id.user_name}}</td>
+            <td>{{score.total_score}}</td>
+            <td>{{score.time_taken}}</td>
         </tr>
+        {% endfor %}
     </table>
 </div>
 {% endblock %}
