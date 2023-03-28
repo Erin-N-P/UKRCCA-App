@@ -6,6 +6,10 @@ body {
     display: none !important;
 }
 
+.headerContainer {
+    display: none !important;
+}
+
 .account-form {
     padding: 20px;
 }

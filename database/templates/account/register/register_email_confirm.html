@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base1.html" %}
 {% load static %}
 {% block title %}Account Email Sent{% endblock %}
 <link rel="stylesheet" href="{% static 'admin-register.css' %}" />
@@ -6,9 +6,10 @@
 
 
 <div class="container">
-    <div>
-        <h3 class="mb-4">Account email sent</h3>
-        <p>Please check your email to activate your account</p>
+    <div
+        style="display: flex; width: 100%; height: 70%; align-items: center; flex-direction: column; font-family: 'Jost', sans-serif;">
+        <h3 style="font-size: 40px; font-weight: 700;" class="mb-4">Account email sent</h3>
+        <p style="font-size: 40px; align-self: center;">Please check your email to activate your account</p>
     </div>
 </div>
 
