@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import Select
 from .models import *
 from django.contrib.auth.forms import (AuthenticationForm, PasswordResetForm,
                                        SetPasswordForm)
@@ -191,9 +192,16 @@ class UserScore(forms.ModelForm):
                 'id': 'roundFinal',
                 'style': 'padding-left: 10px; width: 600px'
             }),
-
+            'user_id': forms.Select(attrs={'style': 'width:250px'}),
+            'comp': forms.Select(attrs={'style': 'width:250px'})
 
         }
+    def __init__(self, *args, **kwargs):
+        super(UserScore, self).__init__(*args, **kwargs)
+        self.fields['user_id'].empty_label = "Select User"
+        self.fields['user_id'].label = "User"
+        self.fields['comp'].empty_label = "Select Comp"
+        self.fields['comp'].label = "Competition"
 
 
 class RulesetForm(forms.ModelForm):
