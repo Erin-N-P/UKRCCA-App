@@ -132,7 +132,7 @@ def account_activate(request, uidb64, token):
         user.is_active = True
         user.save()
         auth_login(request, user)
-        return redirect('/home')
+        return redirect('/')
     else:
         return render(request, 'account/register/activation_invalid.html')
 
