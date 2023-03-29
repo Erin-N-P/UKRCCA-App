@@ -54,14 +54,14 @@ class RegistrationForm(forms.ModelForm):
     email = forms.EmailField(max_length=100, help_text='Required', error_messages={
         'required': 'Sorry, you will need an email'})
     first_name = forms.CharField(label='First name', help_text='Required')
-    surname = forms.CharField(label='Surname', help_text='Required')
+    last_name = forms.CharField(label='Surname', help_text='Required')
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(
         label='Repeat password', widget=forms.PasswordInput)
 
     class Meta:
         model = NewUser
-        fields = ('user_name', 'email',)
+        fields = ('user_name', 'email', 'first_name', 'last_name')
 
     def clean_username(self):
         user_name = self.cleaned_data['user_name'].lower()
@@ -69,6 +69,14 @@ class RegistrationForm(forms.ModelForm):
         if r.count():
             raise forms.ValidationError("Username already exists")
         return user_name
+    
+    def clean_firstname(self):
+        first_name = self.cleaned_data['first_name'].title()
+        return first_name
+    
+    def clean_surname(self):
+        last_name = self.cleaned_data['last_name'].title()
+        return last_name
 
     def clean_password2(self):
         cd = self.cleaned_data
@@ -91,7 +99,7 @@ class RegistrationForm(forms.ModelForm):
             {'class': 'form-control mb-3', 'placeholder': 'E-mail', 'name': 'email', 'id': 'id_email'})
         self.fields['first_name'].widget.attrs.update(
             {'class': 'form-control mb-3', 'placeholder': 'First name'})
-        self.fields['surname'].widget.attrs.update(
+        self.fields['last_name'].widget.attrs.update(
             {'class': 'form-control mb-3', 'placeholder': 'Surname'})
         self.fields['password'].widget.attrs.update(
             {'class': 'form-control mb-3', 'placeholder': 'Password'})
