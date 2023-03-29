@@ -274,11 +274,8 @@ def home(request):
 
 @login_required
 def lboard(request):
-    context = {
-        'score_list': Score.objects.all().order_by('total_score').values(),
-
-    }
-    return render(request, 'leaderboard.html', context)
+    score_list = Score.objects.all().order_by('total_score').values('user__user_name', 'total_score', 'time_taken')
+    return render(request, 'leaderboard.html', {'score_list':score_list})
 
 
 @login_required

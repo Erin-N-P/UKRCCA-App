@@ -177,7 +177,7 @@ class UserScore(forms.ModelForm):
                 'id': 'roundFinal',
                 'style': 'padding-left: 10px; width: 600px;'
             }),
-            'user_id': forms.Select(attrs={'style': 'width:250px'}),
+            'user': forms.Select(attrs={'style': 'width:250px'}),
             'comp': forms.Select(attrs={'style': 'width:250px'})
 
         }
