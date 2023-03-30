@@ -18,8 +18,8 @@
         </tr>
         {% for score in score_list %}
         <tr>
-            <td>{{forloop.counter}}</td>
-            <td>{{score.data}}</td>
+            <td>{{ forloop.counter}}</td>
+            <td>{{score.user__user_name}}</td>
             <td>{{score.total_score}}</td>
             <td>{{score.time_taken}}</td>
         </tr>
