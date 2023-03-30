@@ -1,14 +1,147 @@
-{% extends 'base1.html' %}
-{% load static %}
-
+{% extends 'base1.html' %}{% load static %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="{% static 'home.css' %}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 {% endblock %}
-
+{% block pagename %} <p>HOME</p>{% endblock %}
+{% block back %} {% url 'login' %} {% endblock %}
 {% block content %}
-<p>Welcome to the <a>{{comp.name}}</a> competition!</p>
-<p>Continue to your scorecard here:</p>
-<form action="{% url 'score' %}">
-    <button>ENTER</button>
-</form>
+
+
+<div class="galleryContainer">
+    <p style="font-size: 45px; font-family: 'Jost', sans-serif; margin-top: 2vh;">Welcome to the {{comp.name}}
+        competition!</p>
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="{% static 'gallery1.jpg'%}" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'gallery2.jpg'%}" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'gallery3.jpg'%}" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'gallery4.jpg'%}" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'gallery5.jpg'%}" alt=""></div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="link" style="display: none;">
+        <a class="enterButton" href="{% url 'login' %}">ENTER</a>
+    </div>
+
+</div>
+
+<div class="astrodivider">
+    <div class="astrodividermask"></div><span><i>&#10038;</i></span>
+</div>
+
+<div class="rulesLight" id="ruleLight">
+    <h1>RULES</h1>
+    <div class="selector">
+        <label id="dropLabel" for="dropDown"> Select a rule set: </label>
+        <select onchange=changeDrop() name="dropper" id="dropDown">
+            <option value="light">Light</option>
+            <option value="heavy">Heavy</option>
+        </select>
+    </div>
+    <ul class="gradient-list" style="font-size: 3rem; ">
+        {% for l in light %}
+        <li class="list-text">
+            {{l.name}}
+        </li>
+        {% endfor %}
+        <a class="anchor" style="text-decoration: none; font-family: 'Jost', sans-serif; color: #874bc0"
+            href="https://docs.google.com/document/d/11PhTJvChtI0sOyUqGONaLDCZ6TqLegj2ZuQZZf2_a78/edit#"
+            target="_blank">
+            For more detailed rules,
+            please click here</a>.
+
+    </ul>
+
+</div>
+
+<div style="margin-bottom: 0;" class="rulesHeavy" id="ruleHeavy">
+    <h1>RULES</h1>
+    <div class="selector">
+        <label for="dropDowns" id="dropLabel"> Select a rule set: </label>
+        <select onchange=changeDrops() name="dropper" id="dropDowns">
+            <option value="heavy">Heavy</option>
+            <option value="light">Light</option>
+
+        </select>
+    </div>
+    <ul class="gradient-list" style="font-size: 3rem;">
+        {% for f in full %}
+        <li class="list-text">
+            {{f.name}}
+        </li>
+        {% endfor %}
+    </ul>
+    <p style="margin-bottom: 0;">For access to the rules, please visit <a
+            href="https://drive.google.com/file/d/1E9RrArFlg3z6CCUAL3QpIQDAjKT0UE62" target="_blank">this</a> link.</p>
+</div>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper(".swiper", {
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+
+        pagination: {
+            el: ".swiper-pagination",
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    function changeDrop() {
+        var dropValue = document.getElementById('dropDown').value;
+        var drop = document.getElementById('dropDown');
+        var lightRules = document.getElementById('ruleLight');
+        var heavyRules = document.getElementById('ruleHeavy');
+        if (dropValue == "heavy") {
+            lightRules.style.display = "none";
+            heavyRules.style.display = "block";
+            drop.value = "light";
+
+
+        }
+
+        else if (dropValue == "light") {
+            heavyRules.style.display = "none";
+            lightRules.style.display = "block";
+            drop.value = "heavy";
+
+        }
+    }
+    function changeDrops() {
+        var dropValue = document.getElementById('dropDowns').value;
+        var drop = document.getElementById('dropDowns');
+        var lightRules = document.getElementById('ruleLight');
+        var heavyRules = document.getElementById('ruleHeavy');
+        if (dropValue == "heavy") {
+            lightRules.style.display = "none";
+            heavyRules.style.display = "block";
+            drop.value = "light";
+
+
+        }
+
+        else if (dropValue == "light") {
+            heavyRules.style.display = "none";
+            lightRules.style.display = "block";
+            drop.value = "heavy";
+
+        }
+    }
+</script>
 {% endblock %}

@@ -203,15 +203,17 @@ def comp_delete(request, id):
 @login_required
 def comp_test(request, ref):
     context = {
-        'comp': Competition.objects.get(ref_code=f'{ref}')
+        'comp': Competition.objects.get(ref_code=f'{ref}'),
+        'light': Rule.objects.filter(ruleset_id=3),
+        'full': Rule.objects.filter(ruleset_id=4),
     }
     try:
         return render(request, "competition_register/comp_test.html", context)
     except Competition.DoesNotExist:
-        return render(request, "competition_register/not-found.html")
+        return render(request, "competition_register/comp_test.html")
 
 
-@login_required
+@ login_required
 def comp_success(request, id):
     context = {
         'comp': Competition.objects.get(pk=id)
@@ -222,7 +224,7 @@ def comp_success(request, id):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 
-@login_required
+@ login_required
 def rule_form(request, id=0):
     if request.method == "GET":
         if id == 0:
@@ -243,23 +245,23 @@ def rule_form(request, id=0):
         return render(request, "ruleset_register/rule_form.html", {'form': form})
 
 
-@login_required
+@ login_required
 def rule_list(request):
 
     return render(request, "home.html")
 
 
-@login_required
+@ login_required
 def test(request):
     return render(request, 'test.html')
 
 
-@login_required
+@ login_required
 def base(request):
     return render(request, 'base.html')
 
 
-@login_required
+@ login_required
 def login(request):
     return render(request, 'login.html')
 
@@ -272,19 +274,19 @@ def home(request):
     return render(request, 'home.html', context)
 
 
-@login_required
+@ login_required
 def lboard(request):
     score_list = Score.objects.all().order_by('total_score').values(
         'user__user_name', 'total_score', 'time_taken')
     return render(request, 'leaderboard.html', {'score_list': score_list})
 
 
-@login_required
+@ login_required
 def score(request):
     return render(request, 'score.html')
 
 
-@login_required
+@ login_required
 def submit(request, id=0):
     if request.method == "GET":
         if id == 0:
@@ -310,7 +312,7 @@ def base1(request):
     return render(request, 'base1.html')
 
 
-@login_required
+@ login_required
 def ruleset_form(request, id=0):
     if request.method == 'GET':
         if id == 0:
