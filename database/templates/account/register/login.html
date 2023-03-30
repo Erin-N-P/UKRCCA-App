@@ -8,7 +8,7 @@
 {% block title %}Log-in{% endblock %}
 {% block content %}
 
-<form class="account-form" action="{% url 'auth-login' %}" method="post">
+<form class="account-form" action="{% url 'auth-login' %}" method="post" style="display:flex; flex-direction: column;">
   {% csrf_token %}
     <h3 class="mb-4">Sign In</h3>
     {% if form.errors %}
