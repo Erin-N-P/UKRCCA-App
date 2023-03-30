@@ -276,7 +276,6 @@ def home(request):
 def lboard(request):
     context = {
         'score_list': Score.objects.all().order_by('total_score').values(),
-
     }
     return render(request, 'leaderboard.html', context)
 
